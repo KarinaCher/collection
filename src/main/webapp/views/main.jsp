@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type"
-          content="text/html; charset=ISO-8859-1">
+          content="text/html; charset=utf-8">
         <title>User Registration</title>
     </head>
     <body>
-        aaa
+        aaa = ${list}
     </body>
 </html>

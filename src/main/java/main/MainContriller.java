@@ -1,15 +1,19 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainContriller
 {
     @RequestMapping("/")
-    public String index() {
+    public String index(Model model) {
+        List<String> list = new ArrayList();
+        list.add("elem1");
+        model.addAttribute("list", list);
         return "main";
     }
     
