@@ -1,9 +1,10 @@
 package main;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,24 +34,14 @@ public class MainContriller
     {
         List<Postcard> list = new ArrayList();
         
-        //read json file data to String
-        byte[] jsonData;
         try
         {
-            jsonData = Files.readAllBytes(Paths.get(ClassLoader.getSystemResource("postcards.json").toURI()));
-            
+            ObjectMapper mapper = new ObjectMapper(); 
+            File from = Paths.get(ClassLoader.getSystemResource("postcards.json").toURI()).toFile(); 
+            TypeReference<List<Postcard>> typeRef = new TypeReference<List<Postcard>>() {};
 
-            //create ObjectMapper instance
-            ObjectMapper objectMapper = new ObjectMapper();
-
-            //convert json string to object
-            Postcard postcard = objectMapper.readValue(jsonData, Postcard.class);
-
-            list.add(postcard);
-        } catch (IOException ex)
-        {
-            Logger.getLogger(MainContriller.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (URISyntaxException ex)
+            list = mapper.readValue(from, typeRef); 
+        } catch (IOException | URISyntaxException ex)
         {
             Logger.getLogger(MainContriller.class.getName()).log(Level.SEVERE, null, ex);
         }

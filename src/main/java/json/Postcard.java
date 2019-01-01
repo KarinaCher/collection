@@ -1,5 +1,6 @@
 package json;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +26,9 @@ public class Postcard
 {
     private String id;
     private List<String> images;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private Date dateSent;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private Date dateReceived;
     private int height;
     private int width;

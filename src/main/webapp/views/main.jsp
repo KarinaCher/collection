@@ -10,7 +10,7 @@
         <title>Collection overview</title>
     </head>
     <body>
-        <table>
+        <table class="table table-bordered">
             <tr>
                 <c:forEach var="postcard" items="${list}">
                     <td>
