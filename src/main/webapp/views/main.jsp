@@ -4,11 +4,23 @@
     <head>
         <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
-        <title>User Registration</title>
+        <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
+        <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+        <title>Collection overview</title>
     </head>
     <body>
-        <c:forEach var="postcard" items="${list}">
-            id = ${postcard.id}
-        </c:forEach>
+        <table>
+            <tr>
+                <c:forEach var="postcard" items="${list}">
+                    <td>
+                        id: ${postcard.id}<br />
+                        date sent: ${postcard.dateSent}<br />
+                        sender: ${postcard.sender}
+                    </td>
+                </c:forEach>
+            </tr>
+        </table>
+        
     </body>
 </html>

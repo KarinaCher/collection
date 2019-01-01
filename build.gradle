@@ -25,13 +25,16 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-//    compile("org.springframework.boot:spring-boot-starter")
-//    compile("org.springframework:spring-web")
     compile("com.fasterxml.jackson.core:jackson-databind")
     
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
     compile("javax.servlet:jstl")
     compile('org.springframework.boot:spring-boot-devtools')
+    
+//    compile('org.webjars:bootstrap:4.1.3')
+    compile('org.webjars:webjars-locator:0.32') // use:        /webjars/bootstrap/css/bootstrap.min.css
+    compile('org.webjars:bootstrap:3.3.7-1')    // instead of: /webjars/bootstrap/3.3.7-1/css/bootstrap.min.css
+  
 
     testCompile("junit:junit")
 }
