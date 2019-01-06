@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,20 +32,18 @@ public class MainContriller
     
     private List<Postcard> read()
     {
-        List<Postcard> list = new ArrayList();
-        
         try
         {
             ObjectMapper mapper = new ObjectMapper(); 
-            File from = Paths.get(ClassLoader.getSystemResource("postcards.json").toURI()).toFile(); 
+            File from = Paths.get(ClassLoader.getSystemResource("postcards2018.json").toURI()).toFile(); 
             TypeReference<List<Postcard>> typeRef = new TypeReference<List<Postcard>>() {};
 
-            list = mapper.readValue(from, typeRef); 
+            return mapper.readValue(from, typeRef); 
         } catch (IOException | URISyntaxException ex)
         {
             Logger.getLogger(MainContriller.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        return list;
+        return Collections.EMPTY_LIST;
     }
 }
