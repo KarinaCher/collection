@@ -13,8 +13,16 @@
     <body>
         <div class="container">
             <h1>Collection overview</h1>
-            <c:set var="collCount" value="4" />
 
+            <c:forEach var="tag" items="${tags}">
+                <button type="button" class="btn btn-primary">
+                    ${tag.key} <span class="badge badge-light">${tag.value}</span>
+                </button> 
+            </c:forEach>
+        </div>
+        
+        <div class="container">
+            <c:set var="collCount" value="4" />
             <c:forEach var="postcard" items="${list}" varStatus="count">
                 <c:if test="${(count.count mod collCount) eq 1}" >
                     <div class="row">
@@ -25,8 +33,7 @@
                               <img src="image/${postcard.images[0]}" class="img-fluid">
                               <div class="caption">
                                 <p>
-                                    date sent: <fmt:formatDate value="${postcard.dateSent}" pattern="dd MMM yyyy"/><br />
-                                    sender: ${postcard.sender}
+                                    ${postcard.description}
                                 </p>
                               </div>
                             </a>

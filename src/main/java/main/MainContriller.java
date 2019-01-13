@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import json.Postcard;
@@ -22,7 +24,34 @@ public class MainContriller
     public String index(Model model) {
         List<Postcard> list = read();
         model.addAttribute("list", list);
+        model.addAttribute("tags", prepareTags(list));
         return "main";
+    }
+
+    private static final String ALL = "All";
+    
+    private Map<String, Integer> prepareTags(List<Postcard> list)
+    {
+        Map<String, Integer> tags = new HashMap();
+        tags.put(ALL, 0);
+        for (Postcard postcard : list)
+        {
+            tags.put(postcard.getCountry(), getItemCount(tags, postcard.getCountry()) + 1);
+            tags.put(postcard.getSender(), getItemCount(tags, postcard.getSender()) + 1);
+            tags.put(ALL, tags.get(ALL) + 2);
+        }
+        
+        return tags;
+    }
+
+    private Integer getItemCount(Map<String, Integer> tags, String tagName)
+    {
+        Integer itemCount = tags.get(tagName);
+        if (itemCount == null)
+        {
+            itemCount = 0;
+        }
+        return itemCount;
     }
     
     @RequestMapping("/test")
