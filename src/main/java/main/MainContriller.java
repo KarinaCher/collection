@@ -1,78 +1,38 @@
 package main;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.file.Paths;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import json.Postcard;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import resources.PostcardResource;
+import resources.TagResource;
+import static resources.TagResource.ALL;
 
 @Controller
 public class MainContriller
 {
     @RequestMapping("/")
-    public String index(Model model) {
-        List<Postcard> list = read();
-        model.addAttribute("list", list);
-        model.addAttribute("tags", prepareTags(list));
+    public String index(Model model) 
+    {
+        model.addAttribute("list", PostcardResource.getList());
+        model.addAttribute("tags", (new TagResource(PostcardResource.getList())).getTags());
         return "main";
     }
 
-    private static final String ALL = "All";
-    
-    private Map<String, Integer> prepareTags(List<Postcard> list)
+    @RequestMapping(value = "/tag/{tagName}", method = RequestMethod.GET)
+    public String tag(@PathVariable String tagName, Model model) 
     {
-        Map<String, Integer> tags = new HashMap();
-        tags.put(ALL, 0);
-        for (Postcard postcard : list)
-        {
-            tags.put(postcard.getCountry(), getItemCount(tags, postcard.getCountry()) + 1);
-            tags.put(postcard.getSender(), getItemCount(tags, postcard.getSender()) + 1);
-            tags.put(ALL, tags.get(ALL) + 2);
-        }
+        List<Postcard> postcards = ALL.equals(tagName) 
+                ? PostcardResource.getList()
+                : PostcardResource.getListWithTag(tagName);
         
-        return tags;
-    }
-
-    private Integer getItemCount(Map<String, Integer> tags, String tagName)
-    {
-        Integer itemCount = tags.get(tagName);
-        if (itemCount == null)
-        {
-            itemCount = 0;
-        }
-        return itemCount;
+        // TODO validate input.
+        model.addAttribute("list", postcards);
+        model.addAttribute("tags", (new TagResource(PostcardResource.getList())).getTags());
+        return "main";
     }
     
-    @RequestMapping("/test")
-    public String test() {
-        return "test";
-    }
-    
-    private List<Postcard> read()
-    {
-        try
-        {
-            ObjectMapper mapper = new ObjectMapper(); 
-            File from = Paths.get(ClassLoader.getSystemResource("postcards2018.json").toURI()).toFile(); 
-            TypeReference<List<Postcard>> typeRef = new TypeReference<List<Postcard>>() {};
-
-            return mapper.readValue(from, typeRef); 
-        } catch (IOException | URISyntaxException ex)
-        {
-            Logger.getLogger(MainContriller.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return Collections.EMPTY_LIST;
-    }
 }

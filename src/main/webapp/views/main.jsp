@@ -15,9 +15,9 @@
             <h1>Collection overview</h1>
 
             <c:forEach var="tag" items="${tags}">
-                <button type="button" class="btn btn-primary">
+                <a href="/tag/${tag.key}" class="btn btn-outline-info" role="button">
                     ${tag.key} <span class="badge badge-light">${tag.value}</span>
-                </button> 
+                </a> 
             </c:forEach>
         </div>
         
@@ -29,8 +29,8 @@
                 </c:if>
                     <div class="col-sm-3">
                         <div class="thumbnail">
-                            <a href="image/${postcard.images[0]}">
-                              <img src="image/${postcard.images[0]}" class="img-fluid">
+                            <a href="../image/${postcard.images[0]}">
+                              <img src="../image/${postcard.images[0]}" class="img-fluid">
                               <div class="caption">
                                 <p>
                                     ${postcard.description}
