@@ -35,4 +35,12 @@ public class MainContriller
         return "main";
     }
     
+    @RequestMapping(value = "/postcard/{id}", method = RequestMethod.GET)
+    public String postcard(@PathVariable String id, Model model)
+    {
+        Postcard item = PostcardResource.getById(id);
+        model.addAttribute("postcard", item);
+        return "postcard";
+    }
+    
 }

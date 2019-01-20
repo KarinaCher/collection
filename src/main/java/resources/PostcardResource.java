@@ -27,6 +27,22 @@ public class PostcardResource
         return postcardList;
     }
     
+    public static Postcard getById(String id)
+    {
+        if (id == null)
+        {
+            return null;
+        }
+        for (Postcard postcard : getList())
+        {
+            if (id.equals(postcard.getId()))
+            {
+                return postcard;
+            }
+        }
+        return null;
+    }
+    
     public static List<Postcard> getListWithTag(String tagName)
     {
         List<Postcard> result = new ArrayList();

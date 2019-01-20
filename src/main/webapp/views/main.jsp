@@ -29,8 +29,8 @@
                 </c:if>
                     <div class="col-sm-3">
                         <div class="thumbnail">
-                            <a href="../image/${postcard.images[0]}">
-                              <img src="../image/${postcard.images[0]}" class="img-fluid">
+                            <a href="../postcard/${postcard.id}">
+                              <img src="../image/${postcard.images[0]}" class="img-fluid" />
                               <div class="caption">
                                 <p>
                                     ${postcard.description}
