@@ -3,14 +3,15 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
     <head>
-        <meta http-equiv="Content-Type"
-          content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
         <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
         <title>Postcard</title>
     </head>
     <body>
+        <jsp:include page="parts/menu.jsp" />
+        
         <c:if test="${!empty postcard}">
             <div class="container">
                 <h1>Postcard from ${postcard.sender}</h1>

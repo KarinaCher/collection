@@ -9,7 +9,6 @@ public class Application
 {
     private static final Logger log = Logger.getLogger(Application.class.getName());
 
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

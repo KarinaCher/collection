@@ -9,7 +9,8 @@ public class TagResource
 {
     public static final String ALL = "All";
     
-    private static Map<String, Integer> tags = new HashMap();
+    private static Map<String, Integer> tagsBySender = new HashMap();
+    private static Map<String, Integer> tagsByCountry = new HashMap();
     private static List<Postcard> postcardList;
     
     public TagResource(List<Postcard> postcardList)
@@ -17,20 +18,34 @@ public class TagResource
         this.postcardList = postcardList;
     }
     
-    public Map<String, Integer> getTags()
+    public Map<String, Integer> getTagsBySender()
     {
-        if (tags.isEmpty())
+        if (tagsBySender.isEmpty())
         {
-            tags.put(ALL, 0);
+            tagsBySender.put(ALL, 0);
             for (Postcard postcard : postcardList)
             {
-                tags.put(postcard.getCountry(), getItemCount(tags, postcard.getCountry()) + 1);
-                tags.put(postcard.getSender(), getItemCount(tags, postcard.getSender()) + 1);
-                tags.put(ALL, tags.get(ALL) + 2);
+                tagsBySender.put(postcard.getSender(), getItemCount(tagsBySender, postcard.getSender()) + 1);
+                tagsBySender.put(ALL, tagsBySender.get(ALL) + 1);
             }
         }
         
-        return tags;
+        return tagsBySender;
+    }
+    
+    public Map<String, Integer> getTagsByCountry()
+    {
+        if (tagsByCountry.isEmpty())
+        {
+            tagsByCountry.put(ALL, 0);
+            for (Postcard postcard : postcardList)
+            {
+                tagsByCountry.put(postcard.getCountry(), getItemCount(tagsByCountry, postcard.getCountry()) + 1);
+                tagsByCountry.put(ALL, tagsByCountry.get(ALL) + 1);
+            }
+        }
+        
+        return tagsByCountry;
     }
     
     private Integer getItemCount(Map<String, Integer> tags, String tagName)

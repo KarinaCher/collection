@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import json.Postcard;
-import main.MainContriller;
+import main.OverviewContriller;
 
 public class PostcardResource
 {
@@ -75,7 +75,7 @@ public class PostcardResource
             return mapper.readValue(from, typeRef);
         } catch (IOException | URISyntaxException ex)
         {
-            Logger.getLogger(MainContriller.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OverviewContriller.class.getName()).log(Level.SEVERE, null, ex);
         }
         return Collections.EMPTY_LIST;
     }

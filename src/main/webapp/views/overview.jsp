@@ -3,18 +3,28 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
     <head>
-        <meta http-equiv="Content-Type"
-          content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
         <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
         <title>Collection overview</title>
     </head>
     <body>
+        <jsp:include page="parts/menu.jsp" />
+        
         <div class="container">
             <h1>Collection overview</h1>
 
-            <c:forEach var="tag" items="${tags}">
+            by sender:
+            <c:forEach var="tag" items="${tagsBySender}">
+                <a href="/tag/${tag.key}" class="btn btn-outline-info" role="button">
+                    ${tag.key} <span class="badge badge-light">${tag.value}</span>
+                </a> 
+            </c:forEach>
+            <br />
+            
+            by country:
+            <c:forEach var="tag" items="${tagsByCountry}">
                 <a href="/tag/${tag.key}" class="btn btn-outline-info" role="button">
                     ${tag.key} <span class="badge badge-light">${tag.value}</span>
                 </a> 

@@ -12,14 +12,15 @@ import resources.TagResource;
 import static resources.TagResource.ALL;
 
 @Controller
-public class MainContriller
+public class OverviewContriller
 {
     @RequestMapping("/")
-    public String index(Model model) 
+    public String overview(Model model) 
     {
         model.addAttribute("list", PostcardResource.getList());
-        model.addAttribute("tags", (new TagResource(PostcardResource.getList())).getTags());
-        return "main";
+        model.addAttribute("tagsBySender", (new TagResource(PostcardResource.getList())).getTagsBySender());
+        model.addAttribute("tagsByCountry", (new TagResource(PostcardResource.getList())).getTagsByCountry());
+        return "overview";
     }
 
     @RequestMapping(value = "/tag/{tagName}", method = RequestMethod.GET)
@@ -31,8 +32,11 @@ public class MainContriller
         
         // TODO validate input.
         model.addAttribute("list", postcards);
-        model.addAttribute("tags", (new TagResource(PostcardResource.getList())).getTags());
-        return "main";
+        
+        final TagResource tagResource = new TagResource(PostcardResource.getList());
+        model.addAttribute("tagsBySender", tagResource.getTagsBySender());
+        model.addAttribute("tagsByCountry", tagResource.getTagsByCountry());
+        return "overview";
     }
     
     @RequestMapping(value = "/postcard/{id}", method = RequestMethod.GET)
@@ -42,5 +46,4 @@ public class MainContriller
         model.addAttribute("postcard", item);
         return "postcard";
     }
-    
 }
