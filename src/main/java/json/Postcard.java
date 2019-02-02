@@ -1,6 +1,7 @@
 package json;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +26,7 @@ import java.util.List;
 public class Postcard
 {
     private String id;
-    private List<String> images;
+    private List<String> images = new ArrayList<>();
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private Date dateSent;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
@@ -36,7 +37,7 @@ public class Postcard
     private String city;
     private String sender;
     private String description;
-    private List<String> tags;
+    private List<String> tags = new ArrayList<>();
 
     public String getId()
     {

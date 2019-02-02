@@ -29,7 +29,8 @@ public class ImageController
             throws IOException 
     {
         HttpHeaders headers = new HttpHeaders();
-        InputStream in = resourceLoader.getResource("classpath:2018/" + name).getInputStream();
+        String folder = name.substring(0, 4) + "/";
+        InputStream in = resourceLoader.getResource("classpath:" + folder + name).getInputStream();
         byte[] media = IOUtils.toByteArray(in);
         headers.setCacheControl(CacheControl.noCache().getHeaderValue());
 

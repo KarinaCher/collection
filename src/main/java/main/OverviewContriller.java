@@ -20,6 +20,7 @@ public class OverviewContriller
         model.addAttribute("list", PostcardResource.getList());
         model.addAttribute("tagsBySender", (new TagResource(PostcardResource.getList())).getTagsBySender());
         model.addAttribute("tagsByCountry", (new TagResource(PostcardResource.getList())).getTagsByCountry());
+        model.addAttribute("tags", (new TagResource(PostcardResource.getList())).getTags());
         return "overview";
     }
 
@@ -36,6 +37,7 @@ public class OverviewContriller
         final TagResource tagResource = new TagResource(PostcardResource.getList());
         model.addAttribute("tagsBySender", tagResource.getTagsBySender());
         model.addAttribute("tagsByCountry", tagResource.getTagsByCountry());
+        model.addAttribute("tags", (new TagResource(PostcardResource.getList())).getTags());
         return "overview";
     }
     

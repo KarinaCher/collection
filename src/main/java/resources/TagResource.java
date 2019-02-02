@@ -9,6 +9,7 @@ public class TagResource
 {
     public static final String ALL = "All";
     
+    private static Map<String, Integer> tags = new HashMap();
     private static Map<String, Integer> tagsBySender = new HashMap();
     private static Map<String, Integer> tagsByCountry = new HashMap();
     private static List<Postcard> postcardList;
@@ -46,6 +47,22 @@ public class TagResource
         }
         
         return tagsByCountry;
+    }
+    
+    public Map<String, Integer> getTags()
+    {
+        if (tags.isEmpty())
+        {
+            for (Postcard postcard : postcardList)
+            {
+                for (String tag : postcard.getTags())
+                {
+                    tags.put(tag, getItemCount(tags, tag) + 1);
+                }
+            }
+        }
+        
+        return tags;
     }
     
     private Integer getItemCount(Map<String, Integer> tags, String tagName)
