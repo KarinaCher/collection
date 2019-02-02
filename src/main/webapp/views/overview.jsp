@@ -14,7 +14,7 @@
         
         <div class="container">
             <h1>Collection overview</h1>
-
+            
             by sender:
             <c:forEach var="tag" items="${tagsBySender}">
                 <a href="/tag/${tag.key}" class="btn btn-outline-info" role="button">
@@ -25,6 +25,14 @@
             
             by country:
             <c:forEach var="tag" items="${tagsByCountry}">
+                <a href="/tag/${tag.key}" class="btn btn-outline-info" role="button">
+                    ${tag.key} <span class="badge badge-light">${tag.value}</span>
+                </a> 
+            </c:forEach>
+            <br />
+            
+            tags:
+            <c:forEach var="tag" items="${tags}">
                 <a href="/tag/${tag.key}" class="btn btn-outline-info" role="button">
                     ${tag.key} <span class="badge badge-light">${tag.value}</span>
                 </a> 

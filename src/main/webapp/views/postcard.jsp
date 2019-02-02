@@ -41,6 +41,10 @@
                               <td>${postcard.sender}</td>
                           </tr>
                           <tr>
+                              <td>Size</td>
+                              <td>${postcard.height} x ${postcard.width}</td>
+                          </tr>
+                          <tr>
                               <td>Notes</td>
                               <td>${postcard.description}</td>
                           </tr>
