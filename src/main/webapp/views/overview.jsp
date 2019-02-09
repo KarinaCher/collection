@@ -14,29 +14,6 @@
         
         <div class="container">
             <h1>Collection overview</h1>
-            
-            by sender:
-            <c:forEach var="tag" items="${tagsBySender}">
-                <a href="/tag/${tag.key}" class="btn btn-outline-info" role="button">
-                    ${tag.key} <span class="badge badge-light">${tag.value}</span>
-                </a> 
-            </c:forEach>
-            <br />
-            
-            by country:
-            <c:forEach var="tag" items="${tagsByCountry}">
-                <a href="/tag/${tag.key}" class="btn btn-outline-info" role="button">
-                    ${tag.key} <span class="badge badge-light">${tag.value}</span>
-                </a> 
-            </c:forEach>
-            <br />
-            
-            tags:
-            <c:forEach var="tag" items="${tags}">
-                <a href="/tag/${tag.key}" class="btn btn-outline-info" role="button">
-                    ${tag.key} <span class="badge badge-light">${tag.value}</span>
-                </a> 
-            </c:forEach>
         </div>
         
         <div class="container">
@@ -50,9 +27,13 @@
                             <a href="../postcard/${postcard.id}">
                               <img src="../image/${postcard.images[0]}" class="img-fluid" />
                               <div class="caption">
-                                <p>
-                                    ${postcard.description}
-                                </p>
+                                <a href="/tag/${postcard.country}">${postcard.country}</a>
+                                <br />
+                                sender <a href="/tag/${postcard.sender}">${postcard.sender} </a> 
+                                <br />
+                                <c:if test="${!empty postcard.tags}">
+                                    <a href="/tag/${postcard.tags[0]}">${postcard.tags[0]}</a>
+                                </c:if>
                               </div>
                             </a>
                         </div>

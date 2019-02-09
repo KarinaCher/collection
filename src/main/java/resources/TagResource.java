@@ -1,33 +1,41 @@
 package resources;
 
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import json.Postcard;
 
 public class TagResource
 {
-    public static final String ALL = "All";
-    
-    private static Map<String, Integer> tags = new HashMap();
-    private static Map<String, Integer> tagsBySender = new HashMap();
-    private static Map<String, Integer> tagsByCountry = new HashMap();
+    private static Map<String, Integer> tags;
+    private static Map<String, Integer> tagsBySender;
+    private static Map<String, Integer> tagsByCountry;
     private static List<Postcard> postcardList;
+    
+    private static Comparator comparator = new Comparator<String>() 
+    {
+        @Override
+        public int compare(String o1, String o2) {
+            return o1.toLowerCase().compareTo(o2.toLowerCase());
+        }
+    };
     
     public TagResource(List<Postcard> postcardList)
     {
         this.postcardList = postcardList;
+        tags = new TreeMap<>(comparator);
+        tagsBySender = new TreeMap<>(comparator);
+        tagsByCountry = new TreeMap<>(comparator);
     }
     
     public Map<String, Integer> getTagsBySender()
     {
         if (tagsBySender.isEmpty())
         {
-            tagsBySender.put(ALL, 0);
             for (Postcard postcard : postcardList)
             {
                 tagsBySender.put(postcard.getSender(), getItemCount(tagsBySender, postcard.getSender()) + 1);
-                tagsBySender.put(ALL, tagsBySender.get(ALL) + 1);
             }
         }
         
@@ -38,11 +46,9 @@ public class TagResource
     {
         if (tagsByCountry.isEmpty())
         {
-            tagsByCountry.put(ALL, 0);
             for (Postcard postcard : postcardList)
             {
                 tagsByCountry.put(postcard.getCountry(), getItemCount(tagsByCountry, postcard.getCountry()) + 1);
-                tagsByCountry.put(ALL, tagsByCountry.get(ALL) + 1);
             }
         }
         

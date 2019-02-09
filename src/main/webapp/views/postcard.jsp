@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row">
                   <div class="col-sm-6">
-                    <img src="../image/${postcard.images[0]}" />
+                    <img src="../image/${postcard.images[0]}" width="500px"/>
                   </div>
                   <div class="col-sm-6">
                       <table class="table table-hover">
