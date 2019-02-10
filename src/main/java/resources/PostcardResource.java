@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import json.Postcard;
+import entity.Postcard;
 import main.OverviewContriller;
 
 public class PostcardResource

@@ -2,82 +2,70 @@ package resources;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-import json.Postcard;
+import entity.Postcard;
+import entity.TagInfo;
+import java.util.ArrayList;
 
 public class TagResource
 {
-    private static Map<String, Integer> tags;
-    private static Map<String, Integer> tagsBySender;
-    private static Map<String, Integer> tagsByCountry;
+    private static List<TagInfo> tagsBySender;
+    private static List<TagInfo> tagsByCountry;
     private static List<Postcard> postcardList;
     
-    private static Comparator comparator = new Comparator<String>() 
+    private static Comparator comparator = new Comparator<TagInfo>() 
     {
         @Override
-        public int compare(String o1, String o2) {
-            return o1.toLowerCase().compareTo(o2.toLowerCase());
+        public int compare(TagInfo o1, TagInfo o2) {
+            return o1.getCount().compareTo(o2.getCount()) * -1;
         }
     };
     
     public TagResource(List<Postcard> postcardList)
     {
         this.postcardList = postcardList;
-        tags = new TreeMap<>(comparator);
-        tagsBySender = new TreeMap<>(comparator);
-        tagsByCountry = new TreeMap<>(comparator);
+        tagsBySender = new ArrayList<>();
+        tagsByCountry = new ArrayList<>();
     }
     
-    public Map<String, Integer> getTagsBySender()
+    public List<TagInfo> getTagsBySender()
     {
         if (tagsBySender.isEmpty())
         {
             for (Postcard postcard : postcardList)
             {
-                tagsBySender.put(postcard.getSender(), getItemCount(tagsBySender, postcard.getSender()) + 1);
+                updateTagCount(postcard.getSender(), tagsBySender);
             }
         }
         
+        tagsBySender.sort(comparator);
         return tagsBySender;
     }
     
-    public Map<String, Integer> getTagsByCountry()
+    public List<TagInfo> getTagsByCountry()
     {
         if (tagsByCountry.isEmpty())
         {
             for (Postcard postcard : postcardList)
             {
-                tagsByCountry.put(postcard.getCountry(), getItemCount(tagsByCountry, postcard.getCountry()) + 1);
+                updateTagCount(postcard.getCountry(), tagsByCountry);
             }
         }
         
+        tagsByCountry.sort(comparator);
         return tagsByCountry;
     }
-    
-    public Map<String, Integer> getTags()
+
+    private void updateTagCount(String tagName, List<TagInfo> tags)
     {
-        if (tags.isEmpty())
+        for (TagInfo tagInfo : tags)
         {
-            for (Postcard postcard : postcardList)
+            if (tagInfo.getName().equals(tagName))
             {
-                for (String tag : postcard.getTags())
-                {
-                    tags.put(tag, getItemCount(tags, tag) + 1);
-                }
+                tagInfo.setCount(tagInfo.getCount() + 1);
+                return;
             }
         }
         
-        return tags;
-    }
-    
-    private Integer getItemCount(Map<String, Integer> tags, String tagName)
-    {
-        Integer itemCount = tags.get(tagName);
-        if (itemCount == null)
-        {
-            itemCount = 0;
-        }
-        return itemCount;
+        tags.add(new TagInfo(tagName, 1));
     }
 }

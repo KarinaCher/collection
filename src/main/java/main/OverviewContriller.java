@@ -1,7 +1,7 @@
 package main;
 
 import java.util.List;
-import json.Postcard;
+import entity.Postcard;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,7 +30,6 @@ public class OverviewContriller
         // TODO validate input.
         model.addAttribute("list", postcards);
         
-        final TagResource tagResource = new TagResource(PostcardResource.getList());
         return "overview";
     }
     

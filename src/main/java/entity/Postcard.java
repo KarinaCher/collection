@@ -1,4 +1,4 @@
-package json;
+package entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.ArrayList;
