@@ -12,7 +12,7 @@ public class TagResource
     private static List<TagInfo> tagsByCountry;
     private static List<Postcard> postcardList;
     
-    private static Comparator comparator = new Comparator<TagInfo>() 
+    private static Comparator byCountDesc = new Comparator<TagInfo>() 
     {
         @Override
         public int compare(TagInfo o1, TagInfo o2) {
@@ -37,7 +37,7 @@ public class TagResource
             }
         }
         
-        tagsBySender.sort(comparator);
+        tagsBySender.sort(byCountDesc);
         return tagsBySender;
     }
     
@@ -51,7 +51,7 @@ public class TagResource
             }
         }
         
-        tagsByCountry.sort(comparator);
+        tagsByCountry.sort(byCountDesc);
         return tagsByCountry;
     }
 

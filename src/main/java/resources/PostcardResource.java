@@ -19,11 +19,34 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import entity.Postcard;
+import entity.TagInfo;
+import java.util.Comparator;
 import main.OverviewContriller;
 
 public class PostcardResource
 {
     private static List<Postcard> postcardList = Collections.EMPTY_LIST;
+    
+    private static Comparator byDate = new Comparator<Postcard>() 
+    {
+        @Override
+        public int compare(Postcard p1, Postcard p2) {
+            Date date1 = p1.getDateSent() != null ? p1.getDateSent() : p1.getDateReceived();
+            Date date2 = p2.getDateSent() != null ? p2.getDateSent() : p2.getDateReceived();
+            if (date1 == null)
+            {
+                return -1;
+            }
+            else if (date2 == null)
+            {
+                return -1;
+            }
+            else
+            {
+                return date2.compareTo(date1);
+            }
+        }
+    };
     
     public static List<Postcard> getList()
     {
@@ -31,6 +54,7 @@ public class PostcardResource
         {
             postcardList = readTsv("postcards.tsv");
         }
+        postcardList.sort(byDate);
         return postcardList;
     }
     
@@ -68,6 +92,7 @@ public class PostcardResource
             }
         }
         
+        result.sort(byDate);
         return result;
     }
     
