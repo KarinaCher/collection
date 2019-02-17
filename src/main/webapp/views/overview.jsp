@@ -17,6 +17,10 @@
         </div>
         
         <div class="container">
+            <%--<fmt:setBundle basename = "com.tutorialspoint.Example" var = "lang"/>--%>
+
+            <fmt:message key = "LV"/><br/>
+      
             <c:set var="collCount" value="4" />
             <c:forEach var="postcard" items="${list}" varStatus="count">
                 <c:if test="${(count.count mod collCount) eq 1}" >

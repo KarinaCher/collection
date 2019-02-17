@@ -21,7 +21,7 @@
             <table class="table table-hover">
                 <c:forEach var="tag" items="${tagsBySender}">
                 <tr>
-                    <td>${tag.name}</td><td>${tag.count}</td>
+                    <td><a href="/tag/${tag.name}">${tag.name}</a></td><td>${tag.count}</td>
                 </tr> 
             </c:forEach>
             </table>
@@ -29,7 +29,7 @@
             <table class="table table-hover">
                 <c:forEach var="tag" items="${tagsByCountry}">
                 <tr>
-                    <td>${tag.name}</td><td>${tag.count}</td>
+                    <td><a href="/tag/${tag.name}">${tag.name}</a></td><td>${tag.count}</td>
                 </tr> 
             </c:forEach>
             </table>
