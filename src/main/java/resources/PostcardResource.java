@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
@@ -19,7 +18,8 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import entity.Postcard;
-import entity.TagInfo;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Comparator;
 import main.OverviewContriller;
 
@@ -118,16 +118,9 @@ public class PostcardResource
         List<Postcard> list = new ArrayList<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", Locale.ENGLISH);
         
-        File from = null;
-        try
-        {
-            from = Paths.get(ClassLoader.getSystemResource(file).toURI()).toFile();
-        } catch (URISyntaxException ex)
-        {
-            Logger.getLogger(PostcardResource.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        InputStream in = ClassLoader.getSystemResourceAsStream(file);
         
-        try(BufferedReader br = new BufferedReader(new FileReader(from))) 
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(in, "UTF-8"))) 
         {
             for(String line; (line = br.readLine()) != null; ) 
             {
