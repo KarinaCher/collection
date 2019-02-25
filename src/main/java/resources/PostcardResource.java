@@ -118,9 +118,9 @@ public class PostcardResource
         List<Postcard> list = new ArrayList<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", Locale.ENGLISH);
         
-        InputStream in = ClassLoader.getSystemResourceAsStream(file);
+        InputStream inputStream = PostcardResource.class.getResourceAsStream(file);
         
-        try(BufferedReader br = new BufferedReader(new InputStreamReader(in, "UTF-8"))) 
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"))) 
         {
             for(String line; (line = br.readLine()) != null; ) 
             {
