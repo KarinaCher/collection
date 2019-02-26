@@ -52,7 +52,7 @@ public class PostcardResource
     {
         if (postcardList.isEmpty())
         {
-            postcardList = readTsv("postcards.tsv");
+            postcardList = readTsv("/postcards.tsv");
         }
         postcardList.sort(byDate);
         return postcardList;
