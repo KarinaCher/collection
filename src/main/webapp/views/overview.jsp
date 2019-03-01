@@ -17,10 +17,15 @@
         </div>
         
         <div class="container">
-            <%--<fmt:setBundle basename = "com.tutorialspoint.Example" var = "lang"/>--%>
-
-            <fmt:message key = "LV"/><br/>
-      
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <c:forEach begin="1" end="${pages}" var="page">
+                        <li class="page-item <c:if test="${currenctPage eq page}">active</c:if>">
+                            <a class="page-link" href="<c:if test="${!empty tag}">/tag/${tag}</c:if>/page/${page}">${page}</a>
+                        </li>
+                    </c:forEach>
+                </ul>
+             </nav>
             <c:set var="collCount" value="4" />
             <c:forEach var="postcard" items="${list}" varStatus="count">
                 <c:if test="${(count.count mod collCount) eq 1}" >
@@ -28,15 +33,15 @@
                 </c:if>
                     <div class="col-sm-3">
                         <div class="thumbnail">
-                            <a href="../postcard/${postcard.id}">
-                              <img src="../image/${postcard.images[0]}" class="img-fluid" />
+                            <a href="/postcard/${postcard.id}">
+                              <img src="/image/${postcard.images[0]}" class="img-fluid" />
                               <div class="caption">
-                                <a href="/tag/${postcard.country}">${postcard.country}</a>
+                                <a href="/tag/${postcard.country}/page/1">${postcard.country}</a>
                                 <br />
-                                sender <a href="/tag/${postcard.sender}">${postcard.sender} </a> 
+                                sender <a href="/tag/${postcard.sender}/page/1">${postcard.sender} </a> 
                                 <br />
                                 <c:if test="${!empty postcard.tags}">
-                                    <a href="/tag/${postcard.tags[0]}">${postcard.tags[0]}</a>
+                                    <a href="/tag/${postcard.tags[0]}/page/1">${postcard.tags[0]}</a>
                                 </c:if>
                               </div>
                             </a>

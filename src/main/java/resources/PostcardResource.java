@@ -1,12 +1,7 @@
 package resources;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -15,13 +10,11 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import entity.Postcard;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Comparator;
-import main.OverviewContriller;
+import static main.OverviewContriller.ITEMS_PER_PAGE;
 
 public class PostcardResource
 {
@@ -53,9 +46,34 @@ public class PostcardResource
         if (postcardList.isEmpty())
         {
             postcardList = readTsv("/postcards.tsv");
+            postcardList.sort(byDate);
         }
-        postcardList.sort(byDate);
         return postcardList;
+    }
+    
+    public static List<Postcard> getList(int page)
+    {
+        return substringList(page, getList());
+    }
+    
+    public static List<Postcard> getListWithTag(String tagName, int page)
+    {
+        return substringList(page, getListWithTag(tagName));
+    }
+    
+    public static List<Postcard> substringList(int page, List<Postcard> list)
+    {
+        List<Postcard> result = new ArrayList();
+        int begin = ITEMS_PER_PAGE * (page - 1);
+        int end = ITEMS_PER_PAGE * page;
+        end = end > list.size() ? list.size() : end;
+        
+        for (int i = begin; i < end; i++)
+        {
+            result.add(list.get(i));
+        }
+        
+        return result;
     }
     
     public static Postcard getById(String id)
@@ -96,23 +114,6 @@ public class PostcardResource
         return result;
     }
     
-    private static List<Postcard> read(String sourceName)
-    {
-        try
-        {
-            ObjectMapper mapper = new ObjectMapper();
-            File from = Paths.get(ClassLoader.getSystemResource(sourceName).toURI()).toFile();
-            TypeReference<List<Postcard>> typeRef = new TypeReference<List<Postcard>>()
-            {
-            };
-            return mapper.readValue(from, typeRef);
-        } catch (IOException | URISyntaxException ex)
-        {
-            Logger.getLogger(OverviewContriller.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return Collections.EMPTY_LIST;
-    }
-
     private static List<Postcard> readTsv(String file)
     {
         List<Postcard> list = new ArrayList<>();
