@@ -80,6 +80,6 @@ public class OverviewContriller
         model.addAttribute("currenctPage", pageNum);
         model.addAttribute("list", list);
         model.addAttribute("pages", (int) (fullListSize / ITEMS_PER_PAGE) + 1);
-        model.addAttribute("count", PostcardResource.getList().size());
+        model.addAttribute("count", fullListSize);
     }
 }

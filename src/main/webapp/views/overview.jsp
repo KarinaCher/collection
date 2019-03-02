@@ -17,6 +17,7 @@
         </div>
         
         <div class="container">
+            postcards ${count} <c:if test="${!empty tag}">with tag name ${tag}</c:if>
             <nav>
                 <ul class="pagination">
                     <c:forEach begin="1" end="${pages}" var="page">
