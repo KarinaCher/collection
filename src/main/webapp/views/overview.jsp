@@ -17,7 +17,7 @@
         </div>
         
         <div class="container">
-            <nav aria-label="Page navigation example">
+            <nav>
                 <ul class="pagination">
                     <c:forEach begin="1" end="${pages}" var="page">
                         <li class="page-item <c:if test="${currenctPage eq page}">active</c:if>">

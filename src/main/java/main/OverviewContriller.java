@@ -60,6 +60,7 @@ public class OverviewContriller
     {
         Postcard item = PostcardResource.getById(id);
         model.addAttribute("postcard", item);
+        model.addAttribute("count", PostcardResource.getList().size());
         return "postcard";
     }
 
@@ -78,6 +79,7 @@ public class OverviewContriller
     {
         model.addAttribute("currenctPage", pageNum);
         model.addAttribute("list", list);
-        model.addAttribute("pages", (int) (fullListSize / ITEMS_PER_PAGE));
+        model.addAttribute("pages", (int) (fullListSize / ITEMS_PER_PAGE) + 1);
+        model.addAttribute("count", PostcardResource.getList().size());
     }
 }

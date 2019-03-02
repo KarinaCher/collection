@@ -14,10 +14,14 @@ import entity.Postcard;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
 import static main.OverviewContriller.ITEMS_PER_PAGE;
+import org.jboss.logging.Logger;
 
 public class PostcardResource
 {
+    public static final Logger LOG = Logger.getLogger(PostcardResource.class);
     private static List<Postcard> postcardList = Collections.EMPTY_LIST;
     
     private static Comparator byDate = new Comparator<Postcard>() 
@@ -117,6 +121,7 @@ public class PostcardResource
     private static List<Postcard> readTsv(String file)
     {
         List<Postcard> list = new ArrayList<>();
+        Set<String> ids = new HashSet();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", Locale.ENGLISH);
         
         InputStream inputStream = PostcardResource.class.getResourceAsStream(file);
@@ -134,6 +139,11 @@ public class PostcardResource
 
                 Postcard postcard = new Postcard();
                 postcard.setId(data[0]);
+                if (ids.contains(postcard.getId()))
+                {
+                    LOG.warn("Dublicate id " + postcard.getId());
+                }
+                ids.add(postcard.getId());
                 postcard.getImages().add(data[1]);
                 if (!data[2].isEmpty())
                 {
