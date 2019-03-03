@@ -18,15 +18,7 @@
         
         <div class="container">
             postcards ${count} <c:if test="${!empty tag}">with tag name ${tag}</c:if>
-            <nav>
-                <ul class="pagination">
-                    <c:forEach begin="1" end="${pages}" var="page">
-                        <li class="page-item <c:if test="${currenctPage eq page}">active</c:if>">
-                            <a class="page-link" href="<c:if test="${!empty tag}">/tag/${tag}</c:if>/page/${page}">${page}</a>
-                        </li>
-                    </c:forEach>
-                </ul>
-             </nav>
+            <jsp:include page="parts/navigation.jsp" />
             <c:set var="collCount" value="4" />
             <c:forEach var="postcard" items="${list}" varStatus="count">
                 <c:if test="${(count.count mod collCount) eq 1}" >
@@ -52,6 +44,9 @@
                     </div>
                 </c:if>
             </c:forEach>
+        </div>
+        <div class="container">
+            <jsp:include page="parts/navigation.jsp" />
         </div>
     </body>
 </html>
