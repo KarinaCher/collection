@@ -27,17 +27,17 @@
                     <div class="col-sm-3">
                         <div class="thumbnail">
                             <a href="/postcard/${postcard.id}">
-                              <img src="/image/${postcard.images[0]}" class="img-fluid" />
-                              <div class="caption">
-                                <a href="/tag/${postcard.country}/page/1">${postcard.country}</a>
-                                <br />
-                                sender <a href="/tag/${postcard.sender}/page/1">${postcard.sender} </a> 
-                                <br />
-                                <c:if test="${!empty postcard.tags}">
-                                    <a href="/tag/${postcard.tags[0]}/page/1">${postcard.tags[0]}</a>
-                                </c:if>
-                              </div>
+                              <img src="/image/sm/${postcard.images[0]}" class="img-fluid" />
                             </a>
+                            <div class="caption">
+                              <a href="/tag/${postcard.country}/page/1">${postcard.country}</a>
+                              <br />
+                              sender <a href="/tag/${postcard.sender}/page/1">${postcard.sender} </a> 
+                              <br />
+                              <c:if test="${!empty postcard.tags}">
+                                  <a href="/tag/${postcard.tags[0]}/page/1">${postcard.tags[0]}</a>
+                              </c:if>
+                            </div>
                         </div>
                     </div>
                 <c:if test="${(count.count mod collCount) eq 0}" >
