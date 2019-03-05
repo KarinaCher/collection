@@ -6,7 +6,6 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -22,35 +21,20 @@ import org.jboss.logging.Logger;
 public class PostcardResource
 {
     public static final Logger LOG = Logger.getLogger(PostcardResource.class);
-    private static List<Postcard> postcardList = Collections.EMPTY_LIST;
+    private static List<Postcard> postcardList = new ArrayList<>();
     
-    private static Comparator byDate = new Comparator<Postcard>() 
+    private static final Comparator BY_DATE = (Comparator<Postcard>) (Postcard p1, Postcard p2) -> 
     {
-        @Override
-        public int compare(Postcard p1, Postcard p2) {
-            Date date1 = p1.getDateSent() != null ? p1.getDateSent() : p1.getDateReceived();
-            Date date2 = p2.getDateSent() != null ? p2.getDateSent() : p2.getDateReceived();
-            if (date1 == null)
-            {
-                return -1;
-            }
-            else if (date2 == null)
-            {
-                return -1;
-            }
-            else
-            {
-                return date2.compareTo(date1);
-            }
-        }
+        return p2.getId().compareTo(p1.getId());
     };
     
     public static List<Postcard> getList()
     {
         if (postcardList.isEmpty())
         {
-            postcardList = readTsv("/postcards.tsv");
-            postcardList.sort(byDate);
+            postcardList.addAll(readTsv("/Postcard collection - to 2018.tsv"));
+            postcardList.addAll(readTsv("/Postcard collection - 2019.tsv"));
+            postcardList.sort(BY_DATE);
         }
         return postcardList;
     }
@@ -114,7 +98,7 @@ public class PostcardResource
             }
         }
         
-        result.sort(byDate);
+        result.sort(BY_DATE);
         return result;
     }
     
@@ -132,7 +116,7 @@ public class PostcardResource
             {
                 String[] data = line.split("\t");
                 
-                if (data[0].isEmpty())
+                if (data[0].isEmpty() || "ID".equals(data[0]))
                 {
                     continue;
                 }
@@ -153,7 +137,7 @@ public class PostcardResource
                 }
                 if (!data[3].isEmpty())
                 {
-                    postcard.setDateSent(Date.from(
+                    postcard.setDateReceived(Date.from(
                             LocalDate.parse(data[3], formatter)
                             .atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
                 }

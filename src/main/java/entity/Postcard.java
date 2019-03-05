@@ -5,31 +5,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * "postcard": {
-       "id": "",
-	   "images": [
-		   ".jpg",
-		   "_.jpg"
-	   ],
-	   "dateSent": "",
-	   "dateReceived": "",
-	   "height": "",
-	   "width": "",
-	   "country": "",
-	   "city": "",
-	   "sender": "",
-	   "description": ""
-	   }
- * @author karinacherkashina
- */
 public class Postcard
 {
     private String id;
     private List<String> images = new ArrayList<>();
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private Date dateSent;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private Date dateReceived;
     private int height;
     private int width;
@@ -148,7 +128,4 @@ public class Postcard
     {
         this.tags = tags;
     }
-    
-    
-    
 }
