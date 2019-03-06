@@ -1,5 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
     <head>
@@ -13,11 +13,7 @@
         <jsp:include page="parts/menu.jsp" />
         
         <div class="container">
-            <h1>Collection overview</h1>
-        </div>
-        
-        <div class="container">
-            postcards ${count} <c:if test="${!empty tag}">with tag name ${tag}</c:if>
+            ${count} postcards <c:if test="${!empty tag}">with tag name "${tag}"</c:if>
             <jsp:include page="parts/navigation.jsp" />
             <c:set var="collCount" value="4" />
             <c:forEach var="postcard" items="${list}" varStatus="count">
