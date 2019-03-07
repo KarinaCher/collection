@@ -15,6 +15,7 @@ public class StatisticContriller
         final TagResource tagResource = new TagResource(PostcardResource.getList());
         model.addAttribute("tagsBySender", tagResource.getTagsBySender());
         model.addAttribute("tagsByCountry", tagResource.getTagsByCountry());
+        model.addAttribute("tags", tagResource.getTags());
         return "statistics";
     }
     

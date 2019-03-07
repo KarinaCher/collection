@@ -17,7 +17,15 @@
             <h1>Statistics</h1>
         </div>
         <div class="container">
-            <h2>by sender:</h2>
+            <h2>by tag</h2>
+            <c:forEach var="tag" items="${tags}">
+                <a href="/tag/${tag.name}/page/1"><span style="white-space: nowrap; padding-left: 10px">${tag.name}&nbsp;&mdash;&nbsp;${tag.count},</span></a> 
+            </c:forEach>
+            <h2>by country</h2>
+            <c:forEach var="tag" items="${tagsByCountry}">
+                <a href="/tag/${tag.name}/page/1"><span style="white-space: nowrap; padding-left: 10px">${tag.name}&nbsp;&mdash;&nbsp;${tag.count},</span></a> 
+            </c:forEach>
+            <h2>by sender</h2>
             <table class="table table-hover">
                 <c:forEach var="tag" items="${tagsBySender}">
                 <tr>
@@ -25,14 +33,7 @@
                 </tr> 
             </c:forEach>
             </table>
-            <h2>by Country</h2>
-            <table class="table table-hover">
-                <c:forEach var="tag" items="${tagsByCountry}">
-                <tr>
-                    <td><a href="/tag/${tag.name}/page/1">${tag.name}</a></td><td>${tag.count}</td>
-                </tr> 
-            </c:forEach>
-            </table>
+            
         </div>
         
     </body>

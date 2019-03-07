@@ -8,36 +8,30 @@ import java.util.ArrayList;
 
 public class TagResource
 {
-    private static List<TagInfo> tagsBySender;
-    private static List<TagInfo> tagsByCountry;
+    private static List<TagInfo> tagsBySender = new ArrayList<>();
+    private static List<TagInfo> tagsByCountry = new ArrayList<>();
+    private static List<TagInfo> tags = new ArrayList<>();
     private static List<Postcard> postcardList;
     
-    private static Comparator byCountDesc = new Comparator<TagInfo>() 
-    {
-        @Override
-        public int compare(TagInfo o1, TagInfo o2) {
-            return o1.getCount().compareTo(o2.getCount()) * -1;
-        }
-    };
+    private final static Comparator COUNT_DESC = 
+            (Comparator<TagInfo>) (TagInfo o1, TagInfo o2) -> o1.getCount().compareTo(o2.getCount()) * -1;
     
     public TagResource(List<Postcard> postcardList)
     {
         this.postcardList = postcardList;
-        tagsBySender = new ArrayList<>();
-        tagsByCountry = new ArrayList<>();
     }
     
     public List<TagInfo> getTagsBySender()
     {
         if (tagsBySender.isEmpty())
         {
-            for (Postcard postcard : postcardList)
+            postcardList.forEach((postcard) ->
             {
                 updateTagCount(postcard.getSender(), tagsBySender);
-            }
+            });
+            tagsBySender.sort(COUNT_DESC);
         }
         
-        tagsBySender.sort(byCountDesc);
         return tagsBySender;
     }
     
@@ -45,14 +39,31 @@ public class TagResource
     {
         if (tagsByCountry.isEmpty())
         {
-            for (Postcard postcard : postcardList)
+            postcardList.forEach((postcard) ->
             {
                 updateTagCount(postcard.getCountry(), tagsByCountry);
-            }
+            });
+            tagsByCountry.sort(COUNT_DESC);
         }
         
-        tagsByCountry.sort(byCountDesc);
         return tagsByCountry;
+    }
+    
+    public List<TagInfo> getTags()
+    {
+        if (tags.isEmpty())
+        {
+            postcardList.forEach((postcard) ->
+            {
+                postcard.getTags().forEach((tag) ->
+                {
+                    updateTagCount(tag, tags);
+                });
+            });
+            tags.sort(COUNT_DESC);
+        }
+        
+        return tags;
     }
 
     private void updateTagCount(String tagName, List<TagInfo> tags)
