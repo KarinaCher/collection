@@ -31,7 +31,9 @@
                               sender <a href="/tag/${postcard.sender}/page/1">${postcard.sender} </a> 
                               <br />
                               <c:if test="${!empty postcard.tags}">
-                                  <a href="/tag/${postcard.tags[0]}/page/1">${postcard.tags[0]}</a>
+                                  <c:forEach var="tag" items="${postcard.tags}">
+                                    <a href="/tag/${tag}/page/1">${tag}</a> 
+                                  </c:forEach>
                               </c:if>
                             </div>
                         </div>

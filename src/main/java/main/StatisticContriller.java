@@ -1,5 +1,7 @@
 package main;
 
+import entity.Postcard;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,10 +14,11 @@ public class StatisticContriller
     @RequestMapping(value = "/statistics")
     public String statistics(Model model)
     {
-        final TagResource tagResource = new TagResource(PostcardResource.getList());
-        model.addAttribute("tagsBySender", tagResource.getTagsBySender());
-        model.addAttribute("tagsByCountry", tagResource.getTagsByCountry());
-        model.addAttribute("tags", tagResource.getTags());
+        final List<Postcard> list = PostcardResource.getList();
+        final TagResource tagResource = new TagResource();
+        model.addAttribute("tagsBySender", tagResource.getTagsBySender(list));
+        model.addAttribute("tagsByCountry", tagResource.getTagsByCountry(list));
+        model.addAttribute("tags", tagResource.getTags(list));
         return "statistics";
     }
     

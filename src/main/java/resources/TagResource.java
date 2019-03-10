@@ -11,17 +11,11 @@ public class TagResource
     private static List<TagInfo> tagsBySender = new ArrayList<>();
     private static List<TagInfo> tagsByCountry = new ArrayList<>();
     private static List<TagInfo> tags = new ArrayList<>();
-    private static List<Postcard> postcardList;
     
     private final static Comparator COUNT_DESC = 
             (Comparator<TagInfo>) (TagInfo o1, TagInfo o2) -> o1.getCount().compareTo(o2.getCount()) * -1;
     
-    public TagResource(List<Postcard> postcardList)
-    {
-        this.postcardList = postcardList;
-    }
-    
-    public List<TagInfo> getTagsBySender()
+    public List<TagInfo> getTagsBySender(List<Postcard> postcardList)
     {
         if (tagsBySender.isEmpty())
         {
@@ -35,7 +29,7 @@ public class TagResource
         return tagsBySender;
     }
     
-    public List<TagInfo> getTagsByCountry()
+    public List<TagInfo> getTagsByCountry(List<Postcard> postcardList)
     {
         if (tagsByCountry.isEmpty())
         {
@@ -49,7 +43,7 @@ public class TagResource
         return tagsByCountry;
     }
     
-    public List<TagInfo> getTags()
+    public List<TagInfo> getTags(List<Postcard> postcardList)
     {
         if (tags.isEmpty())
         {

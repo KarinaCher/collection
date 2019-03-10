@@ -12,6 +12,7 @@ import java.util.Locale;
 import entity.Postcard;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
@@ -155,7 +156,8 @@ public class PostcardResource
                 }
                 if (data.length > 10)
                 {
-                    postcard.getTags().add(data[10]);
+                    String[] tags = data[10].split(", ");
+                    postcard.getTags().addAll(Arrays.asList(tags));
                 }
                 list.add(postcard);
             }
