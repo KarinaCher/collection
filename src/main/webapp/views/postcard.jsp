@@ -11,6 +11,7 @@
         <title>Postcard</title>
     </head>
     <body>
+        <jsp:include page="parts/bundles.jsp" />
         <jsp:include page="parts/menu.jsp" />
         
         <c:if test="${!empty postcard}">
@@ -35,7 +36,7 @@
                           </tr>
                           <tr>
                               <td>From</td>
-                              <td>${postcard.country}, ${postcard.city}</td>
+                              <td><fmt:message key="${postcard.country}" bundle="${country}"/>, ${postcard.city}</td>
                           </tr>
                           <tr>
                               <td>Sender</td>

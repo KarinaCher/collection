@@ -10,10 +10,10 @@
         <title>Collection overview</title>
     </head>
     <body>
+        <jsp:include page="parts/bundles.jsp" />
         <jsp:include page="parts/menu.jsp" />
-        
         <div class="container">
-            ${count} postcards <c:if test="${!empty tag}">with tag name "${tag}"</c:if>
+            ${count} postcards
             <jsp:include page="parts/navigation.jsp" />
             <c:set var="collCount" value="4" />
             <c:forEach var="postcard" items="${list}" varStatus="count">
@@ -26,7 +26,7 @@
                               <img src="/image/sm/${postcard.images[0]}" class="img-fluid" />
                             </a>
                             <div class="caption">
-                              <a href="/tag/${postcard.country}/page/1">${postcard.country}</a>
+                              <a href="/tag/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>
                               <br />
                               sender <a href="/tag/${postcard.sender}/page/1">${postcard.sender} </a> 
                               <br />
