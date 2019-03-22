@@ -32,7 +32,7 @@
                               <br />
                               <c:if test="${!empty postcard.tags}">
                                   <c:forEach var="tag" items="${postcard.tags}">
-                                    <a href="/tag/${tag}/page/1">${tag}</a> 
+                                    <a href="/tag/${tag}/page/1"><fmt:message key="${tag}" bundle="${tagMap}"/></a> 
                                   </c:forEach>
                               </c:if>
                             </div>

@@ -18,7 +18,7 @@
         <div class="container">
             <h2>by tag</h2>
             <c:forEach var="tag" items="${tags}">
-                <a href="/tag/${tag.name}/page/1"><span style="white-space: nowrap; padding-left: 10px">${tag.name}&nbsp;&mdash;&nbsp;${tag.count},</span></a> 
+                <a href="/tag/${tag.name}/page/1"><span style="white-space: nowrap; padding-left: 10px"><fmt:message key="${tag.name}" bundle="${tagMap}"/>&nbsp;&mdash;&nbsp;${tag.count},</span></a> 
             </c:forEach>
             <h2>by country</h2>
             <c:forEach var="tag" items="${tagsByCountry}">
