@@ -16,10 +16,6 @@
         
         <c:if test="${!empty postcard}">
             <div class="container">
-                <h1>Postcard from ${postcard.sender}</h1>
-            </div>
-            
-            <div class="container">
                 <div class="row">
                   <div class="col-sm-6">
                     <img src="../image/lg/${postcard.images[0]}"/>
@@ -40,7 +36,11 @@
                           </tr>
                           <tr>
                               <td>Sender</td>
-                              <td>${postcard.sender}</td>
+                              <td>
+                                  <c:forEach var="sender" items="${postcard.senders}">
+                                    <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>, 
+                                  </c:forEach>
+                              </td>
                           </tr>
                           <tr>
                               <td>Size</td>

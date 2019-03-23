@@ -28,7 +28,10 @@
                             <div class="caption">
                               <a href="/tag/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>
                               <br />
-                              sender <a href="/tag/${postcard.sender}/page/1">${postcard.sender} </a> 
+                              sender  
+                              <c:forEach var="sender" items="${postcard.senders}">
+                                <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>, 
+                              </c:forEach>
                               <br />
                               <c:if test="${!empty postcard.tags}">
                                   <c:forEach var="tag" items="${postcard.tags}">

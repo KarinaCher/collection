@@ -1,6 +1,5 @@
 package entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +14,7 @@ public class Postcard
     private int width;
     private String country;
     private String city;
-    private String sender;
+    private List<String> senders = new ArrayList<>();
     private String description;
     private List<String> tags = new ArrayList<>();
 
@@ -99,14 +98,14 @@ public class Postcard
         this.city = city;
     }
 
-    public String getSender()
+    public List<String> getSenders()
     {
-        return sender;
+        return senders;
     }
 
-    public void setSender(String sender)
+    public void setSenders(List<String> senders)
     {
-        this.sender = sender;
+        this.senders = senders;
     }
 
     public String getDescription()

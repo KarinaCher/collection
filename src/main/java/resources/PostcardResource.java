@@ -92,7 +92,7 @@ public class PostcardResource
         for (Postcard postcard : getList())
         {
             if (postcard.getCountry().equals(tagName)
-                    || postcard.getSender().equals(tagName)
+                    || postcard.getSenders().contains(tagName)
                     || postcard.getTags().contains(tagName))
             {
                 result.add(postcard);
@@ -149,15 +149,14 @@ public class PostcardResource
                 }
                 postcard.setCountry(data[6]);
                 postcard.setCity(data[7]);
-                postcard.setSender(data[8]);
+                readMultiValues(data[8], postcard.getSenders());
                 if (data.length > 9)
                 {
                     postcard.setDescription(data[9]);
                 }
                 if (data.length > 10)
                 {
-                    String[] tags = data[10].split(", ");
-                    postcard.getTags().addAll(Arrays.asList(tags));
+                    readMultiValues(data[10], postcard.getTags());
                 }
                 list.add(postcard);
             }
@@ -168,6 +167,12 @@ public class PostcardResource
         }
         
         return list;
+    }
+
+    private static void readMultiValues(String field, List<String> variableList)
+    {
+        String[] tags = field.split(", ");
+        variableList.addAll(Arrays.asList(tags));
     }
     
 }

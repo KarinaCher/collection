@@ -21,7 +21,10 @@ public class TagResource
         {
             postcardList.forEach((postcard) ->
             {
-                updateTagCount(postcard.getSender(), tagsBySender);
+                postcard.getSenders().forEach((sender) ->
+                {
+                    updateTagCount(sender, tagsBySender);
+                });
             });
             tagsBySender.sort(COUNT_DESC);
         }
