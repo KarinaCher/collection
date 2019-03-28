@@ -13,6 +13,10 @@ apply plugin: 'io.spring.dependency-management'
 
 compileJava.options.encoding = 'UTF-8'
 
+tasks.withType(JavaCompile) {
+	options.encoding = "UTF-8"
+}
+
 bootJar {
     baseName = 'gs-spring-boot'
     version =  '0.1.0'
