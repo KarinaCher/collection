@@ -1,5 +1,6 @@
 package main;
 
+import entity.Postcard;
 import java.awt.AlphaComposite;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -14,11 +15,13 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.CacheControl;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import resources.PostcardResource;
 
 @Controller
 public class ImageController
@@ -38,6 +41,19 @@ public class ImageController
             @PathVariable("name") String name,
             @PathVariable("size") String size) 
             throws IOException 
+    {
+        return createImage(name, size);
+    }
+    
+    @RequestMapping(value = "/lastPostcard", method = RequestMethod.GET)
+    public ResponseEntity<byte[]> getLast() 
+            throws IOException 
+    {
+        Postcard postcard = PostcardResource.getList().get(0);
+        return createImage(postcard.getImages().get(0), "sm");
+    }
+
+    private ResponseEntity<byte[]> createImage(String name, String size) throws IOException
     {
         HttpHeaders headers = new HttpHeaders();
         String folder = name.substring(0, 4) + "/";
@@ -74,6 +90,7 @@ public class ImageController
         }
        
         headers.setCacheControl(CacheControl.noCache().getHeaderValue());
+        headers.setContentType(MediaType.IMAGE_JPEG);
         ResponseEntity<byte[]> responseEntity = new ResponseEntity<>(media, headers, HttpStatus.OK);
         return responseEntity;
     }

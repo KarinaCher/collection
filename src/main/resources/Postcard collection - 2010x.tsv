@@ -198,7 +198,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20170406GB	2017_04_06 EN.jpg		06.04.2017			GB	Kingston Upon Hall	mother	С днём рожедния!	
 20170419SE	2017_04_24 SE.jpg	19.04.2017	24.04.2017			SE	Стокгольм	Alex		
 20170531SE	2017_05_31 SE.jpg	31.05.2017				SE	Стокгольм	Alex		
-20170612PT	2017_06_12 PT Lisboa.jpg	12.06.2017				PT	Lisboa	OlgaTk	Пробковая открытка из Португалии от коллеги	
+20170612PT	2017_06_12 PT Lisboa.jpg	12.06.2017				PT	Lisboa	OlgaTk	Пробковая открытка из Португалии от коллеги	non_paper
 20170608SE	2017_06_13.jpg	08.06.2017	13.06.2017			SE	Стокгольм	Alex		stereo
 20170614LV	2017_06_14.jpg	14.06.2017				LV	Riga	I	Открытка мужу от меня с днём рождения	
 20170612GB	2017_06_16 UK.jpg	12.06.2017	16.06.2017			GB	Kingston Upon Hall	mother	Открытка от мамы зятю с днём рождения. Долго думали над посылом.	
@@ -257,7 +257,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20180628EE2	2018_06_28 EE.jpg		28.06.2018	104	147	EE	Tartu	Aliona, MihailT	Открытка от Молодых из Эстонии	
 20180801LV	2018_07_01 LV Jugenstila muzejs.jpg	01.07.2018	03.07.2018	100	149	LV	Riga	Alex, I	Открытка из музея Югенстиля	museum
 20180713LV	2018_07_13 LV Rigas vest muz.jpg	13.07.2018	18.07.2018	104	154	LV	Riga	Alex, I	Открытка из музея истории Риги и мореходства.	museum
-20180713LV2	2018_07_13 Rigas vest muz Cat.jpg	13.07.2018	17.07.2018	120	195	LV	Riga	Alex, I	Купили в музее истории и мореходства в Риге. Открытка фирмы Lovi. Складывается в объемную фигурку кошки.	volume
+20180713LV2	2018_07_13 Rigas vest muz Cat.jpg	13.07.2018	17.07.2018	120	195	LV	Riga	Alex, I	Купили в музее истории и мореходства в Риге. Открытка фирмы Lovi. Складывается в объемную фигурку кошки.	volume, wood
 20180715LV	2018_07_15 LV Ventspils.jpg	15.07.2018	16.07.2018	104	147	LV	Ventspils	Alex, I	Послали открытку из Вентспилса	latvia_city
 20180716LV	2018_07_16 LV Liepaja sea.jpg	16.07.2018	18.07.2018	104	147	LV	Liepaja	Alex, I	Открытка из Лиепаи	
 20180716LV2	2018_07_16 LV Liepaja st Jazeph church.jpg	16.07.2018	17.07.2018	148	99	LV	Liepaja	Alex, I	Открытка из церкви св. Иосифа в Лиепае.	church
@@ -316,6 +316,6 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20181214SE	2018_12_14 SE.jpg	12.12.2018	14.12.2018	120	170	SE	Стокгольм	Alex		volume
 20181215LV	2018_12_15 LV Baltu Rota.jpg	15.12.2018		105	148	LV	Riga	Alex, I	Зашли в магазин Балту Ротас и купили мне украшение на шею с орнаментом как на открытке, только с синим камнем	advert
 20181218SE	2018_12_18 SE.jpg	17.12.2018	18.12.2018	105	148	SE	Стокгольм	Alex	Шведская новогодня открытка от Саши.	
-20181219SE	2018_12_19 SE.jpg	19.12.2018	19.12.2018			SE	Стокгольм	Alex	Посылаемый пакетик со сладостями.	
+20181219SE	2018_12_19 SE.jpg	19.12.2018	19.12.2018			SE	Стокгольм	Alex	Посылаемый пакетик со сладостями.	volume, non_paper
 20181221LV	2018_12_21 LV Secret Santa.jpg		21.12.2018	104	148	LV	Riga	VikaTi	Открытка была в подарке от Секретного Санты (которого я по открытке и угадала). Ручная работа, такие открытки делает ее мама.	
 20181231LV	2018_12_31 LV.jpg	31.12.2018				LV	Riga	Aliona, MihailT		
