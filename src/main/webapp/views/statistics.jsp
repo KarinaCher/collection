@@ -25,19 +25,13 @@
                 <a href="/tag/${tag.name}/page/1"><span style="white-space: nowrap; padding-left: 10px"><fmt:message key="${tag.name}" bundle="${country}"/>&nbsp;&mdash;&nbsp;${tag.count},</span></a> 
             </c:forEach>
             <h2>by sender</h2>
-            <table class="table table-hover">
-                <c:set var="max" value="${tagsBySender[0].count}" />
-                <c:forEach var="tag" items="${tagsBySender}">
-                <tr>
-                    <td>
-                        <fmt:formatNumber var="width" type="percent" 
-                                          maxFractionDigits="0" value="${tag.count/max}"/>
-                        <a href="/tag/${tag.name}/page/1"><fmt:message key="${tag.name}" bundle="${senderMap}"/></a> (${tag.count})
-                        <div class="bg-info" style="width: ${width}; border-left: #d9edf7 1px solid;">&nbsp;</div>
-                    </td>
-                </tr> 
-                </c:forEach>
-            </table>
+            <c:set var="max" value="${tagsBySender[0].count}" />
+            <c:forEach var="tag" items="${tagsBySender}">
+                    <fmt:formatNumber var="width" type="percent" 
+                                      maxFractionDigits="0" value="${tag.count/max}"/>
+                    <a href="/tag/${tag.name}/page/1"><fmt:message key="${tag.name}" bundle="${senderMap}"/></a> (${tag.count})
+                    <div class="bg-info" style="width: ${width}; border-left: #d9edf7 1px solid;">&nbsp;</div>
+            </c:forEach>
             
         </div>
         

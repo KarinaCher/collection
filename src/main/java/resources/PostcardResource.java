@@ -33,6 +33,7 @@ public class PostcardResource
     {
         if (postcardList.isEmpty())
         {
+            postcardList.addAll(readTsv("/Postcard collection - to 1980x.tsv"));
             postcardList.addAll(readTsv("/Postcard collection - 1980x.tsv"));
             postcardList.addAll(readTsv("/Postcard collection - 1990x.tsv"));
             postcardList.addAll(readTsv("/Postcard collection - 2000x.tsv"));
