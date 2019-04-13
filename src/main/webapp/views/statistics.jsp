@@ -13,27 +13,32 @@
         <jsp:include page="parts/bundles.jsp" />
         <jsp:include page="parts/menu.jsp" />
         <div class="container">
-            <h1>Statistics</h1>
+            <ul class="nav nav-tabs">
+                <li <c:if test="${p eq 'tag'}">class="active"</c:if>>
+                    <a href="/statistics/tag">by tag</a>
+                </li>
+                <li <c:if test="${p eq 'country'}">class="active"</c:if>>
+                    <a href="/statistics/country">by country</a>
+                </li>
+                <li <c:if test="${p eq 'sender'}">class="active"</c:if>>
+                    <a href="/statistics/sender">by sender</a>
+                </li>
+            </ul>
+            <div style="padding-top: 30px;">
+                <c:choose>
+                    <c:when test="${p eq 'tag'}">
+                        <jsp:include page="parts/statisticsByTag.jsp" />
+                    </c:when>
+
+                    <c:when test="${p eq 'country'}">
+                        <jsp:include page="parts/statisticsByCountry.jsp" />
+                    </c:when>
+
+                    <c:otherwise>
+                        <jsp:include page="parts/statisticsBySender.jsp" />
+                    </c:otherwise>
+                </c:choose>
+            </div>
         </div>
-        <div class="container">
-            <h2>by tag</h2>
-            <c:forEach var="tag" items="${tags}">
-                <a href="/tag/${tag.name}/page/1"><span style="white-space: nowrap; padding-left: 10px"><fmt:message key="${tag.name}" bundle="${tagMap}"/>&nbsp;&mdash;&nbsp;${tag.count},</span></a> 
-            </c:forEach>
-            <h2>by country</h2>
-            <c:forEach var="tag" items="${tagsByCountry}">
-                <a href="/tag/${tag.name}/page/1"><span style="white-space: nowrap; padding-left: 10px"><fmt:message key="${tag.name}" bundle="${country}"/>&nbsp;&mdash;&nbsp;${tag.count},</span></a> 
-            </c:forEach>
-            <h2>by sender</h2>
-            <c:set var="max" value="${tagsBySender[0].count}" />
-            <c:forEach var="tag" items="${tagsBySender}">
-                    <fmt:formatNumber var="width" type="percent" 
-                                      maxFractionDigits="0" value="${tag.count/max}"/>
-                    <a href="/tag/${tag.name}/page/1"><fmt:message key="${tag.name}" bundle="${senderMap}"/></a> (${tag.count})
-                    <div class="bg-info" style="width: ${width}; border-left: #d9edf7 1px solid;">&nbsp;</div>
-            </c:forEach>
-            
-        </div>
-        
     </body>
 </html>
