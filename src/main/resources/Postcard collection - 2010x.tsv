@@ -1,20 +1,21 @@
 ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
-20100825GB	2010_08_25 EN York Minster 01.jpg	25.08.2010				GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
-20100825GB2	2010_08_25 EN York Minster 02.jpg	25.08.2010				GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
-20100825GB3	2010_08_25 EN York Minster 03.jpg	25.08.2010				GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
-20100825GB4	2010_08_25 EN York Minster 04.jpg	25.08.2010				GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
-20100825GB5	2010_08_25 EN York Railway Museum 02.jpg	25.08.2010				GB	York	I	Были с мамой в Йорке в музее поездов.	museum
-20100825GB6	2010_08_25 EN York Railway Museum 03.jpg	25.08.2010				GB	York	I	Были с мамой в Йорке в музее поездов.	museum
-20110624GB	2011_06_24 EN Hull museum 01.jpg	24.06.2011				GB	Kingston Upon Hall	I	Посетили с мамой художественный музей в городе Халл. Купила открытку с понравившейся картиной	museum
-20110624GB2	2011_06_24 EN Hull museum 02.jpg	24.06.2011				GB	Kingston Upon Hall	I	Посетили с мамой художественный музей в городе Халл. Купила открытку с понравившейся картиной	museum
-20110625GB	2011_06_25 EN Haworth 01.jpg	25.06.2011				GB	Haworth	I	Посетили с мамой город где родилась и жила Шарлота Бронте.	
-20110625GB2	2011_06_25 EN Haworth 02.jpg	25.06.2011				GB	Haworth	I	Посетили с мамой город где родилась и жила Шарлота Бронте.	
-20110625GB3	2011_06_25 EN Skiption 01.jpg	25.06.2011				GB	Skipton	I	Посетили с мамой древний замок в городе Скиптон. Замку 1000 лет.	castle
-20110625GB4	2011_06_25 EN Skiption 02.jpg	25.06.2011				GB	Skipton	I	Посетили с мамой древний замок в городе Скиптон. Замку 1000 лет.	castle
-20110626GB	2011_06_26 EN Harrogate 01.jpg	26.06.2011				GB	Harrogate	I	Посетили с мамой город Харогейт, где расположены знаменитые королевские бани. Бань на месте не оказалось, погуляли просто так.	
-20110626GB2	2011_06_26 EN Knaresborough 01.jpg	26.06.2011				GB	Knaresborough	I	Посетили город Нерсборо, где есть живописные развалины замка и высоченный железнодорожный мост через реку.	castle
-20110626GB3	2011_06_26 EN York Railway Museum 01.jpg	26.06.2011				GB	Knaresborough	I	Посетили город Нерсборо, где есть живописные развалины замка и высоченный железнодорожный мост через реку.	
-20110701GB	2011_07_01 EN London Airport Gatwick.jpg	01.07.2011				GB	London	I	Купила в аэропорту Гатвик в Лондоне	airport
+20100825GB	2010_08_25 EN York Minster 01.jpg	25.08.2010		148	105	GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
+20100825GB2	2010_08_25 EN York Minster 02.jpg	25.08.2010		148	105	GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
+20100825GB3	2010_08_25 EN York Minster 03.jpg	25.08.2010		105	148	GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
+20100825GB4	2010_08_25 EN York Minster 04.jpg	25.08.2010		105	147	GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
+20100825GB5	2010_08_25 EN York Railway Museum 02.jpg	25.08.2010		105	148	GB	York	I	Были с мамой в Йорке в музее поездов.	museum
+20100825GB6	2010_08_25 EN York Railway Museum 03.jpg	25.08.2010		148	105	GB	York	I	Были с мамой в Йорке в музее поездов.	museum
+20100831GB	2010_08_31 GB.jpg	31.08.2010		104	149	GB	Kingston Upon Hall	I	Любимому мужу с приветом из Великобритании.	
+20110624GB	2011_06_24 EN Hull museum 01.jpg	24.06.2011		105	150	GB	Kingston Upon Hall	I	Посетили с мамой художественный музей в городе Халл. Купила открытку с понравившейся картиной	museum
+20110624GB2	2011_06_24 EN Hull museum 02.jpg	24.06.2011		150	104	GB	Kingston Upon Hall	I	Посетили с мамой художественный музей в городе Халл. Купила открытку с понравившейся картиной	museum
+20110625GB	2011_06_25 EN Haworth 01.jpg	25.06.2011		120	170	GB	Haworth	I	Посетили с мамой город где родилась и жила Шарлота Бронте.	
+20110625GB2	2011_06_25 EN Haworth 02.jpg	25.06.2011		146	105	GB	Haworth	I	Посетили с мамой город где родилась и жила Шарлота Бронте.	
+20110625GB3	2011_06_25 EN Skiption 01.jpg	25.06.2011		105	150	GB	Skipton	I	Посетили с мамой древний замок в городе Скиптон. Замку 1000 лет.	castle
+20110625GB4	2011_06_25 EN Skiption 02.jpg	25.06.2011		105	149	GB	Skipton	I	Посетили с мамой древний замок в городе Скиптон. Замку 1000 лет.	castle
+20110626GB	2011_06_26 EN Harrogate 01.jpg	26.06.2011		105	148	GB	Harrogate	I	Посетили с мамой город Харогейт, где расположены знаменитые королевские бани. Бань на месте не оказалось, погуляли просто так.	
+20110626GB2	2011_06_26 EN Knaresborough 01.jpg	26.06.2011		105	147	GB	Knaresborough	I	Посетили город Нерсборо, где есть живописные развалины замка и высоченный железнодорожный мост через реку.	castle
+20110626GB3	2011_06_26 EN York Railway Museum 01.jpg	26.06.2011		105	148	GB	Knaresborough	I	Посетили город Нерсборо, где есть живописные развалины замка и высоченный железнодорожный мост через реку.	
+20110701GB	2011_07_01 EN London Airport Gatwick.jpg	01.07.2011		120	170	GB	London	I	Купила в аэропорту Гатвик в Лондоне	airport
 20111104GB	2011_11_04 GB Simons cat 01.jpg	04.11.2011				LV	Riga	I	Мама подарила книгу про кота Саймона в которой были открытки.	advert
 20111104GB2	2011_11_04 GB Simons cat 02.jpg	04.11.2011				LV	Riga	I	Мама подарила книгу про кота Саймона в которой были открытки.	advert
 20111104GB3	2011_11_04 GB Simons cat 03.jpg	04.11.2011				LV	Riga	I	Мама подарила книгу про кота Саймона в которой были открытки.	advert
@@ -25,7 +26,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20120224BE4	2012_02_24 BE Brussel MIM.jpg	21.02.2012				BE	Брюссель	Alex, I	Musical instruments museum. Harpischord combined with a virginal, J. Ruckers, Antwerpen, 1619	museum
 20120914FI	2012_09_14 FI Helsinki 01.jpg	14.09.2012				FI	Хельсинки	Alex, I	Ездили на семинар Тисье 14-15 сентября 2012 года.	
 20121011LV	2012_10_11 LV intuos.jpg	11.10.2012				LV	Riga	Alex	Саша подарил на именины планшет, а в нем была рекламная открытка	advert
-20130000LV	2013 Taschen.jpg	01.01.2013				LV	Riga	I	В купленной книге издательства Taschen была эта открытка.	advert
+20130000LV	2013 Taschen.jpg	01.01.2013		105	148	LV	Riga	I	В купленной книге издательства Taschen была эта открытка.	advert
 20130412SE	2013_04_12 SE Sigtuna 01.jpg	12.04.2013				SE	Сигтуна	Alex, I	Ездили на семинар Тисье 12-13 апреля 2013 года.	
 20130506LV	2013_05_06 LV Sigulda 01.jpg	06.05.2013				LV	Sigulda	Alex, I	Посетили парк развлечений "Тарзан" в Сигулде	
 20130506LV2	2013_05_06 LV Sigulda 02.jpg	06.05.2013				LV	Sigulda	Alex, I	Посетили парк развлечений "Тарзан" в Сигулде. На открытке: Sigulda, Turaidas pils, Velnalas klintis, Siguldas pilsdrupas, Siguldas pils, Luterāņu baznīca un Spieķu parks	
@@ -36,10 +37,10 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20130610GB	2013_06_10 EN York 01.jpg	10.06.2013	20.06.2013			GB	Йорк	Alex, I	York, The Shambles	
 20130610GB2	2013_06_10 EN York Minster 05.jpg	10.06.2013				GB	Йорк	Alex, I	Bootham bar, York, North Yorkshire, England. From the original painting by Pat Bell	church
 20130611GB	2013_06_11 EN Humber bridge 01.jpg	11.06.2013				GB	Humber bridge	Alex, I	Humber bridge	
-20130613GB	2013_06_13 GB Hull 01.jpg	13.06.2013				GB	Kingston Upon Hall	I	В прошлый приезд в Халл, везде были установлены фигуры лягушек, которые расскрасили разные художники. А в этот приезд выпустили открытку с этими лягушками.	
-20130613GB2	2013_06_13 GB Hull 02.jpg	13.06.2013				GB	Kingston Upon Hall	I	Накупила открыток на память о Халле.	
-20130613GB3	2013_06_13 GB Hull 03.jpg	13.06.2013				GB	Kingston Upon Hall	I	Накупила открыток на память о Халле.	
-20130613GB4	2013_06_13 GB Hull 04.jpg	13.06.2013				GB	Kingston Upon Hall	I	Накупила открыток на память о Халле.	
+20130613GB	2013_06_13 GB Hull 01.jpg	13.06.2013		148	210	GB	Kingston Upon Hall	I	В прошлый приезд в Халл, везде были установлены фигуры лягушек, которые расскрасили разные художники. А в этот приезд выпустили открытку с этими лягушками.	
+20130613GB2	2013_06_13 GB Hull 02.jpg	13.06.2013		105	148	GB	Kingston Upon Hall	I	Накупила открыток на память о Халле.	
+20130613GB3	2013_06_13 GB Hull 03.jpg	13.06.2013		105	148	GB	Kingston Upon Hall	I	Накупила открыток на память о Халле.	
+20130613GB4	2013_06_13 GB Hull 04.jpg	13.06.2013		105	149	GB	Kingston Upon Hall	I	Накупила открыток на память о Халле.	
 20130613GB5	2013_06_13 GB Hull 05.jpg	13.06.2013				GB	Kingston Upon Hall	I	Накупила открыток на память о Халле.	
 20130622AT	2013_06_26 AT Vienna.jpg	22.06.2013	26.06.2013			AT	Вена	LudmilaViktor	Прислали из Вены Сашины родители	
 20130815LV	2013_08_15 LV Daugavpils.jpg		15.08.2013			LV	Даугавпилс	Aliona, MihailT	Прислали Молодые из Даугавпилса. Daugavpils cietoksnis. Cietokšņa redušu šaujamlūkas. Birķeneļi. Borisa un Gļeba pareizticīgo katedrāle. Novadpētniecības un mākslas muzejs. Pieminekļis dzejniekam A. Pumpuram. Tilts pār Daugavu	
