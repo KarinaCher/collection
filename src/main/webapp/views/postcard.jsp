@@ -50,6 +50,16 @@
                               <td>Notes</td>
                               <td>${fn:replace(postcard.description, '|', '<br />')}</td>
                           </tr>
+                          <tr>
+                              <td>Tags</td>
+                              <td>
+                                  <c:if test="${!empty postcard.tags}">
+                                    <c:forEach var="tag" items="${postcard.tags}">
+                                      <a href="/tag/${tag}/page/1"><fmt:message key="${tag}" bundle="${tagMap}"/></a> 
+                                    </c:forEach>
+                                </c:if>
+                              </td>
+                          </tr>
                       </table>
                   </div>
                 </div>

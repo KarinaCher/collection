@@ -1,5 +1,8 @@
 package entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TagInfo
 {
 
@@ -11,6 +14,7 @@ public class TagInfo
     
     private String name;
     private Integer count;
+    private List<TagInfo> list = new ArrayList();
 
     public String getName()
     {
@@ -31,6 +35,9 @@ public class TagInfo
     {
         this.count = count;
     }
-    
-    
+
+    public List<TagInfo> getList()
+    {
+        return list;
+    }
 }

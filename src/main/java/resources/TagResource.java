@@ -38,7 +38,13 @@ public class TagResource
         {
             postcardList.forEach((postcard) ->
             {
-                updateTagCount(postcard.getCountry(), tagsByCountry);
+                TagInfo country = updateTagCount(postcard.getCountry(), tagsByCountry);
+                updateTagCount(postcard.getCity(), country.getList());
+            });
+            
+            tagsByCountry.forEach((country) ->
+            {
+                country.getList().sort(COUNT_DESC);
             });
             tagsByCountry.sort(COUNT_DESC);
         }
@@ -63,17 +69,19 @@ public class TagResource
         return tags;
     }
 
-    private void updateTagCount(String tagName, List<TagInfo> tags)
+    private TagInfo updateTagCount(String tagName, List<TagInfo> tags)
     {
         for (TagInfo tagInfo : tags)
         {
             if (tagInfo.getName().equals(tagName))
             {
                 tagInfo.setCount(tagInfo.getCount() + 1);
-                return;
+                return tagInfo;
             }
         }
         
-        tags.add(new TagInfo(tagName, 1));
+        TagInfo result = new TagInfo(tagName, 1);
+        tags.add(result);
+        return result;
     }
 }

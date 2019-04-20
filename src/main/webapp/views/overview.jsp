@@ -26,9 +26,12 @@
                               <img src="/image/sm/${postcard.images[0]}" class="img-fluid" />
                             </a>
                             <div class="caption">
-                              <a href="/tag/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>
+                              <a href="/tag/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>,
+                              <c:if test="${!empty postcard.city}">
+                                  ${postcard.city}
+                              </c:if>
                               <br />
-                              sender  
+                              from  
                               <c:forEach var="sender" items="${postcard.senders}">
                                 <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>, 
                               </c:forEach>
