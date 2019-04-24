@@ -43,7 +43,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20130613GB4	2013_06_13 GB Hull 04.jpg	13.06.2013		105	149	GB	Kingston Upon Hall	I	Накупила открыток на память о Халле.	
 20130613GB5	2013_06_13 GB Hull 05.jpg	13.06.2013		156	117	GB	Kingston Upon Hall	I	Накупила открыток на память о Халле.	
 20130622AT	2013_06_26 AT Vienna.jpg	22.06.2013	26.06.2013	147	104	AT	Вена	LudmilaViktor	Прислали из Вены Сашины родители	
-20130815LV	2013_08_15 LV Daugavpils.jpg		15.08.2013	105	155	LV	Даугавпилс	Aliona, MihailT	Прислали Молодые из Даугавпилса. Daugavpils cietoksnis. Cietokšņa redušu šaujamlūkas. Birķeneļi. Borisa un Gļeba pareizticīgo katedrāle. Novadpētniecības un mākslas muzejs. Pieminekļis dzejniekam A. Pumpuram. Tilts pār Daugavu	
+20130815LV	2013_08_15 LV Daugavpils.jpg		15.08.2013	105	155	LV	Daugavpils	Aliona, MihailT	Прислали Молодые из Даугавпилса. Daugavpils cietoksnis. Cietokšņa redušu šaujamlūkas. Birķeneļi. Borisa un Gļeba pareizticīgo katedrāle. Novadpētniecības un mākslas muzejs. Pieminekļis dzejniekam A. Pumpuram. Tilts pār Daugavu	
 20130925GB	2013_09_25 EN.jpg		25.09.2013	114	160	GB		mother		beer
 20140101LV	2014 LV Aikidojo New year.jpg	01.01.2014		170	120	LV	Riga	I	Aikidojo выпустило новогоднюю поздравительную открытку.	aikido
 20140327LV	2014_03_27 LV Latvian about himselfs.jpg		27.03.2014	145	104	LV	Riga	I	Оказалось, это небольшая группа энтузиастов, выпускающая забавные и интресные открытки. Я уже обращала на них внимание, уж очень они необычные и симпатичные (с латышскими знаками, например). На сайте нашлась одна, которая не в бровь, а в глаз "Латыши про себя (с городостью :)"	
@@ -127,7 +127,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20151204LV	2015_12_08 Horse.jpg	04.12.2015	08.12.2015	160	120	LV	Riga	Alex	3D открытка от мужа с розово-фиолетовой упитанной лошадкой, радугой, бабочками и ГРИБАМИ :)	stereo
 20151204SE	2015_12_14 Stockholm Christmas.jpg	09.12.2015	14.12.2015	100	145	SE	Стокгольм	Alex	Металлическая открытка с видом Стокгольма в Рождество.	metal, non_paper
 20151219SM	2015_12_19 San Marino.jpg	19.12.2015	06.01.2016	104	147	SM		JuraM		
-20151224LV	2015_12_30 Kuldiga.jpg	24.12.2015	30.12.2015	147	104	LV	Kuldiga	Alex, I		latvia_city
+20151224LV	2015_12_30 Kuldiga.jpg	24.12.2015	30.12.2015	147	104	LV	Kuldiga	Alex, I		latvia_city, maksimum_card
 20160109LV	2016_01_09 aikidojo.jpg		09.01.2016	160	160	LV	Riga	I	Новогодняя открытка от aikidojo 2016 год	aikido
 20160112LV	2016_01_13 Shodan.jpg	13.01.2016	15.01.2016	160	120	LV	Riga	Alex		stereo
 20160121IT	2016_01_21 Canazei.jpg	14.01.2016	21.01.2016	120	170	IT	Canazei	JuraM	Привет из Доломитов (https://en.wikipedia.org/wiki/Dolomites) от Юры М.	
@@ -159,14 +159,14 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20160713SE	2016_07_15.jpg	13.07.2016	14.07.2016	104	148	SE	Стокгольм	Alex	Шведская открытка от мужа из Fotografiska	museum
 20160718LV	2016_07_20 LV Kara muzejs.jpg	18.07.2016	19.07.2016	148	104	LV	Riga	Alex, I	Были в Kara muzejs.	museum
 20160718GB	2016_07_18 EN Torquay.jpg	18.07.2016	26.07.2016	104	147	GB	Torquay	mother	Открытка от мамы из Англии из курортного города Торки.	
-20160721LV	2016_07_22 Jurmala.jpg	21.07.2016	25.07.2016	147	104	LV	Jurmala	Alex, I	Продолжаем посылать себе открытки из серии гербы городов Латвии. Вот из Юрмалы наконец-то послали, не забыли с собой захватить.	latvia_city
+20160721LV	2016_07_22 Jurmala.jpg	21.07.2016	25.07.2016	147	104	LV	Jurmala	Alex, I	Продолжаем посылать себе открытки из серии гербы городов Латвии. Вот из Юрмалы наконец-то послали, не забыли с собой захватить.	latvia_city, maksimum_card
 20160720LV	2016_07_22 LV TV Tornis 2.jpg	20.07.2016	22.07.2016	147	104	LV	Riga	Alex, I	Открытка с рижской телебашни. Последняя :)	
 20160720LV2	2016_07_22 LV TV Tornis.jpg	20.07.2016	22.07.2016	104	147	LV	Riga	Alex, I	Эту открытку мы подписали на телебашне.	latvia_city
 20160725LV	2016_07_25 Bauska2.jpg	25.07.2016	26.07.2016	110	229	LV	Bauska	Alex, I	Купили открытку в туристическом центре. Копия гравюры какого-то века, замок ещё был цел.	
 20160725LV2	2016_07_25 Bauska.jpg	25.07.2016	26.07.2016	147	104	LV	Bauska	Alex, I	Посетили город Бауску.	latvia_city
 20160725LV3	2016_07_25 Bauskas pils.jpg	25.07.2016	26.07.2016	104	147	LV	Bauska	Alex, I	Купили с Бауском замке.	castle
 20160725LV4	2016_07_25 Bauska Sv Gara Baznica.jpg	25.07.2016	26.07.2016	102	150	LV	Bauska	Alex, I		church
-20160729LV	2016_07_29_Dobele.jpg	29.07.2016	01.08.2016	147	104	LV	Dobele	Alex, I	Ездили в Добеле 29 июля 2016 года.	latvia_city
+20160729LV	2016_07_29_Dobele.jpg	29.07.2016	01.08.2016	147	104	LV	Dobele	Alex, I	Ездили в Добеле 29 июля 2016 года.	latvia_city, maksimum_card
 20160729LV2	2016_07_29_Dobele_2.jpg	29.07.2016	01.08.2016	104	147	LV	Dobele	Alex, I	Открытка из добельского туристического центра.	
 20160808SE	2016_08_09 SE.jpg	08.08.2016	09.08.2016	114	165	SE	Стокгольм	Alex		
 20160810GB	2016_08_10 EN Anniversary.jpg		10.08.2016			GB	Kingston Upon Hall	mother	Открытка от мамы. Поздравление с 8 годовщиной свадьбы.	
@@ -272,8 +272,8 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20180715LV	2018_07_15 LV Ventspils.jpg	15.07.2018	16.07.2018	104	147	LV	Ventspils	Alex, I	Послали открытку из Вентспилса	latvia_city
 20180716LV	2018_07_16 LV Liepaja sea.jpg	16.07.2018	18.07.2018	104	147	LV	Liepaja	Alex, I	Открытка из Лиепаи	
 20180716LV2	2018_07_16 LV Liepaja st Jazeph church.jpg	16.07.2018	17.07.2018	148	99	LV	Liepaja	Alex, I	Открытка из церкви св. Иосифа в Лиепае.	church
-20180716LV3	2018_07_16 LV Liepaja.jpg	16.07.2018	17.07.2018	147	104	LV	LIepaja	Alex, I	Послали открытку из Лиепаи.	latvia_city
-20180717LV	2018_07_17 LV Liepaja Karosta Cietums.jpg	17.07.2018	18.07.2018	147	104	LV	LIepaja	Alex, I	Открытка билет в тюрьму в Каросте в Лиепае.	museum
+20180716LV3	2018_07_16 LV Liepaja.jpg	16.07.2018	17.07.2018	147	104	LV	Liepaja	Alex, I	Послали открытку из Лиепаи.	latvia_city
+20180717LV	2018_07_17 LV Liepaja Karosta Cietums.jpg	17.07.2018	18.07.2018	147	104	LV	Liepaja	Alex, I	Открытка билет в тюрьму в Каросте в Лиепае.	museum
 20180720LV	2018_07_23 LV Riga Doms.jpg	20.07.2018	23.07.2018	149	99	LV	Riga	Alex, I	Побывали на органном концерте в Домском соборе.	church
 20180724IT	2018_07_24 Tirano.jpg	24.07.2018		147	103	IT	Tirano	LudmilaViktor	Из Тирано от Виктора и Людмилы.	
 20180725IT	2018_07_25 IT Milano.jpg	25.07.2018		120	170	IT	Milano	LudmilaViktor		
@@ -297,7 +297,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20180821DK	2018_08_21 DK Copenhagen Tivoli.jpg	21.08.2018		104	147	DK	Copenhagen	Alex	Открытка от Саши из командировки в Копенгаген. Из парка Тиволи.	advert
 20180821DK2	2018_08_21 DK Tivoli 1.jpg	21.08.2018		147	104	DK	Copenhagen	Alex	Открытка от Саши из Дании, парк Тиволи.	advert
 20180821DK3	2018_08_21 DK Tivoli 2.jpg	21.08.2018		147	104	DK	Copenhagen	Alex	Открытка от Саши из Дании, парк Тиволи.	advert
-20180821DK4	2018_08_21 DK Tivoli 3.jpg	21.08.2018		147	104	DK	Copenhagen	Alex	Открытка от Саши из Дании, парк Тиволи.	advert
+20180821DK4	2018_08_21 DK Tivoli 3.jpg	21.08.2018		147	104	DK	Copenhagen	Alex	Открытка от Саши из Дании, парк Тиволи.	advert, beer
 20180822DK	2018_08_22 DK Copenhagen Canal Nyhavn 2.jpg	22.08.2018		104	147	DK	Copenhagen	Alex	Открытка от Саши из командировки в Копенгаген. Знаменитая набережная.	
 20180822DK2	2018_08_22 DK Copenhagen Canal Nyhavn.jpg	22.08.2018		104	147	DK	Copenhagen	Alex	Открытка от Саши из командировки в Копенгаген.	
 20180822DK3	2018_08_22 DK Copenhagen Nyhavn.jpg	22.08.2018	24.08.2018	118	170	DK	Copenhagen	Alex	Открытка от Саши из командировки в Копенгаген. Со стереоэффектом, но на скане плохо видно.	stereo
