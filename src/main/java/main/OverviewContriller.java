@@ -48,9 +48,52 @@ public class OverviewContriller
                 : PostcardResource.getListWithTag(tagName);
         
         addAttributes(model, pageNum, 
-                PostcardResource.substringList(pageNum, list), 
+                PostcardResource.getPage(pageNum, list), 
                 list.size());
-        model.addAttribute("tag", tagName);
+        model.addAttribute("itemId", tagName);
+        model.addAttribute("navPath", "tag");
+        
+        return "overview";
+    }
+    
+    @RequestMapping(value = "/country/{countryId}/page/{page}", method = RequestMethod.GET)
+    public String getBycountry(@PathVariable String countryId, 
+            @PathVariable String page,
+            Model model) 
+    {
+        // TODO validate input.
+        int pageNum = getPage(page);
+        
+        List<Postcard> list = countryId == null
+                ? PostcardResource.getList()
+                : PostcardResource.getListWithTag(countryId);
+        
+        addAttributes(model, pageNum, 
+                PostcardResource.getPage(pageNum, list), 
+                list.size());
+        model.addAttribute("itemId", countryId);
+        model.addAttribute("navPath", "country");
+        
+        return "overview";
+    }
+    
+    @RequestMapping(value = "/city/{city}/page/{page}", method = RequestMethod.GET)
+    public String getByCity(@PathVariable String city, 
+            @PathVariable String page,
+            Model model) 
+    {
+        // TODO validate input.
+        int pageNum = getPage(page);
+        
+        List<Postcard> list = city == null
+                ? PostcardResource.getList()
+                : PostcardResource.getListWithTag(city);
+        
+        addAttributes(model, pageNum, 
+                PostcardResource.getPage(pageNum, list), 
+                list.size());
+        model.addAttribute("itemId", city);
+        model.addAttribute("navPath", "city");
         
         return "overview";
     }

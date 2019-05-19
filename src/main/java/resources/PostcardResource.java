@@ -46,15 +46,15 @@ public class PostcardResource
     
     public static List<Postcard> getList(int page)
     {
-        return substringList(page, getList());
+        return getPage(page, getList());
     }
     
     public static List<Postcard> getListWithTag(String tagName, int page)
     {
-        return substringList(page, getListWithTag(tagName));
+        return getPage(page, getListWithTag(tagName));
     }
     
-    public static List<Postcard> substringList(int page, List<Postcard> list)
+    public static List<Postcard> getPage(int page, List<Postcard> list)
     {
         List<Postcard> result = new ArrayList();
         int begin = ITEMS_PER_PAGE * (page - 1);
@@ -96,6 +96,7 @@ public class PostcardResource
         for (Postcard postcard : getList())
         {
             if (postcard.getCountry().equals(tagName)
+                    || (postcard.getCity() != null && postcard.getCity().equals(tagName))
                     || postcard.getSenders().contains(tagName)
                     || postcard.getTags().contains(tagName))
             {
