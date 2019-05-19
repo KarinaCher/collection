@@ -22,6 +22,17 @@ public class OverviewContriller
         return "overview";
     }
     
+    @RequestMapping("/other/page/{page}")
+    public String otherPostcards(@PathVariable String page, Model model) 
+    {
+        int pageNum = getPage(page);
+        
+        final List<Postcard> list = PostcardResource.getList(pageNum, true);
+        addAttributes(model, pageNum, list, PostcardResource.getOtherList().size());
+        model.addAttribute("parentPath", "/other");
+        return "overview";
+    }
+    
     @RequestMapping(value = "/page/{page}", method = RequestMethod.GET)
     public String overviewPage(@PathVariable String page, Model model) 
     {
@@ -120,7 +131,7 @@ public class OverviewContriller
 
     private void addAttributes(Model model, int pageNum, List<Postcard> list, int fullListSize)
     {
-        model.addAttribute("currenctPage", pageNum);
+        model.addAttribute("currentPage", pageNum);
         model.addAttribute("list", list);
         model.addAttribute("pages", (int) (fullListSize / ITEMS_PER_PAGE) + 1);
         model.addAttribute("count", fullListSize);

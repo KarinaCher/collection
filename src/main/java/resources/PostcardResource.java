@@ -23,6 +23,7 @@ public class PostcardResource
 {
     public static final Logger LOG = Logger.getLogger(PostcardResource.class);
     private static List<Postcard> postcardList = new ArrayList<>();
+    private static List<Postcard> postcardListOther = new ArrayList<>();
     
     private static final Comparator BY_DATE = (Comparator<Postcard>) (Postcard p1, Postcard p2) -> 
     {
@@ -33,7 +34,6 @@ public class PostcardResource
     {
         if (postcardList.isEmpty())
         {
-            postcardList.addAll(readTsv("/Postcard collection - to 1980x.tsv"));
             postcardList.addAll(readTsv("/Postcard collection - 1980x.tsv"));
             postcardList.addAll(readTsv("/Postcard collection - 1990x.tsv"));
             postcardList.addAll(readTsv("/Postcard collection - 2000x.tsv"));
@@ -42,6 +42,21 @@ public class PostcardResource
             postcardList.sort(BY_DATE);
         }
         return postcardList;
+    }
+    
+    public static List<Postcard> getOtherList()
+    {
+        if (postcardListOther.isEmpty())
+        {
+            postcardListOther.addAll(readTsv("/Postcard collection - other.tsv"));
+            postcardListOther.sort(BY_DATE);
+        }
+        return postcardListOther;
+    }
+    
+    public static List<Postcard> getList(int page, boolean isOther)
+    {
+        return getPage(page, isOther ? getOtherList() : getList());
     }
     
     public static List<Postcard> getList(int page)

@@ -17,7 +17,7 @@ public class Postcard
     private List<String> senders = new ArrayList<>();
     private String description;
     private List<String> tags = new ArrayList<>();
-
+    
     public String getId()
     {
         return id;
