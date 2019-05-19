@@ -97,6 +97,13 @@ public class PostcardResource
                 return postcard;
             }
         }
+        for (Postcard postcard : getOtherList())
+        {
+            if (id.equals(postcard.getId()))
+            {
+                return postcard;
+            }
+        }
         return null;
     }
     
