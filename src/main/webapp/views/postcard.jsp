@@ -18,8 +18,18 @@
             <div class="container">
                 <div class="row">
                   <div class="col-sm-6">
-                    <img src="../image/lg/${postcard.images[0]}"/>
+                    <c:forEach var="image" items="${postcard.images}" varStatus="loop">
+                        <c:if test="${loop.index == 0}">
+                            <img src="../image/lg/${image}"/>
+                        </c:if>
+                        <c:if test="${loop.index > 0}">
+                        <a href="../image/lg/${image}" title="">
+                            <img src="../image/sm/${image}">
+                        </a>
+                        </c:if>
+                    </c:forEach>
                   </div>
+                    
                   <div class="col-sm-6">
                       <table class="table table-hover">
                           <tr>

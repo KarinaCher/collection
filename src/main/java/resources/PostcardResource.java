@@ -185,6 +185,14 @@ public class PostcardResource
                 {
                     readMultiValues(data[10], postcard.getTags());
                 }
+                if (data.length > 11 && !data[11].isEmpty())
+                {
+                    int postcardCount = Integer.parseInt(data[11]);
+                    for (int i = 2; i <= postcardCount; i++) 
+                    {
+                        postcard.getImages().add(data[1].replaceAll("1.jpg", i + ".jpg"));
+                    }
+                }
                 list.add(postcard);
             }
         }
