@@ -17,6 +17,7 @@ public class Postcard
     private List<String> senders = new ArrayList<>();
     private String description;
     private List<String> tags = new ArrayList<>();
+    private boolean mine = true;
     
     public String getId()
     {
@@ -126,5 +127,15 @@ public class Postcard
     public void setTags(List<String> tags)
     {
         this.tags = tags;
+    }
+
+    public boolean isMine()
+    {
+        return mine;
+    }
+
+    public void setMine(boolean mine)
+    {
+        this.mine = mine;
     }
 }

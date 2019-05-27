@@ -49,6 +49,7 @@ public class PostcardResource
         if (postcardListOther.isEmpty())
         {
             postcardListOther.addAll(readTsv("/Postcard collection - other.tsv"));
+            postcardListOther.forEach(postcard -> postcard.setMine(false));
             postcardListOther.sort(BY_DATE);
         }
         return postcardListOther;
