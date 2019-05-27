@@ -87,6 +87,10 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td>Size</td>
+                                    <td>${postcard.height} x ${postcard.width}</td>
+                                </tr>
+                                <tr>
                                     <td>Notes</td>
                                     <td>${fn:replace(postcard.description, '|', '<br />')}</td>
                                 </tr>
