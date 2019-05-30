@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import resources.PostcardResource;
 import resources.TagResource;
+import statistic.SizeMap;
 
 @Controller
 public class StatisticContriller
@@ -30,6 +31,9 @@ public class StatisticContriller
                 break;
             case "tag":
                 model.addAttribute("tags", tagResource.getTags(list));
+                break;
+            case "size":
+                model.addAttribute("sizeMap", (new SizeMap(list)).get());
                 break;
         }
         model.addAttribute("p", param);
