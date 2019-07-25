@@ -19,7 +19,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images
 20190321SE	2019_03_21 SE.jpg	21.03.2019	25.03.2019	166	116	SE	Stockholm	Alex			
 20190324LV	2019_03_24 LV Night Vansu titls.jpg	24.03.2019	26.03.2019	100	150	LV	Riga	Alex, I			
 20190326SE	2019_03_26 SE Boat.jpg	26.03.2019	29.03.2019	166	116	SE	Stockholm	Alex			
-20190331LV	2019_03_31 LV Map.jpg	31.03.2019	02.04.2019	120	170	LV	Riga	Alex, I	Объемная карта Латвии. Второй вариант, улучшенный и дополненный.	volume	
+20190331LV	2019_03_31 LV Map.jpg	31.03.2019	02.04.2019	120	170	LV	Riga	Alex, I	Объемная карта Латвии. Второй вариант, улучшенный и дополненный.	volume, map	
 20190406LV	2019_04_06 LV Birthsday.jpg		06.04.2019	130	104	LV	Riga	Alex		pickmotion.com	
 20190409SE	2019_04_09 SE Moose.jpg	09.04.2019	12.04.2019	180	130	SE	Stockholm	Alex	Лось на картнке, один из более чем 400 000 шведских лосей. Высота плеча взрослой особи более 2 метров, а вес около 850 кг.	travel_poster_stockholm	
 20190416SE	2019_04_16 SE Branch Lake Swan.jpg	16.04.2019	23.04.2019	133	130	SE	Stockholm	Alex	Swan at Lake Genewa		
@@ -52,7 +52,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images
 20190618SE	2019_06_18 SE Fika.jpg	18.06.2019	21.06.2019	166	116	SE	Solna	I	Еще одна шведская национальная традиция - фика		
 20190619SE	2019_06_19 SE Cat.jpg	19.06.2019	25.06.2019	166	117	SE	Stockholm	I	Прислала я из командировки в Швецию.		
 20190620SE	2019_06_20 SE Fishing Cow.jpg	20.06.2019	25.06.2019	148	105	SE	Stockholm	I	Прислала я из командировки в Швецию.		
-20190625SE	2019_06_25 SE Map.jpg	25.06.2019	28.06.2019	166	116	SE	Stockholm	Alex			
+20190625SE	2019_06_25 SE Map.jpg	25.06.2019	28.06.2019	166	116	SE	Stockholm	Alex		map	
 20190701GB	2019_07_01 GB Coin.jpg	27.06.2019	01.07.2019	105	147	GB	Kingston Upon Hall	mother	Открытка с монетой от мамы.	coin	
 20190521IT	2019_05_21 IT Rome.jpg	21.05.2019	02.07.2019	120	170	IT	Rome	LudmilaViktor	Людмила и Виктор прислали из поездки в Рим		
 20190630LV	2019_06_30 LV Sigulda.jpg	30.06.2019	02.07.2019	147	210	LV	Sigulda	Alex, I	Гуляли по знаменитым тропинкам вблизи Сигулды. Покатались на канатном трамвайчике.		
@@ -68,3 +68,6 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images
 20190710DK4	2019_07_10 DK Our Savoir church.jpg	10.07.2019	17.07.2019	147	104	DK	Copenhagen	Alex, I	Купили в церкви Спасителя в Копенгагене, после того как забрались по винтовой наружней лестнице вокруг купола.		
 20190711DK	2019_07_11 DK Botanical garden.jpg	11.07.2019	17.07.2019	147	104	DK	Copenhagen	Alex, I	Купили в Ботаническом саду.		
 20190712DK	2019_07_12 DK Rosenborg castle.jpg	12.07.2019	17.07.2019	115	165	DK	Copenhagen	Alex, I	Купили в замке Розенборг, после осмотра королевских сокровищ.	stereo	
+20190722GB	2019_07_22 GB Geologic map.jpg	22.07.2019	25.07.2019	210	147	GB	Scarorough	mother		map	
+20190722GB2	2019_07_22 GB Old Scarorough.jpg	22.07.2019	25.07.2019	104	148	GB	Scarorough	mother			
+20190723DE	2019_07_23 DE Frankfurt Zoo.jpg	23.07.2019	23.07.2019	120	170	DE	Frankfurt	Alex, I			

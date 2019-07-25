@@ -3,7 +3,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20100825GB2	2010_08_25 EN York Minster 02.jpg	25.08.2010		148	105	GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
 20100825GB3	2010_08_25 EN York Minster 03.jpg	25.08.2010		105	148	GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
 20100825GB4	2010_08_25 EN York Minster 04.jpg	25.08.2010		105	147	GB	York	I	Были с мамой в Йорке, посетили Йоркский собор. Купила открытки на память.	church
-20100825GB5	2010_08_25 EN York Railway Museum 02.jpg	25.08.2010		105	148	GB	York	I	Были с мамой в Йорке в музее поездов.	museum
+20100825GB5	2010_08_25 EN York Railway Museum 02.jpg	25.08.2010		105	148	GB	York	I	Были с мамой в Йорке в музее поездов.	museum, map
 20100825GB6	2010_08_25 EN York Railway Museum 03.jpg	25.08.2010		148	105	GB	York	I	Были с мамой в Йорке в музее поездов.	museum
 20100831GB	2010_08_31 GB.jpg	31.08.2010		104	149	GB	Kingston Upon Hall	I	Любимому мужу с приветом из Великобритании.	
 20110624GB	2011_06_24 EN Hull museum 01.jpg	24.06.2011		105	150	GB	Kingston Upon Hall	I	Посетили с мамой художественный музей в городе Халл. Купила открытку с понравившейся картиной	museum
@@ -66,15 +66,15 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20140919SE	2014_09_22 SE Stockholm 01.jpg	19.09.2014	22.09.2014	104	147	SE	Stockholm	Alex		
 20140926GB	2014_09_26 EN Hull Trinity Church 1.jpg	23.09.2014	26.09.2014	147	104	GB	Kingston Upon Hall	mother		church, advert
 20140923GB2	2014_09_26 EN Hull Trinity Church 2.jpg	23.09.2014	26.09.2014	104	147	GB	Kingston Upon Hall	mother		church
-20140929SE	2014_09_29 SE Scandic hotel.jpg		29.09.2014	104	147	SE	Stockholm	Alex		
+20140929SE	2014_09_29 SE Scandic hotel.jpg		29.09.2014	104	147	SE	Stockholm	Alex		map
 20140926SE	2014_09_29 SE Stockholm 02.jpg	26.09.2014	29.09.2014	104	147	SE	Stockholm	Alex	Stockholm, Gamla stan	
 20141003SE	2014_10_07 SE Stockholm 03.jpg	03.10.2014	07.10.2014	115	245	SE	Stockholm	Alex	The Stockholm Globe Arena	
 20141010SE	2014_10_10 SE Stockholm 04.jpg	10.10.2014	13.10.2014	147	210	SE	Stockholm	Alex	Stockholm	
 20141014DE	2014_10_14 DE Rinteln 2014 01.jpg	14.10.2014	17.10.2014	147	104	DE	Rinteln	Alex, I	Extertal, Germany	
 20141014DE2	2014_10_14 DE Rinteln 2014 03.jpg	14.10.2014	16.10.2014	104	147	DE	Rinteln	Alex, I	Rinteln	
 20141015DE	2014_10_15 DE Extertal 2014 01.jpg	15.10.2014	17.10.2014	147	104	DE	Extertal	Alex, I	Семинар Тисье в Экстертале, Германия	
-20141015DE2	2014_10_15 DE Extertal 2014 02.jpg	15.10.2014	22.10.2014	104	147	DE	Extertal	Alex, I		
-20141017DE	2014_10_17 DE Rinteln 2014 02.jpg		17.10.2014	147	104	DE	Rinteln	Alex, I	Rinteln, Germany	
+20141015DE2	2014_10_15 DE Extertal 2014 02.jpg	15.10.2014	22.10.2014	104	147	DE	Extertal	Alex, I		map
+20141017DE	2014_10_17 DE Rinteln 2014 02.jpg		17.10.2014	147	104	DE	Rinteln	Alex, I	Rinteln, Germany	map
 20140919IL	2014_10_17 IL Israel.jpg	19.09.2014	17.10.2014	170	120	IL	Tel Aviv	JuraM		
 20141019DE	2014_10_19_DE_Lubeck.jpg	19.10.2014	27.02.2015	120	170	DE	Lubeck	JuraM		
 20141121SE	2014_11_25 SE Stockholm 05.jpg	21.11.2014	25.11.2014	104	147	SE	Stockholm	Alex	I love Sweden. Dalecarlian horse or Dala horse	
@@ -96,7 +96,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20150221LV	2015_02_21_LV_Cesis.jpg	21.02.2015		100	147	LV	Cesis	I	С ИТ отделом ездили на новогоднюю премию.	castle
 20150215LV3	2015_03_13_SE.jpg	15.02.2015	13.03.2015	150	210	LV	Riga	Alex		
 20150317SE	2015_03_20_SE_Vasa.jpg	17.03.2015	20.03.2015	150	210	SE	Stockholm	Alex	Музей Васа. Открытка с трёхмерным эффектом, поэтому так отсканировалась.	stereo, museum
-20150330IS	2015_03_30_IS.jpg	30.03.2015	09.03.2014	147	104	IS		JuraM	открытка похоже отправлена из будущего	
+20150330IS	2015_03_30_IS.jpg	30.03.2015	09.03.2014	147	104	IS		JuraM	открытка похоже отправлена из будущего	map
 20150416SE	2015_04_16_SE_Lund.jpg	16.04.2015	21.04.2015	104	147	SE	Lund	JuraM	От Юры М. из Лунда, Швеция, где он жил и работал.	
 20150427SE	2015_04_27_SE_Midsummer.jpg	27.04.2015	30.04.2015	135	240	SE	Stockholm	Alex		
 20150506SE	2015_05_06_SE.jpg	06.05.2015	11.05.2015	104	147	SE	Stockholm	Alex		
@@ -136,7 +136,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20160215SE2	2016_02_15 Tea bag.jpg	15.02.2016	18.02.2016	175	110	SE	Stockholm	Alex	Последняя из серии открыток с чаем из Швеции от Саши. Чай - ройбуш.	tea, non_paper
 20160217SE	2016_02_22 Lands of the vikings.jpg	17.02.2016	22.02.2016	182	117	SE	Stockholm	Alex	Саша прислал из Швеции. Земли викингов.	travel_poster_stockholm
 20160218SE	2016_02_22 Stockholm public library.jpg	18.02.2016	22.02.2016	147	210	SE	Stockholm	Alex	Саша прислал из Швеции. Это Стокгольмская публичная библиотека, он там был и открытку мне купил.	library
-20160131LV	2016_02_World_by_day-night.jpg	31.01.2016	02.02.2016	100	210	LV	Riga	Alex, I	Саша подарил, купил в Риге. Открытка при наклоне меняет изображение: вид на Землю днём и вид на Землю ночью. Сосканировалась, конечно, плохо, зато вживую выглядит замечательно.	stereo
+20160131LV	2016_02_World_by_day-night.jpg	31.01.2016	02.02.2016	100	210	LV	Riga	Alex, I	Саша подарил, купил в Риге. Открытка при наклоне меняет изображение: вид на Землю днём и вид на Землю ночью. Сосканировалась, конечно, плохо, зато вживую выглядит замечательно.	stereo, amp
 20160312LV	2016_03 Marupe.jpg	12.03.2016	15.03.2016	105	155	LV	Marupe	Alex, I	Сами себе послали из Марупе. Открыток с Марупе на местной почте нет, пришлось довольствоваться Латвией.	
 20160317SE	2016_03 Stockholm 700.jpg	17.03.2016	21.03.2016	182	117	SE	Stockholm	Alex		travel_poster_stockholm
 20160316SE	2016_03 Sweden Lappland.jpg	16.03.2016	21.03.2016	182	117	SE	Stockholm	Alex		travel_poster_stockholm
@@ -223,10 +223,10 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20170804DE	2017_08_04 DE.jpg		04.08.2017	122	172	DE		LudmilaViktor	Привет из Баварии от Людмилы и Виктора.	
 20170802LV2	2017_08_04 LV Valmiera 2.jpg	02.08.2017	04.08.2017	147	104	LV	Valmiera	Alex, I	То ради чего ездили в Валмиеру - отправить эту открытку.	latvia_city
 20170802LV	2017_08_04 LV Valmiera.jpg	02.08.2017	03.04.2017	105	150	LV	Valmiera	Alex, I	Послали себе из Валмиеры. Вот такой там мост с рёбрами (это фонари)	
-20170815LV	2017_08_15 LV 3D.jpg		15.08.2017			LV	Riga	Alex	Трёхмерная открытка-карта Латвии. От Саши.	volume
+20170815LV	2017_08_15 LV 3D.jpg		15.08.2017			LV	Riga	Alex	Трёхмерная открытка-карта Латвии. От Саши.	volume, map
 20170831LV	2017_09_01 LV Smiltene.jpg	31.08.2017	01.09.2017	105	150	LV	Smiltene	Aliona		
 20170903NO	2017_09_03 NO.jpg	03.09.2017	06.09.2017	104	147	NO	Oslo	I	Открытка из командировки в Норвегию. Показывает как солнце не заходит за полярным кругом.	
-20170905NO	2017_09_05 NO.jpg	05.09.2017	08.09.2017	147	104	NO	Oslo	I	Открытка из командировки в Норвегию. Примечательна тем что на ней изображено много достопримечательностей, только без лупы не разглядеть.	
+20170905NO	2017_09_05 NO.jpg	05.09.2017	08.09.2017	147	104	NO	Oslo	I	Открытка из командировки в Норвегию. Примечательна тем что на ней изображено много достопримечательностей, только без лупы не разглядеть.	map
 20170918LV	2017_09_19 LV Lighthouse.jpg	18.09.2017	19.09.2017	106	147	LV	Riga	Alex	3D открытка с маяком от Саши. Это она при сканировании так странно выглядит, а на самом деле 3D.	stereo
 20170924LV	2017_09_26 Baltu rotas.jpg	24.09.2017	28.09.2017	150	100	LV	Turaida	Alex, I	Рекламная открытка из магазина Baltu Rotas, который находится в башне Турайдского замка.	advert
 20170923LV	2017_09_26 Dzivnieku patversme.jpg	23.09.2017	25.09.2017	105	147	LV	Riga	Alex, I	Рекламная открытка из приюта "Dzivnieku patversme". Обратите внимание фотография Хелены Эрте.	advert
@@ -277,7 +277,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20180720LV	2018_07_23 LV Riga Doms.jpg	20.07.2018	23.07.2018	149	99	LV	Riga	Alex, I	Побывали на органном концерте в Домском соборе.	church
 20180724IT	2018_07_24 Tirano.jpg	24.07.2018		147	103	IT	Tirano	LudmilaViktor	Из Тирано от Виктора и Людмилы.	
 20180725IT	2018_07_25 IT Milano.jpg	25.07.2018		120	170	IT	Milano	LudmilaViktor		
-20180725IT2	2018_07_25 Lago di Como.jpg	25.07.2018		103	147	IT		LudmilaViktor	С озера Como от Виктора и Людмилы.	
+20180725IT2	2018_07_25 Lago di Como.jpg	25.07.2018		103	147	IT		LudmilaViktor	С озера Como от Виктора и Людмилы.	map
 20180725IT3	2018_07_25 Lago di Garda.jpg	25.07.2018		120	170	IT		LudmilaViktor	С озера Garda. От Виктора и Людмилы.	
 20180726DE	2018_07_26 Chur.jpg	26.07.2018	30.07.2018	104	148	DE	Chur	LudmilaViktor	От Виктора и Людмилы из Chur, Немецкая Швейцария	
 20180727DE	2018_07_27 Amberg.jpg	27.07.2018		104	148	DE	Amberg	LudmilaViktor	От Виктора и Людмилы из Амберга, Германия	
@@ -285,7 +285,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20180727CH	2018_07_27 CH.jpg	27.07.2018	31.07.2018	104	147	CH		LudmilaViktor	От Виктора и Людмилы из Саксонской Швейцарии и Национального парка	
 20180815GR	2018_08 Crete Aliona.jpg	15.08.2018		160	110	GR	Crete	Aliona, MihailT	Открытка с Крита от Молодых	
 20180815GR2	2018_08 Crete Mama.jpg	15.08.2018		105	148	GR	Crete	mother	Открытка с Крита от мамы	
-20180726CH	2018_08_01 CH.jpg	26.07.2018	01.08.2018	153	200	CH		LudmilaViktor	Фигурная открытка из Швейцарии от Виктора и Людмилы.	shape
+20180726CH	2018_08_01 CH.jpg	26.07.2018	01.08.2018	153	200	CH		LudmilaViktor	Фигурная открытка из Швейцарии от Виктора и Людмилы.	shape, map
 20180726CH2	2018_08_01 Liechtenstein.jpg	26.07.2018	01.08.2018	139	200	CH	Liechtenstein	LudmilaViktor	Фигурная открытка из Швейцарии от Виктора и Людмилы.	shape
 20180803LV	2018_08_03 LV Daugavpils wooden.jpg		03.08.2018	106	154	LV	Daugavpils	Aliona	Открытка от Алёны из Даугавпилса. Изготовлена из тонкого шпона, поверху напечатано изображение.	wood, non_paper
 20180808GB	2018_08_08 GB Anniversary.jpg		08.08.2018	104	147	GB	Kingston Upon Hall	mother	От мамы, поздравление с юбилеем. Правда не 70-летним, а только с 10-летним.	coin
@@ -307,9 +307,9 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20181102GB	2018_11_02 GB London.jpg	02.11.2018	12.11.2018	120	170	GB	London	I	Я прислала из командировки в Лондоне. Такой открытки еще не было: открытка-календарь.	
 20181106SE2	2018_11_06 SE Solna.jpg	06.11.2018	12.11.2018	105	215	SE	Stockholm	Alex	Саша прислал из командировки в Швецию.	
 20181106SE	2018_11_06 SE.jpg		06.11.2018			SE	Stockholm	Alex	Саша прислал из командировки в Швецию.	pickmotion.com
-20181113SE	2018_11_13 SE.jpg	13.11.2018	14.11.2018	114	147	SE	Stockholm	Alex	Саша прислал из командировки в Швецию. У автора какая-то тяга к обезъянам: мало того что перечислены виды обезьян, так еще и многие антропоморфные персонажи тоже обезъяны.	
+20181113SE	2018_11_13 SE.jpg	13.11.2018	14.11.2018	114	147	SE	Stockholm	Alex	Саша прислал из командировки в Швецию. У автора какая-то тяга к обезъянам: мало того что перечислены виды обезьян, так еще и многие антропоморфные персонажи тоже обезъяны.	alphabet
 20181115SE	2018_11_15 SE.jpg	15.11.2018	18.11.2018	140	140	SE	Stockholm	Alex	Саша прислал из командировки в Швецию.	
-20181119SE	2018_11_19 SE.jpg	19.11.2018				SE	Stockholm	Alex	Саша прислал из командировки в Швецию.	volume
+20181119SE	2018_11_19 SE.jpg	19.11.2018				SE	Stockholm	Alex	Саша прислал из командировки в Швецию.	volume, map
 20181121SE	2018_11_21 SE.jpg	21.11.2018	26.11.2018	105	147	SE	Stockholm	Alex		
 20181122JP2	2018_11_22 JP Aquarium.jpg		22.11.2018	105	150	JP	Okinawa	OlgaTk	Ольга привезла из путешествия на Окинаву, где сходила в местный аквариум.	
 20181122JP	2018_11_22 JP Okinava.jpg		22.11.2018	148	100	JP	Okinawa	OlgaTk	Ольга привезла из путешествия на Окинаву.	
@@ -321,7 +321,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags
 20181212SE	2018_12_12 SE.jpg	04.12.2018	12.12.2018	105	148	SE	Stockholm	Alex		
 20181214GB	2018_12_14 GB Liverpool.jpg		14.12.2018	105	148	GB	Liverpool	mother		
 20181214SE2	2018_12_14 SE Airbaltic.jpg	13.12.2018		102	148	SE	Stockholm	Alex	Рекламная открытка Аирбалтика из очередной командировки	airbaltic
-20181214SE	2018_12_14 SE.jpg	12.12.2018	14.12.2018	120	170	SE	Stockholm	Alex		volume
+20181214SE	2018_12_14 SE.jpg	12.12.2018	14.12.2018	120	170	SE	Stockholm	Alex		volume, map
 20181215LV	2018_12_15 LV Baltu Rota.jpg	15.12.2018		105	148	LV	Riga	Alex, I	Зашли в магазин Балту Ротас и купили мне украшение на шею с орнаментом как на открытке, только с синим камнем	advert
 20181218SE	2018_12_18 SE.jpg	17.12.2018	18.12.2018	105	148	SE	Stockholm	Alex	Шведская новогодня открытка от Саши.	
 20181219SE	2018_12_19 SE.jpg	19.12.2018	19.12.2018			SE	Stockholm	Alex	Посылаемый пакетик со сладостями.	volume, non_paper
