@@ -27,6 +27,13 @@ public class PostcardResource
     
     private static final Comparator BY_DATE = (Comparator<Postcard>) (Postcard p1, Postcard p2) -> 
     {
+        Date date2 = p2.getDateReceived() == null ? p2.getDateSent() : p2.getDateReceived();
+        Date date1 = p1.getDateReceived() == null ? p1.getDateSent() : p1.getDateReceived();
+        return date2.compareTo(date1);
+    };
+    
+    private static final Comparator BY_ID = (Comparator<Postcard>) (Postcard p1, Postcard p2) -> 
+    {
         return p2.getId().compareTo(p1.getId());
     };
     
@@ -50,7 +57,7 @@ public class PostcardResource
         {
             postcardListOther.addAll(readTsv("/Postcard collection - other.tsv"));
             postcardListOther.forEach(postcard -> postcard.setMine(false));
-            postcardListOther.sort(BY_DATE);
+            postcardListOther.sort(BY_ID);
         }
         return postcardListOther;
     }
@@ -167,8 +174,11 @@ public class PostcardResource
                 if (!data[3].isEmpty())
                 {
                     postcard.setDateReceived(Date.from(
-                            LocalDate.parse(data[3], formatter)
-                            .atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+                                LocalDate.parse(data[3], formatter)
+                                .atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+                }
+                else {
+                    LOG.warn("data id " + postcard.getId());
                 }
                 if (!data[4].isEmpty() && !data[5].isEmpty())
                 {
