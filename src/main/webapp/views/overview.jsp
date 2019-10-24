@@ -13,7 +13,7 @@
         <jsp:include page="parts/bundles.jsp" />
         <jsp:include page="parts/menu.jsp" />
         <div class="container">
-            ${count} postcards
+            ${count} <fmt:message key="postcards" bundle="${texts}"/>
             <jsp:include page="parts/navigation.jsp" />
             <c:set var="collCount" value="4" />
             <c:forEach var="postcard" items="${list}" varStatus="count">
@@ -28,7 +28,7 @@
                             <div class="caption">
                               <a href="/country/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>
                               <br />
-                              from  
+                              <fmt:message key="overview.from" bundle="${texts}"/>  
                               <c:forEach var="sender" items="${postcard.senders}">
                                 <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>, 
                               </c:forEach>

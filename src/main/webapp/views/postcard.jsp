@@ -34,19 +34,19 @@
                         <div class="col-sm-6">
                             <table class="table table-hover">
                                 <tr>
-                                    <td>Date sent</td>
+                                    <td><fmt:message key="dateSent" bundle="${texts}"/></td>
                                     <td><fmt:formatDate value="${postcard.dateSent}" pattern="dd MMM yyyy"/></td>
                                 </tr>
                                 <tr>
-                                    <td>Date received</td>
+                                    <td><fmt:message key="dateReceived" bundle="${texts}"/></td>
                                     <td><fmt:formatDate value="${postcard.dateReceived}" pattern="dd MMM yyyy"/></td>
                                 </tr>
                                 <tr>
-                                    <td>From</td>
+                                    <td><fmt:message key="from" bundle="${texts}"/></td>
                                     <td><fmt:message key="${postcard.country}" bundle="${country}"/>, ${postcard.city}</td>
                                 </tr>
                                 <tr>
-                                    <td>Sender</td>
+                                    <td><fmt:message key="sender" bundle="${texts}"/></td>
                                     <td>
                                         <c:forEach var="sender" items="${postcard.senders}">
                                             <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>, 
@@ -54,15 +54,15 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Size</td>
+                                    <td><fmt:message key="size" bundle="${texts}"/></td>
                                     <td>${postcard.height} x ${postcard.width}</td>
                                 </tr>
                                 <tr>
-                                    <td>Notes</td>
+                                    <td><fmt:message key="notes" bundle="${texts}"/></td>
                                     <td>${fn:replace(postcard.description, '|', '<br />')}</td>
                                 </tr>
                                 <tr>
-                                    <td>Tags</td>
+                                    <td><fmt:message key="tags" bundle="${texts}"/></td>
                                     <td>
                                         <c:if test="${!empty postcard.tags}">
                                             <c:forEach var="tag" items="${postcard.tags}">
@@ -79,7 +79,7 @@
                         <div class="col-sm-6">
                             <table class="table table-hover">
                                 <tr>
-                                    <td>From</td>
+                                    <td><fmt:message key="sender" bundle="${texts}"/></td>
                                     <td>
                                         <c:forEach var="sender" items="${postcard.senders}">
                                             <fmt:message key="${sender}" bundle="${senderMap}"/>, 
@@ -87,11 +87,11 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Size</td>
+                                    <td><fmt:message key="size" bundle="${texts}"/></td>
                                     <td>${postcard.height} x ${postcard.width}</td>
                                 </tr>
                                 <tr>
-                                    <td>Notes</td>
+                                    <td><fmt:message key="notes" bundle="${texts}"/></td>
                                     <td>${fn:replace(postcard.description, '|', '<br />')}</td>
                                 </tr>
                             </table>

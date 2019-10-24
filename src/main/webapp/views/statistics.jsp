@@ -15,13 +15,13 @@
         <div class="container">
             <ul class="nav nav-tabs">
                 <li <c:if test="${p eq 'sender'}">class="active"</c:if>>
-                    <a href="/statistics/sender">by sender</a>
+                    <a href="/statistics/sender"><fmt:message key="bySender" bundle="${texts}"/></a>
                 </li>
                 <li <c:if test="${p eq 'tag'}">class="active"</c:if>>
-                    <a href="/statistics/tag">by tag</a>
+                    <a href="/statistics/tag"><fmt:message key="byTag" bundle="${texts}"/></a>
                 </li>
                 <li <c:if test="${p eq 'country'}">class="active"</c:if>>
-                    <a href="/statistics/country">by country</a>
+                    <a href="/statistics/country"><fmt:message key="byCountry" bundle="${texts}"/></a>
                 </li>
 <!--                <li <c:if test="${p eq 'size'}">class="active"</c:if>>
                     <a href="/statistics/size">by size</a>

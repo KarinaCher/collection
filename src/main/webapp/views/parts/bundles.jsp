@@ -4,3 +4,4 @@
 <fmt:setBundle basename="TagMap" var="tagMap" scope="application"/>
 <fmt:setBundle basename="TagDescrMap" var="tagDescrMap" scope="application"/>
 <fmt:setBundle basename="SenderMap" var="senderMap" scope="application"/>
+<fmt:setBundle basename="TextMap" var="texts" scope="application"/>
