@@ -1,6 +1,9 @@
 package entity;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import static java.util.Calendar.JANUARY;
+import static java.util.Calendar.YEAR;
 import java.util.Date;
 import java.util.List;
 
@@ -137,5 +140,27 @@ public class Postcard
     public void setMine(boolean mine)
     {
         this.mine = mine;
+    }
+    
+    public Date getDate() 
+    {
+        if (getDateReceived() != null) {
+            return getDateReceived();
+        }
+        else if (getDateSent() != null) {
+            return getDateSent();
+        }
+        else {
+            Calendar c = Calendar.getInstance();
+            c.set(1900, JANUARY, 1);
+            return c.getTime();
+        }
+    }
+    
+    public String getYear() 
+    {
+        Calendar c = Calendar.getInstance();
+        c.setTime(getDate());
+        return String.valueOf(c.get(YEAR));
     }
 }

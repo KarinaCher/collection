@@ -26,7 +26,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20190420GB	2019_04_20 GB Newcastle.jpg	20.04.2019	25.04.2019	104	147	GB	Newcastle	mother				
 20190426GB	2019_04_26 GB Newcastle.jpg		26.04.2019	100	150	GB	Newcastle	mother	John Wilson Carmichael|Newcastle from St. Ann's.			
 20190425LV	2019_04_25 LV Smiltene.jpg	25.04.2019	26.04.2019	105	150	LV	Smiltene	Aliona	В Смилтене выпускают хорошие открытки.			
-20190423SE	2019_04_23 SE Glad Pask.jpg	23.04.2019	26.04.2019	166	115	SE	Stockholm	Alex		shape		
+20190423SE	2019_04_23 SE Glad Pask.jpg	23.04.2019	26.04.2019	166	115	SE	Stockholm	Alex		shape, easter		
 20190507SE	2019_05_07 SE Cows.jpg	07.05.2019	10.05.2019	166	116	SE	Kista	Alex				
 20190516GB	2019_05_16 GB Amy Johnson.jpg		16.05.2019	105	148	GB	Kingston Upon Hall	mother	Э́ми Джо́нсон (1 июля 1903 — 5 января 1941) — женщина-пилот Великобритании, первая в мире женщина, совершившая одиночный перелёт из Англии в Австралию. Родилась в Халле.			
 20190514SE	2019_05_14 SE Gamla Stan.jpg	14.05.2019	17.05.2019	180	130	SE	Kista	Alex		travel_poster_stockholm		
@@ -82,7 +82,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20190721DE	2019_07_21 DE Rainbow lion.jpg	21.07.2019	26.07.2019	104	147	DE	Frankfurt	Alex, I	Открытка с мероприятия "Rainbow lion"			
 20190722DE	2019_07_22 DE Experimenta.jpg	22.07.2019	26.07.2019	104	147	DE	Frankfurt	Alex, I	Открытка из научного центра EXPERIMINTA	museum		
 20190722DE2	2019_07_22 DE Legoland.jpg	22.07.2019	26.07.2019	120	170	DE	Munchen	Aliona, MihailT	Открытка из Мюнхенского Леголенда.			
-20190722DE3	2019_07_22 DE Munchen Hofbrauhaus.jpg	22.07.2019	26.07.2019	123	174	DE	Munchen	Aliona, MihailT	Открытка из знаменитого мюнхенского Hofbrauhaus.			
+20190722DE3	2019_07_22 DE Munchen Hofbrauhaus.jpg	22.07.2019	26.07.2019	123	174	DE	Munchen	Aliona, MihailT	Открытка из знаменитого мюнхенского Hofbrauhaus.	beer		
 20190722DE4	2019_07_22 DE BMW Cat.jpg	22.07.2019	26.07.2019	104	147	DE	Munchen	Aliona, MihailT	Открытка из музея BMW.	stereo		
 20190722DE5	2019_07_22 DE BMW Fractal.jpg	22.07.2019	26.07.2019	104	147	DE	Munchen	Aliona, MihailT	Открытка из музея BMW.	stereo		
 20190722DE6	2019_07_22 DE Frankfurt Palmengarten.jpg	22.07.2019	26.07.2019	104	147	DE	Frankfurt	Alex, I	Открытка из ботанического сада во Франкфурте. Большая террирория, красиво ухоженная.			
@@ -103,6 +103,6 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20191106SE	2019_11_06 SE Horses.jpg	06.11.2019	11.11.2019	104	147	SE	Solna	I				
 20191107SE	2019_11_07 SE December.jpg	07.11.2019	12.11.2019	147	104	SE	Solna	I		calendar		
 20191107LV	2019_11_07 LV Lauma.jpg	07.11.2019	13.11.2019	104	147	LV	Riga	Alex	Рекламная открытка из магазина Lauma	advert		
-20191124LV	2019_11_24 LV Selga.jpg	24.11.2019	26.11.2019	104	147	LV	Riga	Aliona	Новогодняя рекламная открытка печеньев Selga. А марку на почте подменили - беспрециндентный случай.	advert		
-20191213LV	2019_12_13 LV Maxima.jpg	13.12.2019	16.12.2019	104	147	LV	Riga	Aliona	Рекламная открытка из Maxima. Алене дали за покупки. И даже пересылка уже оплачена!	advert		
+20191124LV	2019_11_24 LV Selga.jpg	24.11.2019	26.11.2019	104	147	LV	Riga	Aliona	Новогодняя рекламная открытка печеньев Selga. А марку на почте подменили - беспрециндентный случай.	advert, new_year		
+20191213LV	2019_12_13 LV Maxima.jpg	13.12.2019	16.12.2019	104	147	LV	Riga	Aliona	Рекламная открытка из Maxima. Алене дали за покупки. И даже пересылка уже оплачена!	advert, new_year		
 20191218SE	2019_12_18 SE Blue-tit.jpg	18.12.2019	20.12.2019	167	117	SE	Solna	Alex		shape, new_year		

@@ -12,6 +12,8 @@ import java.util.Locale;
 import entity.Postcard;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -128,7 +130,8 @@ public class PostcardResource
             if (postcard.getCountry().equals(tagName)
                     || (postcard.getCity() != null && postcard.getCity().equals(tagName))
                     || postcard.getSenders().contains(tagName)
-                    || postcard.getTags().contains(tagName))
+                    || postcard.getTags().contains(tagName)
+                    || postcard.getYear().equals(tagName))
             {
                 result.add(postcard);
             }
@@ -216,6 +219,7 @@ public class PostcardResource
         
         return list;
     }
+    private static final String DATE_FORMAT = "dd.MM.yyyy";
 
     private static void readMultiValues(String field, List<String> variableList)
     {

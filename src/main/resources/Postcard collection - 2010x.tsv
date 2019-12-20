@@ -241,8 +241,8 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20171213SE	2017_12_18 SE Tree.jpg	13.12.2017	18.12.2017	132	185	SE	Stockholm	Alex	Генеалогической дерево шведской королевской семьи.			
 20171229LV	2017_12_29 New year.jpg		29.12.2017	155	105	LV	Riga	I	Поздравила Сашу с Наступающим годом.	new_year		
 20171231DE	2017_12_31 Munchen 2.jpg		31.12.2017	174	122	DE	Munchen	MihailT	Открытка из Мюнхена от Михаила наконец-то принесена в мой дом.			
-20171231DE2	2017_12_31 Munchen.jpg		31.12.2017	122	174	DE	Munchen	MihailT	И ещё одна открытка из Мюнхена от Михаила			
-20171231LV	2017_21_31 LV.jpg		31.12.2017	114	170	LV	Riga	MihailT, Aliona				
+20171231DE2	2017_12_31 Munchen.jpg		31.12.2017	122	174	DE	Munchen	MihailT	И ещё одна открытка из Мюнхена от Михаила	beer		
+20171231LV	2017_21_31 LV.jpg		31.12.2017	114	170	LV	Riga	MihailT, Aliona		new_year		
 20180101LV	2018_01_01 LV.jpg	01.01.2018				LV	Riga	Alex	Поздравительная открытка от Саши. |Это авторская открытка, другие работы можно посмотреть на сайте автора lindawangstudios.com	new_year		
 20180111LV	2018_01_12 LV Lnmm.jpg	11.01.2018	15.01.2018	150	180	LV	Riga	Alex	Открытка из Латвийского национального художественного музея. Ценный экземпляр, потому что по своей воле я вряд ли туда загляну.	museum		
 20180301LV	2018_03_01 LV.jpg	01.03.2018		150	100	LV	Riga	Alex				
@@ -326,4 +326,4 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20181218SE	2018_12_18 SE.jpg	17.12.2018	18.12.2018	105	148	SE	Stockholm	Alex	Шведская новогодня открытка от Саши.	new_year		
 20181219SE	2018_12_19 SE.jpg	19.12.2018	19.12.2018			SE	Stockholm	Alex	Посылаемый пакетик со сладостями.	volume, non_paper		
 20181221LV	2018_12_21 LV Secret Santa.jpg		21.12.2018	104	148	LV	Riga	VikaTi	Открытка была в подарке от Секретного Санты (которого я по открытке и угадала). Ручная работа, такие открытки делает ее мама.	new_year		
-20181231LV	2018_12_31 LV.jpg	31.12.2018				LV	Riga	Aliona, MihailT				
+20181231LV	2018_12_31 LV.jpg	31.12.2018				LV	Riga	Aliona, MihailT		new_year		
