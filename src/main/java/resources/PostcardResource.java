@@ -220,7 +220,9 @@ public class PostcardResource
     private static void readMultiValues(String field, List<String> variableList)
     {
         String[] tags = field.split(", ");
-        variableList.addAll(Arrays.asList(tags));
+        Arrays.stream(tags)
+                .filter(tag -> !tag.isEmpty())
+                .forEach(tag -> variableList.add(tag));
     }
     
 }
