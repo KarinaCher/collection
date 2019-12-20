@@ -1,11 +1,11 @@
 ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	Origin country
 20190104LV	2019_01_04 LV Dagnija.jpg	04.01.2019				LV	Riga	Dagnija				
-20190115SE	2019_01_15 SE.jpg	15.01.2019		148	105	SE	Stockholm	Alex	Послал из Швеции, а купил на рождественском рынке в Риге.			
-20190121SE	2019_01_21 SE.jpg	21.01.2019		105	148	SE	Stockholm	Alex	Послал из Швеции, а купил на рождественском рынке в Риге.			
+20190115SE	2019_01_15 SE.jpg	15.01.2019		148	105	SE	Stockholm	Alex	Послал из Швеции, а купил на рождественском рынке в Риге.			LV
+20190121SE	2019_01_21 SE.jpg	21.01.2019		105	148	SE	Stockholm	Alex	Послал из Швеции, а купил на рождественском рынке в Риге.			LV
 20190125SE	2019_01_25 SE.jpg	25.01.2019		105	148	SE	Stockholm	Alex				
 20190129SE	2019_01_29 SE.jpg	29.01.2019		105	148	SE	Stockholm	Alex				
-20190201LV	2019_02_01 LV.jpg	01.02.2019	05.02.2019	105	148	SE	Stockholm	Alex	Шведская открытка, послана из Латвии			
-20190205SE	2019_02_05 SE Lighthouse.jpg	05.02.2019	08.02.2019	105	148	SE	Stockholm	Alex	Послал из Швеции, а купил на рождественском рынке в Риге.			
+20190201LV	2019_02_01 LV.jpg	01.02.2019	05.02.2019	105	148	SE	Stockholm	Alex	Шведская открытка, послана из Латвии			LV
+20190205SE	2019_02_05 SE Lighthouse.jpg	05.02.2019	08.02.2019	105	148	SE	Stockholm	Alex	Послал из Швеции, а купил на рождественском рынке в Риге.			LV
 20190205ES	2019_02_05 ES Tenerife.jpg	05.02.2019	12.02.2019	150	150	ES	Tenirife	VikaTi	Прислала с Тенирифе, где отдыхала			
 20190213SE	2019_02_13 SE.jpg	13.02.2019	18.02.2019	105	148	SE	Stockholm	Alex				
 20190216SE	2019_02_16 SE.jpg	16.02.2019	19.02.2019	105	148	SE	Stockholm	Alex				
@@ -45,7 +45,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20190601SE4	2019_06_01 SE National museum fasade.jpg	01.06.2019	05.06.2019	105	147	SE	Stockholm	I	Фасад Национального художественного музея в Стокгольме.	museum		
 20190602SE	2019_06_02 SE Technic museum vintage.jpg	02.06.2019	05.06.2019	150	210	SE	Stockholm	I	Музей техники в Стокгольме.	museum		
 20190602SE2	2019_06_02 SE Technic museum 3D.jpg	02.06.2019	05.06.2019	105	148	SE	Stockholm	I	Музей техники в Стокгольме.	museum, stereo		
-20190614LV	2019_06_14 LV.jpg		14.06.2019	167	118	LV	Riga	I	Поздравила Сашу с днем рождения			
+20190614LV	2019_06_14 LV.jpg		14.06.2019	167	118	LV	Riga	I	Поздравила Сашу с днем рождения	birthday		
 20190614GB	2019_06_14 GB Niagara.jpg		14.06.2019	100	139	GB	Kingston Upon Hall	mother	Открытку привезла маме подруга из США, а мама переслала ее мне.			
 20190614SE	2019_06_14 SE Katarinahissen.jpg	14.06.2019	18.06.2019	180	130	SE	Stockholm	I		travel_poster_stockholm		
 20190616LV	2019_06_16 LV Zila govs.jpg	16.06.2019	18.06.2019	160	104	LV	Riga	Alex, I	Пообедали в ресторане "Zila govs" на подарочную карту, которую Саше подарили на день рождения. А в ресторане были рекламные открытки.	advert		
@@ -105,3 +105,4 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20191107LV	2019_11_07 LV Lauma.jpg	07.11.2019	13.11.2019	104	147	LV	Riga	Alex	Рекламная открытка из магазина Lauma	advert		
 20191124LV	2019_11_24 LV Selga.jpg	24.11.2019	26.11.2019	104	147	LV	Riga	Aliona	Новогодняя рекламная открытка печеньев Selga. А марку на почте подменили - беспрециндентный случай.	advert		
 20191213LV	2019_12_13 LV Maxima.jpg	13.12.2019	16.12.2019	104	147	LV	Riga	Aliona	Рекламная открытка из Maxima. Алене дали за покупки. И даже пересылка уже оплачена!	advert		
+20191218SE	2019_12_18 SE Blue-tit.jpg	18.12.2019	20.12.2019	167	117	SE	Solna	Alex		shape,new_year		
