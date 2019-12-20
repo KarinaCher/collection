@@ -45,7 +45,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20130622AT	2013_06_26 AT Vienna.jpg	22.06.2013	26.06.2013	147	104	AT	Vienna	LudmilaViktor	Прислали из Вены Сашины родители			
 20130815LV	2013_08_15 LV Daugavpils.jpg		15.08.2013	105	155	LV	Daugavpils	Aliona, MihailT	Прислали Молодые из Даугавпилса. Daugavpils cietoksnis. Cietokšņa redušu šaujamlūkas. Birķeneļi. Borisa un Gļeba pareizticīgo katedrāle. Novadpētniecības un mākslas muzejs. Pieminekļis dzejniekam A. Pumpuram. Tilts pār Daugavu			
 20130925GB	2013_09_25 EN.jpg		25.09.2013	114	160	GB		mother		beer		
-20140101LV	2014 LV Aikidojo New year.jpg	01.01.2014		170	120	LV	Riga	I	Aikidojo выпустило новогоднюю поздравительную открытку.	aikido,new_year		
+20140101LV	2014 LV Aikidojo New year.jpg	01.01.2014		170	120	LV	Riga	I	Aikidojo выпустило новогоднюю поздравительную открытку.	aikido, new_year		
 20140327LV	2014_03_27 LV Latvian about himselfs.jpg		27.03.2014	145	104	LV	Riga	I	Оказалось, это небольшая группа энтузиастов, выпускающая забавные и интресные открытки. Я уже обращала на них внимание, уж очень они необычные и симпатичные (с латышскими знаками, например). На сайте нашлась одна, которая не в бровь, а в глаз "Латыши про себя (с городостью :)"			
 20140419LV	2014_04_19 LV Kuldiga 01.jpg	19.04.2014		104	154	LV	Kuldiga	Alex, I	Kuldīga. Tilts par Ventu. Kuldīgas pils sarga mājiņa. Kuldīgas veca koka apbūve			
 20140522LV	2014_05_22 Maximum card LV.jpg	22.05.2014	26.05.2014	147	104	LV	Riga	I	Максимум карта которую я послала по почте, а марку не погасили	maksimum_card		
@@ -86,7 +86,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20150104BR	2015_01_04_BR_Iguazu Falls.jpg	04.01.2015	06.02.2015	120	170	BR		JuraM	из Южной Америки на границе Бразилии и Аргентины.			
 20141231RU	2015_01_10 RU Tomsk Tower 1.jpg	31.12.2014	10.01.2015	147	104	RU	Томск	AleksanderLunev	Открытка из Томской башни http://tomsktower.ru	project		
 20141231RU2	2015_01_10 RU Tomsk Tower 2.jpg	31.12.2014	10.01.2015	147	104	RU	Томск	AleksanderLunev	Открытка из Томской башни http://tomsktower.ru	project		
-20150101LV	2015 LV Aikidojo New year.jpg	01.01.2015		163	164	LV	Riga	I	Aikidojo выпустило новогоднюю поздравительную открытку.	aikido,new_year		
+20150101LV	2015 LV Aikidojo New year.jpg	01.01.2015		163	164	LV	Riga	I	Aikidojo выпустило новогоднюю поздравительную открытку.	aikido, new_year		
 20150112AQ	2015_01_12_AQ.jpg	12.01.2015	23.02.2015	104	152	AQ		JuraM	из Антарктиды			
 20150119GB	2015_01_23_EN_Blackpool.jpg	19.01.2015	23.01.2015	100	150	GB	Blackpool	mother	От мамы из Блекпула, Англия где она отдыхала. Окрытка с фигурным краем.	shape		
 20150127SE	2015_01_27_Airbaltic.jpg	27.01.2015	02.02.2015	102	148	SE		Alex	Рекламная открытка Airbaltic. Вообще-то у открыток и вторая сторона интересная, у этой, например там земной шар изображён и место только для адреса.	airbaltic		
@@ -128,7 +128,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20151204SE	2015_12_14 Stockholm Christmas.jpg	09.12.2015	14.12.2015	100	145	SE	Stockholm	Alex	Металлическая открытка с видом Стокгольма в Рождество.	metal, non_paper		
 20151219SM	2015_12_19 San Marino.jpg	19.12.2015	06.01.2016	104	147	SM		JuraM				
 20151224LV	2015_12_30 Kuldiga.jpg	24.12.2015	30.12.2015	147	104	LV	Kuldiga	Alex, I		latvia_city, maksimum_card		
-20160109LV	2016_01_09 aikidojo.jpg		09.01.2016	160	160	LV	Riga	I	Новогодняя открытка от aikidojo 2016 год	aikido,new_year		
+20160109LV	2016_01_09 aikidojo.jpg		09.01.2016	160	160	LV	Riga	I	Новогодняя открытка от aikidojo 2016 год	aikido, new_year		
 20160112LV	2016_01_13 Shodan.jpg	13.01.2016	15.01.2016	160	120	LV	Riga	Alex		stereo		
 20160121IT	2016_01_21 Canazei.jpg	14.01.2016	21.01.2016	120	170	IT	Canazei	JuraM	Привет из Доломитов (https://en.wikipedia.org/wiki/Dolomites) от Юры М.			
 20160127SE	2016_01_Stockholm.jpg	27.01.2016	01.02.2016	175	110	SE	Stockholm	Alex	Открытка с зелёным чаем из Стокгольма от мужа. Вид на Ратушу	tea, non_paper		
@@ -184,7 +184,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20161031SE	2016_11_03 SE.jpg	31.10.2016	03.11.2016	115	165	SE	Stockholm	Alex	Что мы знаем о Швеции: Скол - что-то вроде тоста и приглашения осушить кубки. Праздник летнего солнцестояния. Солнце в солнцестояние. Шведские девушки. Стокгольм. Далекарлийская лошадка. Архипелаг. Красные дома. Праздник рака. Шведский новогодний стол Юлборд. Люция. Новогодняя елка и гномик с подарками			
 20161122LV	2016_11_23 LV.jpg	22.11.2016	23.11.2016	105	155	LV	Talsi	Aliona				
 20161125LV	2016_11_29 LV.jpg	25.11.2016	29.11.2016	100	150	LV	Riga	Alex				
-20161201RU	2016_12_01 RU.jpg		01.12.2016	147	104	RU		PolinaNesterova	Открытка из проекта "12 вкусных месяцев" https://planeta.ru/campaigns/vanillabrushcalendar	project,calendar		
+20161201RU	2016_12_01 RU.jpg		01.12.2016	147	104	RU		PolinaNesterova	Открытка из проекта "12 вкусных месяцев" https://planeta.ru/campaigns/vanillabrushcalendar	project, calendar		
 20161212SE	2016_12_15 SE.jpg	12.12.2016	15.12.2016	100	145	SE	Stockholm	Alex		metal, non_paper		
 20161215LV	2016_12_19 LV.jpg	15.12.2016	19.12.2016	110	150	LV	Riga	I	От меня из рождественского филиала латвийской почты на Домской площади. Издательство латвийской почты.			
 20161214SE	2016_12_19 SE.jpg	14.12.2016	19.12.2016	165	117	SE	Stockholm	Alex				
