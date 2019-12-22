@@ -17,9 +17,7 @@ public class TagResource
     private final static Comparator<TagInfo> BY_COUNT_DESC = 
             (TagInfo o1, TagInfo o2) -> o1.getCount().compareTo(o2.getCount()) * -1;
     
-    private final static Comparator<TagInfo> BY_NAME = Comparator
-            .comparing(TagInfo::getName)
-            .reversed();
+    private final static Comparator<TagInfo> BY_NAME = Comparator.comparing(TagInfo::getName);
     
     public List<TagInfo> getTagsBySender(List<Postcard> postcardList)
     {
@@ -55,15 +53,15 @@ public class TagResource
     }
     
     public List<TagInfo> getTagsByName(List<Postcard> postcardList) {
-        return sortTags(tagsByName, postcardList, BY_NAME);
+        return getTagsSorted(tagsByName, postcardList, BY_NAME);
     }
     
     public List<TagInfo> getTags(List<Postcard> postcardList)
     {
-        return sortTags(tags, postcardList, BY_COUNT_DESC);
+        return getTagsSorted(tags, postcardList, BY_COUNT_DESC);
     }
     
-    public List<TagInfo> sortTags(List<TagInfo> listToSort, List<Postcard> postcardList, Comparator sortParam)
+    public List<TagInfo> getTagsSorted(List<TagInfo> listToSort, List<Postcard> postcardList, Comparator<TagInfo> sortParam)
     {
         if (listToSort.isEmpty())
         {
@@ -102,7 +100,7 @@ public class TagResource
                     .forEach((postcard) -> updateTagCount(postcard.getYear(), tagsByYear)
             );
 
-            tagsByYear.sort(BY_NAME);
+            tagsByYear.sort(BY_NAME.reversed());
         }
         
         return tagsByYear;
