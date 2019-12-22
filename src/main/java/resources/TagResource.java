@@ -5,8 +5,6 @@ import java.util.List;
 import entity.Postcard;
 import entity.TagInfo;
 import java.util.ArrayList;
-import java.util.Calendar;
-import static java.util.Calendar.YEAR;
 
 public class TagResource
 {
@@ -19,18 +17,19 @@ public class TagResource
     private final static Comparator<TagInfo> BY_COUNT_DESC = 
             (TagInfo o1, TagInfo o2) -> o1.getCount().compareTo(o2.getCount()) * -1;
     
-    private final static Comparator<TagInfo> BY_NAME = Comparator.comparing(TagInfo::getName);
+    private final static Comparator<TagInfo> BY_NAME = Comparator
+            .comparing(TagInfo::getName)
+            .reversed();
     
     public List<TagInfo> getTagsBySender(List<Postcard> postcardList)
     {
         if (tagsBySender.isEmpty())
         {
-            postcardList.forEach((postcard) ->
+            postcardList.forEach(postcard ->
             {
-                postcard.getSenders().forEach((sender) ->
-                {
-                    updateTagCount(sender, tagsBySender);
-                });
+                postcard.getSenders()
+                        .forEach(sender -> updateTagCount(sender, tagsBySender)
+                );
             });
             tagsBySender.sort(BY_COUNT_DESC);
         }
@@ -42,16 +41,13 @@ public class TagResource
     {
         if (tagsByCountry.isEmpty())
         {
-            postcardList.forEach((postcard) ->
+            postcardList.forEach(postcard ->
             {
                 TagInfo country = updateTagCount(postcard.getCountry(), tagsByCountry);
                 updateTagCount(postcard.getCity(), country.getList());
             });
             
-            tagsByCountry.forEach((country) ->
-            {
-                country.getList().sort(BY_COUNT_DESC);
-            });
+            tagsByCountry.forEach(country -> country.getList().sort(BY_COUNT_DESC));
             tagsByCountry.sort(BY_COUNT_DESC);
         }
         
@@ -71,12 +67,9 @@ public class TagResource
     {
         if (listToSort.isEmpty())
         {
-            postcardList.forEach((postcard) ->
+            postcardList.forEach(postcard ->
             {
-                postcard.getTags().forEach((tag) ->
-                {
-                    updateTagCount(tag, listToSort);
-                });
+                postcard.getTags().forEach(tag -> updateTagCount(tag, listToSort));
             });
             listToSort.sort(sortParam);
         }
@@ -104,13 +97,12 @@ public class TagResource
     {
         if (tagsByYear.isEmpty())
         {
-            postcardList.forEach((postcard) ->
-            {
-                updateTagCount(postcard.getYear(), tagsByYear);
-            });
+            postcardList.stream()
+                    .filter(p -> p.getYear() != null)
+                    .forEach((postcard) -> updateTagCount(postcard.getYear(), tagsByYear)
+            );
 
             tagsByYear.sort(BY_NAME);
-            tagsByYear.remove("1900");
         }
         
         return tagsByYear;

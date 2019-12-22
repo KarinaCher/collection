@@ -2,13 +2,15 @@ package entity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import static java.util.Calendar.JANUARY;
 import static java.util.Calendar.YEAR;
 import java.util.Date;
 import java.util.List;
+import org.jboss.logging.Logger;
 
 public class Postcard
 {
+    public static final Logger LOG = Logger.getLogger(Postcard.class);
+    
     private String id;
     private List<String> images = new ArrayList<>();
     private Date dateSent;
@@ -151,14 +153,18 @@ public class Postcard
             return getDateSent();
         }
         else {
-            Calendar c = Calendar.getInstance();
-            c.set(1900, JANUARY, 1);
-            return c.getTime();
+            return null;
         }
     }
     
     public String getYear() 
     {
+        if (getDate() == null) 
+        {
+            LOG.warn("Postcard without date. ID = " + getId());
+            return null;
+        }
+        
         Calendar c = Calendar.getInstance();
         c.setTime(getDate());
         return String.valueOf(c.get(YEAR));
