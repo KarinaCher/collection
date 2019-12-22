@@ -179,7 +179,7 @@ public class PostcardResource
                                 .atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
                 }
                 else {
-                    LOG.warn("data id " + postcard.getId());
+                    LOG.warn("Date received is empty. ID = " + postcard.getId());
                 }
                 if (!data[4].isEmpty() && !data[5].isEmpty())
                 {
