@@ -193,7 +193,7 @@ public class PostcardResource
                 if (data.length > 9)
                 {
                     String descr = data[9];
-                    descr = descr.replaceAll("\\[([a-zA-Z\\s]+)\\|([a-zA-Z\\s:/\\.]+)\\]", "<a href=\"$2\" target=\"_blank\">$1</a>");
+                    descr = descr.replaceAll("\\[([a-zA-Z\\.\\s]+)\\|([a-zA-Z\\s:/\\.]+)\\]", "<a href=\"$2\" target=\"_blank\">$1</a>");
                     postcard.setDescription(descr);
                 }
                 if (data.length > 10)
