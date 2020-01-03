@@ -5,6 +5,8 @@ import java.util.List;
 import entity.Postcard;
 import entity.TagInfo;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class TagResource
 {
@@ -23,12 +25,15 @@ public class TagResource
     {
         if (tagsBySender.isEmpty())
         {
-            postcardList.forEach(postcard ->
-            {
-                postcard.getSenders()
-                        .forEach(sender -> updateTagCount(sender, tagsBySender)
-                );
-            });
+            Set<String> senderSet = postcardList.stream()
+                    .flatMap(p -> p.getSenders().stream())
+                    .collect(Collectors.toSet());
+            
+            senderSet.stream()
+                    .forEach(sender -> tagsBySender.add(new TagInfo(sender, 
+                            PostcardResource.getListWithTag(sender).size()))
+                    );
+            
             tagsBySender.sort(BY_COUNT_DESC);
         }
         
@@ -39,11 +44,26 @@ public class TagResource
     {
         if (tagsByCountry.isEmpty())
         {
-            postcardList.forEach(postcard ->
-            {
-                TagInfo country = updateTagCount(postcard.getCountry(), tagsByCountry);
-                updateTagCount(postcard.getCity(), country.getList());
-            });
+            Set<String> countrySet = postcardList.stream()
+                    .map(Postcard::getCountry)
+                    .collect(Collectors.toSet());
+            
+            countrySet.stream()
+                    .forEach(country -> 
+                    {
+                        TagInfo tagInfo = new TagInfo(country, PostcardResource.getListWithTag(country).size());
+                        Set<String> cities =
+                                postcardList.stream()
+                                        .filter(postcard -> country.equals(postcard.getCountry()))
+                                        .filter(postcard -> postcard.getCity() != null)
+                                        .map(Postcard::getCity)
+                                        .collect(Collectors.toSet());
+                        cities.stream()
+                                .forEach(city -> tagInfo.getList()
+                                        .add(new TagInfo(city, PostcardResource.getListWithTag(city).size())));
+                        
+                        tagsByCountry.add(tagInfo);
+                    });
             
             tagsByCountry.forEach(country -> country.getList().sort(BY_COUNT_DESC));
             tagsByCountry.sort(BY_COUNT_DESC);
@@ -65,40 +85,33 @@ public class TagResource
     {
         if (listToSort.isEmpty())
         {
-            postcardList.forEach(postcard ->
-            {
-                postcard.getTags().forEach(tag -> updateTagCount(tag, listToSort));
-            });
+            Set<String> tagSet = postcardList.stream()
+                    .flatMap(p -> p.getTags().stream())
+                    .collect(Collectors.toSet());
+            
+            tagSet.stream()
+                    .forEach(tag -> listToSort.add(new TagInfo(tag, 
+                            PostcardResource.getListWithTag(tag).size()))
+                    );
+            
             listToSort.sort(sortParam);
         }
         
         return listToSort;
     }
 
-    private TagInfo updateTagCount(String tagName, List<TagInfo> tags)
-    {
-        for (TagInfo tagInfo : tags)
-        {
-            if (tagInfo.getName().equals(tagName))
-            {
-                tagInfo.setCount(tagInfo.getCount() + 1);
-                return tagInfo;
-            }
-        }
-        
-        TagInfo result = new TagInfo(tagName, 1);
-        tags.add(result);
-        return result;
-    }
-
     public List<TagInfo> getTagsByYear(List<Postcard> postcardList)
     {
         if (tagsByYear.isEmpty())
         {
-            postcardList.stream()
-                    .filter(p -> p.getYear() != null)
-                    .forEach((postcard) -> updateTagCount(postcard.getYear(), tagsByYear)
-            );
+            Set<String> yearSet = postcardList.stream()
+                    .map(Postcard::getYear)
+                    .collect(Collectors.toSet());
+            
+            yearSet.stream()
+                    .forEach(year -> tagsByYear.add(new TagInfo(year, 
+                            PostcardResource.getListWithTag(year).size()))
+                    );
 
             tagsByYear.sort(BY_NAME.reversed());
         }
