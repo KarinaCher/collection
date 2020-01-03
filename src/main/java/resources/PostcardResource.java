@@ -46,6 +46,7 @@ public class PostcardResource
             postcardList.addAll(readTsv("/Postcard collection - 2000x.tsv"));
             postcardList.addAll(readTsv("/Postcard collection - 2010x.tsv"));
             postcardList.addAll(readTsv("/Postcard collection - 2019.tsv"));
+            postcardList.addAll(readTsv("/Postcard collection - 2020.tsv"));
             postcardList.sort(BY_DATE);
         }
         return postcardList;
