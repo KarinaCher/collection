@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import resources.PostcardResource;
+import resources.TagResource;
 import static statistic.Filters.*;
 import statistic.SizeMap;
 
@@ -20,19 +21,20 @@ public class StatisticContriller
             Model model)
     {
         final List<Postcard> list = PostcardResource.getList();
+        final TagResource tagResource = new TagResource(list);
         switch (param)
         {
             case "sender":
-                model.addAttribute("tagsBySender", SENDERS_BY_COUNT.getList(list));
+                model.addAttribute("tagsBySender", tagResource.getBy(SENDERS_BY_COUNT));
                 break;
                 
             case "country":
-                model.addAttribute("tagsByCountry", COUNTRY_CITY_BY_COUNT.getList(list));
+                model.addAttribute("tagsByCountry", tagResource.getBy(COUNTRY_CITY_BY_COUNT));
                 break;
                 
             case "tag":
-                model.addAttribute("tags", TAG_BY_COUNT.getList(list));
-                model.addAttribute("tagsByName", TAG_BY_NAME.getList(list));
+                model.addAttribute("tags", tagResource.getBy(TAG_BY_COUNT));
+                model.addAttribute("tagsByName", tagResource.getBy(TAG_BY_NAME));
                 break;
                 
             case "size":
@@ -40,7 +42,7 @@ public class StatisticContriller
                 break;
                 
             case "year":
-                model.addAttribute("tagsByYear", YEAR_BY_NAME.getList(list));
+                model.addAttribute("tagsByYear", tagResource.getBy(YEAR_BY_NAME));
                 break;
         }
         model.addAttribute("p", param);

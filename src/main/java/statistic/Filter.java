@@ -44,18 +44,6 @@ public abstract class Filter<T, K>
         return comparator;
     }
     
-//    public List<TagInfo> getList(List<Postcard> postcardList)
-//    {
-//        List<TagInfo> result = new ArrayList();
-//        Set<String> set = getSet(postcardList);
-//
-//        set.stream()
-//                .forEach(value -> result.add(createTagInfo(value)));
-//
-//        result.sort(this.getComparator());
-//        return result;
-//    }
-    
     protected abstract Set<String> getSet(List<Postcard> postcardList);
     
     protected abstract Set<String> getSubSet(List<Postcard> postcardList, String field);
