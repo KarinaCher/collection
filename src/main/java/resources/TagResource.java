@@ -3,10 +3,10 @@ package resources;
 import entity.Postcard;
 import java.util.Comparator;
 import java.util.List;
-import entity.TagInfo;
+import presentation.TagInfo;
 import java.util.HashMap;
 import java.util.Map;
-import statistic.Filters;
+import filter.Filters;
 
 public class TagResource
 {

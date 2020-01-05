@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import resources.PostcardResource;
 import resources.TagResource;
-import static statistic.Filters.*;
-import statistic.SizeMap;
+import static filter.Filters.*;
+import presentation.SizeMap;
 
 @Controller
 public class StatisticContriller

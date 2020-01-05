@@ -1,4 +1,4 @@
-package statistic;
+package presentation;
 
 import entity.Postcard;
 import java.util.HashMap;

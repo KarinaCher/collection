@@ -1,7 +1,7 @@
-package statistic;
+package filter;
 
 import entity.Postcard;
-import entity.TagInfo;
+import presentation.TagInfo;
 import java.util.List;
 import static resources.TagResource.BY_COUNT_DESC;
 import static resources.TagResource.BY_NAME;

@@ -1,7 +1,7 @@
-package statistic;
+package filter;
 
 import entity.Postcard;
-import entity.TagInfo;
+import presentation.TagInfo;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
