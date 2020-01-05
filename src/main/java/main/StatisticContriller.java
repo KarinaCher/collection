@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import resources.PostcardResource;
 import resources.TagResource;
-import static filter.Filters.*;
+import static presentation.Filters.*;
 import presentation.SizeMap;
 
 @Controller

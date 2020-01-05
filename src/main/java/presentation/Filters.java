@@ -1,7 +1,9 @@
-package filter;
+package presentation;
 
 import entity.Postcard;
-import presentation.TagInfo;
+import filter.Filter;
+import filter.ListFilter;
+import filter.StringFilter;
 import java.util.List;
 import static resources.TagResource.BY_COUNT_DESC;
 import static resources.TagResource.BY_NAME;

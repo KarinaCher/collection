@@ -6,7 +6,7 @@ import java.util.List;
 import presentation.TagInfo;
 import java.util.HashMap;
 import java.util.Map;
-import filter.Filters;
+import presentation.Filters;
 
 public class TagResource
 {

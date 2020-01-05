@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class StringFilter extends Filter<String, String>
+public class StringFilter extends Filter<Postcard, String, String>
 {
     public StringFilter(Function<Postcard, String> field, Comparator<TagInfo> comparator)
     {

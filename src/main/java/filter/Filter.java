@@ -1,6 +1,5 @@
 package filter;
 
-import entity.Postcard;
 import presentation.TagInfo;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -9,32 +8,32 @@ import java.util.Set;
 import java.util.function.Function;
 import resources.PostcardResource;
 
-public abstract class Filter<T, K>
+public abstract class Filter<E, T, K>
 {
-    Function<Postcard, T> field;
-    Function<Postcard, K> subfield;
+    Function<E, T> field;
+    Function<E, K> subfield;
     
     Comparator<TagInfo> comparator;
 
-    public Filter(Function<Postcard, T> field, Comparator<TagInfo> comparator)
+    public Filter(Function<E, T> field, Comparator<TagInfo> comparator)
     {
         this.field = field;
         this.comparator = comparator;
     }
     
-    public Filter(Function<Postcard, T> field, Function<Postcard, K> subfield, Comparator<TagInfo> comparator)
+    public Filter(Function<E, T> field, Function<E, K> subfield, Comparator<TagInfo> comparator)
     {
         this.field = field;
         this.subfield = subfield;
         this.comparator = comparator;
     }
 
-    public Function<Postcard, T> getField()
+    public Function<E, T> getField()
     {
         return field;
     }
 
-    public Function<Postcard, K> getSubfield()
+    public Function<E, K> getSubfield()
     {
         return subfield;
     }
@@ -44,11 +43,11 @@ public abstract class Filter<T, K>
         return comparator;
     }
     
-    protected abstract Set<String> getSet(List<Postcard> postcardList);
+    protected abstract Set<String> getSet(List<E> postcardList);
     
-    protected abstract Set<String> getSubSet(List<Postcard> postcardList, String field);
+    protected abstract Set<String> getSubSet(List<E> postcardList, String field);
     
-    public List<TagInfo> getList(List<Postcard> postcardList)
+    public List<TagInfo> getList(List<E> postcardList)
     {
         List<TagInfo> result = new ArrayList();
         Set<String> fieldValues = getSet(postcardList);
