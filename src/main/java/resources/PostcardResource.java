@@ -13,6 +13,8 @@ import entity.Postcard;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Calendar;
+import static java.util.Calendar.YEAR;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
@@ -45,8 +47,9 @@ public class PostcardResource
             postcardList.addAll(readTsv("/Postcard collection - 1990x.tsv"));
             postcardList.addAll(readTsv("/Postcard collection - 2000x.tsv"));
             postcardList.addAll(readTsv("/Postcard collection - 2010x.tsv"));
-            postcardList.addAll(readTsv("/Postcard collection - 2019.tsv"));
-            postcardList.addAll(readTsv("/Postcard collection - 2020.tsv"));
+            for (int i = 2019; i <= getCurrentYear(); i++) {
+                postcardList.addAll(readTsv("/Postcard collection - " + i + ".tsv"));
+            }
             postcardList.sort(BY_DATE);
         }
         return postcardList;
@@ -226,6 +229,11 @@ public class PostcardResource
         Arrays.stream(tags)
                 .filter(tag -> !tag.isEmpty())
                 .forEach(tag -> variableList.add(tag));
+    }
+    
+    private static int getCurrentYear() {
+        Calendar c = Calendar.getInstance();
+        return c.get(YEAR);
     }
     
 }
