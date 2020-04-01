@@ -12,7 +12,7 @@ import resources.PostcardResource;
 @Controller
 public class OverviewContriller
 {
-    public static final int ITEMS_PER_PAGE = 24;
+    public static final int ITEMS_PER_PAGE = 36;
     
     @RequestMapping("/")
     public String overview(Model model) 
