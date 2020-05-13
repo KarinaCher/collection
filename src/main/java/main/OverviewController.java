@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import resources.PostcardResource;
 
 @Controller
-public class OverviewContriller
+public class OverviewController
 {
     public static final int ITEMS_PER_PAGE = 36;
     
@@ -117,7 +117,7 @@ public class OverviewContriller
         model.addAttribute("count", PostcardResource.getList().size());
         return "postcard";
     }
-
+    
     private int getPage(String page)
     {
         int pageNum = 1;

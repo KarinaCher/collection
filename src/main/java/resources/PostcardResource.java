@@ -18,7 +18,7 @@ import static java.util.Calendar.YEAR;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
-import static main.OverviewContriller.ITEMS_PER_PAGE;
+import static main.OverviewController.ITEMS_PER_PAGE;
 import org.jboss.logging.Logger;
 
 public class PostcardResource

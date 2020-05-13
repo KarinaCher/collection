@@ -1,0 +1,46 @@
+body {
+    font-family: Georgia, serif;
+}
+
+div#menuBar {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div#menuBar table {
+    margin: 40px auto 0px auto;
+    font-size: 20px;
+    border-bottom: solid 2px #e3f2fd;
+}
+
+div#menuBar td {
+    padding: 20px 30px;
+}
+
+.captionModal {
+    width: 100%;
+    
+}
+
+table.modalCaption {
+    margin-top: 10px;
+}
+
+table.modalCaption th {
+    text-align: right;
+    width: 40%;
+    font-weight: normal;
+    padding-top: 5px;
+    padding-right: 15px;
+    vertical-align: top;
+}
+
+table.modalCaption td {
+    padding-top: 5px;
+    vertical-align: top;
+}
+
+span#span-close {
+    vertical-align: top;
+}
