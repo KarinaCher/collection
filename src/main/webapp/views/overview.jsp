@@ -44,6 +44,11 @@
                                     <th><fmt:message key="notes" bundle="${texts}"/></th>
                                     <td id="modalDescription"></td>
                                 </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <a id="modalDirectLink" href="#"><fmt:message key="directLink" bundle="${texts}"/></a>
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                     </div>

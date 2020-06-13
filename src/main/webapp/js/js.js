@@ -9,6 +9,7 @@ $(document).ready(function () {
         $("#modalSender").html($("#postcard" + id).attr('postcardSender'));
         $("#modalSize").html($("#postcard" + id).attr('postcardSize'));
         $("#modalDescription").html($("#postcardDescription" + id).html());
+        $("#modalDirectLink").attr("href", "/postcard/" + id);
         $('#imagemodal').modal('show');
     });
 });
