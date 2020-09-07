@@ -32,9 +32,9 @@ public class ImageController
     @Autowired
     ResourceLoader resourceLoader;
     
-    private static final int MAX = 200;
     private static final String JPG = "jpg";
     private static final String SMALL = "sm";
+    private static final String THUMB = "thumb";
     
     @RequestMapping(value = "/image/{size}/{name}", method = RequestMethod.GET)
     public ResponseEntity<byte[]> getImageAsResponseEntity(
@@ -62,27 +62,11 @@ public class ImageController
         byte[] media;
         if (SMALL.equals(size)) 
         {
-            BufferedImage image = ImageIO.read(in);
-            
-            boolean isVertical = image.getHeight() > image.getWidth();
-            
-            int width, height;
-            if (isVertical)
-            {
-                height = MAX;
-                width = image.getWidth() * MAX / image.getHeight();
-            }
-            else
-            {
-                width = MAX;
-                height = image.getHeight() * MAX / image.getWidth();
-            }
-            
-            BufferedImage resized = resize(image, height, width);
-
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ImageIO.write(resized, JPG, baos);
-            media = baos.toByteArray();
+            media = resize(in, 200);
+        }
+        else if (THUMB.equals(size)) 
+        {
+            media = resize(in, 100);
         }
         else
         {
@@ -93,6 +77,29 @@ public class ImageController
         headers.setContentType(MediaType.IMAGE_JPEG);
         ResponseEntity<byte[]> responseEntity = new ResponseEntity<>(media, headers, HttpStatus.OK);
         return responseEntity;
+    }
+
+    private byte[] resize(InputStream in, int maxSize) throws IOException
+    {
+        byte[] media;
+        BufferedImage image = ImageIO.read(in);
+        boolean isVertical = image.getHeight() > image.getWidth();
+        int width, height;
+        if (isVertical)
+        {
+            height = maxSize;
+            width = image.getWidth() * maxSize / image.getHeight();
+        }
+        else
+        {
+            width = maxSize;
+            height = image.getHeight() * maxSize / image.getWidth();
+        }
+        BufferedImage resized = resize(image, height, width);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ImageIO.write(resized, JPG, baos);
+        media = baos.toByteArray();
+        return media;
     }
     
     private static BufferedImage resize(BufferedImage img, int height, int width) 
