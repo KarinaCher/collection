@@ -7,28 +7,31 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
         <link rel='stylesheet' href='/css/main.css'>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/js/js.js"></script>
 
         <title>Postcard</title>
     </head>
     <body>
         <jsp:include page="parts/bundles.jsp" />
         <jsp:include page="parts/menu.jsp" />
+        <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">              
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal"><span id="span-close" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <div style="text-align: center;"><img src="" class="imagepreview" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <c:if test="${!empty postcard}">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <c:forEach var="image" items="${postcard.images}" varStatus="loop">
-                            <c:if test="${loop.index == 0}">
-                                <img src="../image/lg/${image}"/>
-                            </c:if>
-                            <c:if test="${loop.index > 0}">
-                                <a href="../image/lg/${image}" title="">
-                                    <img src="../image/sm/${image}">
-                                </a>
-                            </c:if>
-                        </c:forEach>
+                        <img src="../image/lg/${postcard.images[0]}"/>
                     </div>
 
                     <c:if test="${postcard.mine}">
@@ -98,6 +101,13 @@
                             </table>
                         </div>
                     </c:if>
+                </div>
+                <div>
+                    <c:forEach var="image" items="${postcard.images}" varStatus="loop">
+                        <c:if test="${loop.index > 0}">
+                            <img src="../image/thumb/${image}" class="pop">
+                        </c:if>
+                    </c:forEach>
                 </div>
             </div>
         </c:if>

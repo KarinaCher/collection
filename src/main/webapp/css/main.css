@@ -44,3 +44,12 @@ table.modalCaption td {
 span#span-close {
     vertical-align: top;
 }
+
+div.thumb_img {
+    text-align: center;
+}
+
+div.thumb_img img {
+    margin: 4px;
+    cursor: pointer;
+}
