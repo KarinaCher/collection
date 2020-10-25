@@ -53,3 +53,22 @@ div.thumb_img img {
     margin: 4px;
     cursor: pointer;
 }
+
+div#modal-body-img {
+    text-align: center; 
+    height: 500px; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+div#modal-body-prevImg {
+    float: left; 
+    width: 50%; 
+    height: 500px;
+}
+
+div#modal-body-nextImg {
+    float: right; 
+    width: 50%; 
+    height: 500px;
+}

@@ -16,12 +16,22 @@
     <body>
         <jsp:include page="parts/bundles.jsp" />
         <jsp:include page="parts/menu.jsp" />
+    <script>
+        var imagesList = [
+        <c:forEach var="image" items="${postcard.images}" varStatus="loop">
+                "${image}",
+        </c:forEach>
+            ""];
+    </script>
         <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">              
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal"><span id="span-close" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <div style="text-align: center;"><img src="" class="imagepreview" /></div>
+                        <div id="modal-body-img" class="imagepreview">
+                            <div class="pop" id="modal-body-prevImg" current-index=""></div>
+                            <div class="pop" id="modal-body-nextImg" current-index=""></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,7 +41,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <img src="../image/lg/${postcard.images[0]}"/>
+                        <img src="../image/lg/${postcard.images[0]}" class="pop" current-index="0" />
                     </div>
 
                     <c:if test="${postcard.mine}">
@@ -105,7 +115,7 @@
                 <div>
                     <c:forEach var="image" items="${postcard.images}" varStatus="loop">
                         <c:if test="${loop.index > 0}">
-                            <img src="../image/thumb/${image}" class="pop">
+                            <img src="../image/thumb/${image}" class="pop" current-index="${loop.index}" />
                         </c:if>
                     </c:forEach>
                 </div>
