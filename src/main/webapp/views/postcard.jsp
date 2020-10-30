@@ -115,7 +115,7 @@
                 <div>
                     <c:forEach var="image" items="${postcard.images}" varStatus="loop">
                         <c:if test="${loop.index > 0}">
-                            <img src="../image/thumb/${image}" class="pop" current-index="${loop.index}" />
+                            <img src="../image/100/${image}" class="pop" current-index="${loop.index}" />
                         </c:if>
                     </c:forEach>
                 </div>

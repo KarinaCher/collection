@@ -169,4 +169,9 @@ public class Postcard
         c.setTime(getDate());
         return String.valueOf(c.get(YEAR));
     }
+    
+    public int getSquare()
+    {
+        return getHeight() * getWidth();
+    }
 }

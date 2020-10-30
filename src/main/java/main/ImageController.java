@@ -33,8 +33,6 @@ public class ImageController
     ResourceLoader resourceLoader;
     
     private static final String JPG = "jpg";
-    private static final String SMALL = "sm";
-    private static final String THUMB = "thumb";
     
     @RequestMapping(value = "/image/{size}/{name}", method = RequestMethod.GET)
     public ResponseEntity<byte[]> getImageAsResponseEntity(
@@ -50,7 +48,7 @@ public class ImageController
             throws IOException 
     {
         Postcard postcard = PostcardResource.getList().get(0);
-        return createImage(postcard.getImages().get(0), "sm");
+        return createImage(postcard.getImages().get(0), "200");
     }
 
     private ResponseEntity<byte[]> createImage(String name, String size) throws IOException
@@ -60,14 +58,10 @@ public class ImageController
         InputStream in = resourceLoader.getResource("classpath:" + folder + name).getInputStream();
         
         byte[] media;
-        if (SMALL.equals(size)) 
-        {
-            media = resize(in, 200);
-        }
-        else if (THUMB.equals(size)) 
-        {
-            media = resize(in, 100);
-        }
+        
+        if (size.chars().allMatch(Character::isDigit)) {
+            media = resize(in, Integer.parseInt(size));
+        }    
         else
         {
             media = IOUtils.toByteArray(in);

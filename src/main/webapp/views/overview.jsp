@@ -26,7 +26,7 @@
                     <div class="col-sm-3">
                         <div class="thumbnail">
                             <a href="/postcard/${postcard.id}">
-                                <img src="/image/sm/${postcard.images[0]}" class="img-fluid" id="${postcard.id}"/>
+                                <img src="/image/200/${postcard.images[0]}" class="img-fluid" id="${postcard.id}"/>
                             </a>
                             <div id="postcardDescription${postcard.id}" class="hidden">
                                 ${fn:replace(postcard.description, '|', '<br />')}

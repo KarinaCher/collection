@@ -27,6 +27,9 @@
                 <li <c:if test="${p eq 'sender'}">class="active"</c:if>>
                     <a href="/statistics/sender"><fmt:message key="bySender" bundle="${texts}"/></a>
                 </li>
+                <li <c:if test="${p eq 'most'}">class="active"</c:if>>
+                    <a href="/statistics/most"><fmt:message key="most" bundle="${texts}"/></a>
+                </li>
 <!--                <li <c:if test="${p eq 'size'}">class="active"</c:if>>
                     <a href="/statistics/size">by size</a>
                 </li>-->
@@ -47,6 +50,10 @@
                     
                     <c:when test="${p eq 'year'}">
                         <jsp:include page="parts/statisticsByYear.jsp" />
+                    </c:when>
+                    
+                    <c:when test="${p eq 'most'}">
+                        <jsp:include page="parts/statisticsMost.jsp" />
                     </c:when>
 
                     <c:otherwise>

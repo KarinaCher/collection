@@ -190,6 +190,11 @@ public class PostcardResource
                     postcard.setHeight(Integer.parseInt(data[4]));
                     postcard.setWidth(Integer.parseInt(data[5]));
                 }
+                else
+                {
+                    postcard.setHeight(0);
+                    postcard.setWidth(0);
+                }
                 postcard.setCountry(data[6]);
                 postcard.setCity(data[7]);
                 readMultiValues(data[8], postcard.getSenders());

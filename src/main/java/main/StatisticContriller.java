@@ -1,7 +1,10 @@
 package main;
 
 import entity.Postcard;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,10 +47,30 @@ public class StatisticContriller
             case "year":
                 model.addAttribute("tagsByYear", tagResource.getBy(YEAR_BY_NAME));
                 break;
+                   
+            case "most":
+                model.addAttribute("most", getMostPostcards(list));
+                break;
         }
         model.addAttribute("p", param);
 
         return "statistics";
+    }
+    
+    private Map<String, Postcard> getMostPostcards(List<Postcard> postcards)
+    {
+        Map<String, Postcard> result = new HashMap();
+        
+        result.put("oldest", postcards.stream()
+                .min(Comparator.comparing(Postcard::getDate)).get());
+        result.put("highest", postcards.stream()
+                .max(Comparator.comparing(Postcard::getHeight)).get());
+        result.put("widest", postcards.stream()
+                .max(Comparator.comparing(Postcard::getWidth)).get());
+        result.put("biggest", postcards.stream()
+                .max(Comparator.comparing(Postcard::getSquare)).get());
+        
+        return result;
     }
 
 }
