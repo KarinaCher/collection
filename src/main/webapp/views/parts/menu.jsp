@@ -4,7 +4,7 @@
         <tr>
             <td><a href="/"><fmt:message key="myPostcards" bundle="${texts}"/></a></td>
             <td><a href="/other/page/1"><fmt:message key="otherPostcards" bundle="${texts}"/></a></td>
-            <td><a href="/statistics/sender"><fmt:message key="statistics" bundle="${texts}"/></a></td>
+            <td><a href="/statistics/country"><fmt:message key="statistics" bundle="${texts}"/></a></td>
             <td><a href="https://www.postcrossing.com/user/ljulitka/gallery" target="_blank">Postcrossing.com</a></td>
         </tr>
     </table>

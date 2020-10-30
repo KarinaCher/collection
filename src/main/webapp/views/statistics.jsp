@@ -15,17 +15,17 @@
         <jsp:include page="parts/menu.jsp" />
         <div class="container">
             <ul class="nav nav-tabs">
-                <li <c:if test="${p eq 'sender'}">class="active"</c:if>>
-                    <a href="/statistics/sender"><fmt:message key="bySender" bundle="${texts}"/></a>
+                <li <c:if test="${p eq 'country'}">class="active"</c:if>>
+                    <a href="/statistics/country"><fmt:message key="byCountry" bundle="${texts}"/></a>
                 </li>
                 <li <c:if test="${p eq 'tag'}">class="active"</c:if>>
                     <a href="/statistics/tag"><fmt:message key="byTag" bundle="${texts}"/></a>
                 </li>
-                <li <c:if test="${p eq 'country'}">class="active"</c:if>>
-                    <a href="/statistics/country"><fmt:message key="byCountry" bundle="${texts}"/></a>
-                </li>
                 <li <c:if test="${p eq 'year'}">class="active"</c:if>>
                     <a href="/statistics/year"><fmt:message key="byYear" bundle="${texts}"/></a>
+                </li>
+                <li <c:if test="${p eq 'sender'}">class="active"</c:if>>
+                    <a href="/statistics/sender"><fmt:message key="bySender" bundle="${texts}"/></a>
                 </li>
 <!--                <li <c:if test="${p eq 'size'}">class="active"</c:if>>
                     <a href="/statistics/size">by size</a>

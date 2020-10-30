@@ -43,7 +43,7 @@ public class Postcard
     {
         this.images = images;
     }
-
+    
     public Date getDateSent()
     {
         return dateSent;
