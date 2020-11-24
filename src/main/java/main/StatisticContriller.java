@@ -75,10 +75,13 @@ public class StatisticContriller
                 .max(Comparator.comparing(Postcard::getSquare)).get());
         
         result.put("shortest", postcards.stream()
+                .filter(p -> p.getHeight() > 0)
                 .min(Comparator.comparing(Postcard::getHeight)).get());
         result.put("narrowest", postcards.stream()
+                .filter(p -> p.getWidth() > 0)
                 .min(Comparator.comparing(Postcard::getWidth)).get());
         result.put("smallest", postcards.stream()
+                .filter(p -> p.getSquare() > 0)
                 .min(Comparator.comparing(Postcard::getSquare)).get());
         
         

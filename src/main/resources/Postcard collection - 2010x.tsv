@@ -6,6 +6,9 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20100825GB5	2010_08_25 EN York Railway Museum 02.jpg	25.08.2010		105	148	GB	York	I	Были с мамой в Йорке в музее поездов.	museum, map		
 20100825GB6	2010_08_25 EN York Railway Museum 03.jpg	25.08.2010		148	105	GB	York	I	Были с мамой в Йорке в музее поездов.	museum		
 20100831GB	2010_08_31 GB.jpg	31.08.2010		104	149	GB	Kingston Upon Hall	I	Любимому мужу с приветом из Великобритании.			
+20101231LV	2010_12_31 LV RIX.jpg		31.12.2010	150	110	LV	Riga	employer	Открытка от Сашиного работодателя RIX Technologies, поздравление с Новым годом.	new_year		
+20110406LV	2011_04_06 LV Birthday.jpg		06.04.2011	104	147	LV	Riga	Aliona, MihailT	Подарили на День рождения, а в каком году - не написано, поэтому пусть будет 2010 (если судить по количеству поздравителей)	birthday		
+20110406GB	2011_04_06 GB Birthday.jpg		06.04.2011	260	180	GB	Kingston Upon Hall	mother	Мама поздравила с днем рождения.	birthday		
 20110624GB	2011_06_24 EN Hull museum 01.jpg	24.06.2011		105	150	GB	Kingston Upon Hall	I	Посетили с мамой художественный музей в городе Халл. Купила открытку с понравившейся картиной	museum		
 20110624GB2	2011_06_24 EN Hull museum 02.jpg	24.06.2011		150	104	GB	Kingston Upon Hall	I	Посетили с мамой художественный музей в городе Халл. Купила открытку с понравившейся картиной	museum		
 20110625GB	2011_06_25 EN Haworth 01.jpg	25.06.2011		120	170	GB	Haworth	I	Посетили с мамой город где родилась и жила Шарлота Бронте.			
@@ -16,6 +19,8 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20110626GB2	2011_06_26 EN Knaresborough 01.jpg	26.06.2011		105	147	GB	Knaresborough	I	Посетили город Нерсборо, где есть живописные развалины замка и высоченный железнодорожный мост через реку.	castle		
 20110626GB3	2011_06_26 EN York Railway Museum 01.jpg	26.06.2011		105	148	GB	Knaresborough	I	Посетили город Нерсборо, где есть живописные развалины замка и высоченный железнодорожный мост через реку.			
 20110701GB	2011_07_01 EN London Airport Gatwick.jpg	01.07.2011		120	170	GB	London	I	Купила в аэропорту Гатвик в Лондоне	airport		
+20110809LV	2011_08_09 LV.jpg		09.08.2011	164	114	LV	Riga	LudmilaViktor	Родители мужа поздравили с годовщиной свадьбы	wedding, puzzle		
+20110809GB	2011_08_09 GB.jpg		09.08.2011	230	100	GB	Kingston Upon Hall	mother	Мама поздравила с годовщиной свадьбы.	wedding		
 20111104GB	2011_11_04 GB Simons cat 01.jpg	04.11.2011		104	147	GB	Kingston Upon Hall	mother	Мама подарила книгу про кота Саймона в которой были открытки.	advert		
 20111104GB2	2011_11_04 GB Simons cat 02.jpg	04.11.2011		104	147	GB	Kingston Upon Hall	mother	Мама подарила книгу про кота Саймона в которой были открытки.	advert		
 20111104GB3	2011_11_04 GB Simons cat 03.jpg	04.11.2011		104	147	GB	Kingston Upon Hall	mother	Мама подарила книгу про кота Саймона в которой были открытки.	advert		
@@ -24,6 +29,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20120224BE2	2012_02_24 BE Brussel Cathedrale SS Michel-et-Gudule 01.jpg	21.02.2012		102	148	BE	Brussels	Alex, I	Cathedrale des SS. Michel-et-Gudile. Орган	church		
 20120224BE3	2012_02_24 BE Brussel Cathedrale SS Michel-et-Gudule 02.jpg	21.02.2012		148	104	BE	Brussels	Alex, I	Cathedrale des SS. Michel-et-Gudile. центральный неф	church		
 20120224BE4	2012_02_24 BE Brussel MIM.jpg	21.02.2012		104	150	BE	Brussels	Alex, I	Musical instruments museum. Harpischord combined with a virginal, J. Ruckers, Antwerpen, 1619	museum		
+20120614LV	2012_06_14 LV.jpg		14.06.2012	147	104	LV	Riga	LudmilaViktor	Сашины родители поздравили его с днем рождения.	birthday		
 20120914FI	2012_09_14 FI Helsinki 01.jpg	14.09.2012		104	147	FI	Helsinki	Alex, I	Ездили на семинар Тисье 14-15 сентября 2012 года.			
 20121011LV	2012_10_11 LV intuos.jpg	11.10.2012		104	147	LV	Riga	Alex	Саша подарил на именины планшет, а в нем была рекламная открытка	advert		
 20130000LV	2013 Taschen.jpg	01.01.2013		105	148	LV	Riga	I	В купленной книге издательства Taschen была эта открытка.	advert		
@@ -45,11 +51,14 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20130622AT	2013_06_26 AT Vienna.jpg	22.06.2013	26.06.2013	147	104	AT	Vienna	LudmilaViktor	Прислали из Вены Сашины родители			
 20130815LV	2013_08_15 LV Daugavpils.jpg		15.08.2013	105	155	LV	Daugavpils	Aliona, MihailT	Прислали Молодые из Даугавпилса. Daugavpils cietoksnis. Cietokšņa redušu šaujamlūkas. Birķeneļi. Borisa un Gļeba pareizticīgo katedrāle. Novadpētniecības un mākslas muzejs. Pieminekļis dzejniekam A. Pumpuram. Tilts pār Daugavu			
 20130925GB	2013_09_25 EN.jpg		25.09.2013	114	160	GB		mother		beer		
+20131017LV	2013_10_17 LV.jpg		17.10.2013	190	110	LV	Riga	Aliona, MihailT	Поздравление с именинами. Год не указан, по косвенным признакам может быть 2013-й.			
 20140101LV	2014 LV Aikidojo New year.jpg	01.01.2014		170	120	LV	Riga	I	Aikidojo выпустило новогоднюю поздравительную открытку.	aikido, new_year		
 20140327LV	2014_03_27 LV Latvian about himselfs.jpg		27.03.2014	145	104	LV	Riga	I	Оказалось, это небольшая группа энтузиастов, выпускающая забавные и интресные открытки. Я уже обращала на них внимание, уж очень они необычные и симпатичные (с латышскими знаками, например). На сайте нашлась одна, которая не в бровь, а в глаз "Латыши про себя (с городостью :)"			
+20140406LV	2014_04_06 LV Happy birthday Cat.jpg		06.04.2014	150	100	LV	Riga	I	Купила себе эту открытку, потому что понравилась. И подарила на день рождения.	birthday		
 20140419LV	2014_04_19 LV Kuldiga 01.jpg	19.04.2014		104	154	LV	Kuldiga	Alex, I	Kuldīga. Tilts par Ventu. Kuldīgas pils sarga mājiņa. Kuldīgas veca koka apbūve			
 20140522LV	2014_05_22 Maximum card LV.jpg	22.05.2014	26.05.2014	147	104	LV	Riga	I	Максимум карта которую я послала по почте, а марку не погасили	maksimum_card		
 20140601LV	2014_06_01 LV.jpg		01.06.2014	145	105	LV	Riga	I				
+20140614GB	2014_06_14 GB.jpg		14.06.2014	176	128	GB	Kingston Upon Hall	mother	Мама позравила зятя с днем рождения!	birthday		
 20140800IE	2014_08_00 IE 01.jpg	01.08.2014		120	170	IE		Aliona, MihailT				
 20140800IE2	2014_08_00 IE 02.jpg	01.08.2014		104	147	IE		Aliona, MihailT				
 20140804DE	2014_08_04_DE_Heide park.jpg		04.08.2014	104	147	DE		JuraM	От Моисеенко из парка развлечений в Германии. Поверхность открытки фольгированная поэтому ни отсканировать, ни сфотографировать её не получилось, нашла картинку в интернете.			
@@ -128,6 +137,8 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20151204SE	2015_12_14 Stockholm Christmas.jpg	09.12.2015	14.12.2015	100	145	SE	Stockholm	Alex	Металлическая открытка с видом Стокгольма в Рождество.	metal, non_paper		
 20151219SM	2015_12_19 San Marino.jpg	19.12.2015	06.01.2016	104	147	SM		JuraM				
 20151224LV	2015_12_30 Kuldiga.jpg	24.12.2015	30.12.2015	147	104	LV	Kuldiga	Alex, I		latvia_city, maksimum_card		
+20151229GB	2015_12_29 GB Frozen.jpg	29.12.2015	04.01.2016	85	83	GB	Kingston Upon Hall	mother	Мама поздравила с Новым годом.	new_year		
+20151229GB2	2015_12_29 GB.jpg	29.12.2015	04.01.2016	195	135	GB	Kingston Upon Hall	mother	Мама поздравила с Новым годом.	new_year		
 20160109LV	2016_01_09 aikidojo.jpg		09.01.2016	160	160	LV	Riga	I	Новогодняя открытка от aikidojo 2016 год	aikido, new_year		
 20160112LV	2016_01_13 Shodan.jpg	13.01.2016	15.01.2016	160	120	LV	Riga	Alex		stereo		
 20160121IT	2016_01_21 Canazei.jpg	14.01.2016	21.01.2016	120	170	IT	Canazei	JuraM	Привет из Доломитов (https://en.wikipedia.org/wiki/Dolomites) от Юры М.			
@@ -239,6 +250,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20171201LV	2017_12_01 LV.jpg	01.12.2017	04.12.2017	105	210	LV	Riga	Alex		library		
 20171214SE	2017_12_18 SE Hall.jpg	14.12.2017	18.12.2017	104	147	SE	Stockholm	Alex	Стокгольм. Голубой зал в городской ратуше и банкет для нобелевских лауреатов.			
 20171213SE	2017_12_18 SE Tree.jpg	13.12.2017	18.12.2017	132	185	SE	Stockholm	Alex	Генеалогической дерево шведской королевской семьи.			
+20171227GB	2017_12_27 GB New Year.jpg	27.12.2017	29.12.2017	190	130	GB	Kingston Upon Hall	mother	Поздравление от мамы с Новым годом.	new_year	2	
 20171229LV	2017_12_29 New year.jpg		29.12.2017	155	105	LV	Riga	I	Поздравила Сашу с Наступающим годом.	new_year		
 20171231DE	2017_12_31 Munchen 2.jpg		31.12.2017	174	122	DE	Munchen	MihailT	Открытка из Мюнхена от Михаила наконец-то принесена в мой дом.			
 20171231DE2	2017_12_31 Munchen.jpg		31.12.2017	122	174	DE	Munchen	MihailT	И ещё одна открытка из Мюнхена от Михаила	beer		
@@ -255,7 +267,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20180403GB	2018_04_06 GB Coin.jpg	03.04.2018	05.04.2018	147	104	GB	Kingston Upon Hall	mother		coin		
 20180406LV	2018_04_06 Notes.jpg	06.04.2018		130	104	LV	Riga	Alex		pickmotion.com		
 20180410MT	2018_04_17 Malta Cats.jpg	10.04.2018	19.02.2018	164	115	MT		JuraM	Мальтийские котики от Юры М			
-20180428LV	2018_04_29 New Home.jpg	28.04.2018	29.04.2018	130		LV	Riga	Alex	Саша поздравил с новосельем	pickmotion.com		
+20180428LV	2018_04_29 New Home.jpg	28.04.2018	29.04.2018	130	104	LV	Riga	Alex	Саша поздравил с новосельем	pickmotion.com		
 20180507GB	2018_05_11 GB Withernsea.jpg	07.05.2018	11.05.2018	104	157	GB	Withernsea	mother	От мамы из города где проходит нулевой меридиан			
 20180512LV	2018_05_12 LV Goda aplis2.jpg	12.05.2018	21.05.2018	104	147	LV	Marupe	I	Латвии 100 лет. Бесплатная открытка с праздника.			
 20180512LV2	2018_05_12 LV Goda aplis.jpg	12.05.2018	21.05.2018	104	147	LV	Marupe	I	Латвии 100 лет. Бесплатная открытка с праздника.			
@@ -306,10 +318,10 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20181031GB	2018_10_31 GB.jpg	31.11.2018	05.11.2018	120	170	GB	London	I	Я прислала из командировки в Лондоне. Ничего кроме метро и конференции я в тот раз в Лондоне не видела.			
 20181102GB	2018_11_02 GB London.jpg	02.11.2018	12.11.2018	120	170	GB	London	I	Я прислала из командировки в Лондоне. Такой открытки еще не было: открытка-календарь.	calendar		
 20181106SE2	2018_11_06 SE Solna.jpg	06.11.2018	12.11.2018	105	215	SE	Stockholm	Alex	Саша прислал из командировки в Швецию.			
-20181106SE	2018_11_06 SE.jpg		06.11.2018			SE	Stockholm	Alex	Саша прислал из командировки в Швецию.	pickmotion.com		
+20181106SE	2018_11_06 SE.jpg		06.11.2018	130	104	SE	Stockholm	Alex	Саша прислал из командировки в Швецию.	pickmotion.com		
 20181113SE	2018_11_13 SE.jpg	13.11.2018	14.11.2018	114	147	SE	Stockholm	Alex	Саша прислал из командировки в Швецию. У автора какая-то тяга к обезъянам: мало того что перечислены виды обезьян, так еще и многие антропоморфные персонажи тоже обезъяны.	alphabet		
 20181115SE	2018_11_15 SE.jpg	15.11.2018	18.11.2018	140	140	SE	Stockholm	Alex	Саша прислал из командировки в Швецию.			
-20181119SE	2018_11_19 SE.jpg	19.11.2018				SE	Stockholm	Alex	Саша прислал из командировки в Швецию.	volume, map		
+20181119SE	2018_11_19 SE.jpg	19.11.2018		170	120	SE	Stockholm	Alex	Саша прислал из командировки в Швецию.	volume, map		
 20181121SE	2018_11_21 SE.jpg	21.11.2018	26.11.2018	105	147	SE	Stockholm	Alex				
 20181122JP2	2018_11_22 JP Aquarium.jpg		22.11.2018	105	150	JP	Okinawa	OlgaTk	Ольга привезла из путешествия на Окинаву, где сходила в местный аквариум.			
 20181122JP	2018_11_22 JP Okinava.jpg		22.11.2018	148	100	JP	Okinawa	OlgaTk	Ольга привезла из путешествия на Окинаву.			
@@ -324,6 +336,6 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20181214SE	2018_12_14 SE.jpg	12.12.2018	14.12.2018	120	170	SE	Stockholm	Alex		volume, map		
 20181215LV	2018_12_15 LV Baltu Rota.jpg	15.12.2018		105	148	LV	Riga	Alex, I	Зашли в магазин Балту Ротас и купили мне украшение на шею с орнаментом как на открытке, только с синим камнем	advert		
 20181218SE	2018_12_18 SE.jpg	17.12.2018	18.12.2018	105	148	SE	Stockholm	Alex	Шведская новогодня открытка от Саши.	new_year		
-20181219SE	2018_12_19 SE.jpg	19.12.2018	19.12.2018			SE	Stockholm	Alex	Посылаемый пакетик со сладостями.	volume, non_paper		
+20181219SE	2018_12_19 SE.jpg	19.12.2018	19.12.2018	200	150	SE	Stockholm	Alex	Посылаемый пакетик со сладостями.	volume, non_paper		
 20181221LV	2018_12_21 LV Secret Santa.jpg		21.12.2018	104	148	LV	Riga	VikaTi	Открытка была в подарке от Секретного Санты (которого я по открытке и угадала). Ручная работа, такие открытки делает ее мама.	new_year		
-20181231LV	2018_12_31 LV.jpg	31.12.2018				LV	Riga	Aliona, MihailT		new_year		
+20181231LV	2018_12_31 LV.jpg	31.12.2018		106	88	LV	Riga	Aliona, MihailT		new_year		
