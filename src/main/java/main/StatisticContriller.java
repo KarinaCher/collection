@@ -63,12 +63,24 @@ public class StatisticContriller
         
         result.put("oldest", postcards.stream()
                 .min(Comparator.comparing(Postcard::getDate)).get());
+        result.put("latest", postcards.stream()
+                .max(Comparator.comparing(Postcard::getDate)).get());
+        
+        
         result.put("highest", postcards.stream()
                 .max(Comparator.comparing(Postcard::getHeight)).get());
         result.put("widest", postcards.stream()
                 .max(Comparator.comparing(Postcard::getWidth)).get());
         result.put("biggest", postcards.stream()
                 .max(Comparator.comparing(Postcard::getSquare)).get());
+        
+        result.put("shortest", postcards.stream()
+                .min(Comparator.comparing(Postcard::getHeight)).get());
+        result.put("narrowest", postcards.stream()
+                .min(Comparator.comparing(Postcard::getWidth)).get());
+        result.put("smallest", postcards.stream()
+                .min(Comparator.comparing(Postcard::getSquare)).get());
+        
         
         return result;
     }
