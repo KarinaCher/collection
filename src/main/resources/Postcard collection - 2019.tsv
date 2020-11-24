@@ -1,5 +1,5 @@
 ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	Origin country
-20190104LV	2019_01_04 LV Dagnija.jpg	04.01.2019				LV	Riga	Dagnija				
+20190104LV	2019_01_04 LV Dagnija.jpg	04.01.2019		177	126	LV	Riga	Dagnija				
 20190115SE	2019_01_15 SE.jpg	15.01.2019		148	105	SE	Stockholm	Alex	Послал из Швеции, а купил на рождественском рынке в Риге.			LV
 20190121SE	2019_01_21 SE.jpg	21.01.2019		105	148	SE	Stockholm	Alex	Послал из Швеции, а купил на рождественском рынке в Риге.			LV
 20190125SE	2019_01_25 SE.jpg	25.01.2019		105	148	SE	Stockholm	Alex				
@@ -74,7 +74,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20190723DE2	2019_07_23 DE Frankfurt Zoo ABC.jpg	23.07.2019	29.07.2019	120	170	DE	Frankfurt	Alex, I	Открытка из зоопарка во Франкфурте. Очень хороший зоопарк. Животные здоровы и веселы и доступны для обозрения.	alphabet		
 20190720DE	2019_07_20 DE Gutenberg.jpg	20.07.2019	26.07.2019	104	147	DE	Mainz	Alex, I	Открытка из музея Гутенберга в Майнце. Хороший музей, интересная экспозиция и демонстрации.	museum		
 20190720DE1	2019_07_20 DE Gutenberg museum.jpg	20.07.2019	29.07.2019	104	147	DE	Mainz	Alex, I	Открытка из музея Гутенберга в Майнце. Хороший музей, интересная экспозиция и демонстрации.	museum, stereo		
-20190720DE2	2019_07_20 DE Mainz Puzzle.jpg	20.07.2019	26.07.2019	104	147	DE	Mainz	Alex, I	Открытка из туристического центра в Майнце в виде паззла.			
+20190720DE2	2019_07_20 DE Mainz Puzzle.jpg	20.07.2019	26.07.2019	104	147	DE	Mainz	Alex, I	Открытка из туристического центра в Майнце в виде паззла.	puzzle		
 20190720DE3	2019_07_20 DE map.jpg	20.07.2019	26.07.2019	104	147	DE	Mainz	Alex, I	Открытка из туристического центра в Майнце. Выпуклый рельеф.	volume, map		
 20190720DE4	2019_07_20 DE Lama.jpg	20.07.2019	26.07.2019	104	147	DE	Mainz	Alex, I	Рекламная открытка какого-то заведения африканской кухни.	advert		
 20190720DE5	2019_07_20 DE Elephant.jpg	20.07.2019	26.07.2019	104	147	DE	Mainz	Alex, I	Рекламная открытка какого-то заведения африканской кухни.	advert		
