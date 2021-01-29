@@ -202,7 +202,7 @@ public class PostcardResource
                 {
                     String descr = data[9];
                     descr = descr.replaceAll("\\[([0-9]{8}[A-Z]{2}[0-9]?)\\|(\\p{L}+)\\]", "<a href=\"/postcard/$1\">$2</a>");
-                    descr = descr.replaceAll("\\[([a-zA-Z\\.\\s]+)\\|([a-zA-Z\\s:/\\.]+)\\]", "<a href=\"$2\" target=\"_blank\">$1</a>");
+                    descr = descr.replaceAll("\\[([a-zA-Z\\.\\s\\p{IsAlphabetic}]+)\\|([a-zA-Z\\s:/\\.]+)\\]", "<a href=\"$2\" target=\"_blank\">$1</a>");
                     postcard.setDescription(descr);
                 }
                 if (data.length > 10)
