@@ -255,7 +255,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20171231DE	2017_12_31 Munchen 2.jpg		31.12.2017	174	122	DE	Munchen	MihailT	Открытка из Мюнхена от Михаила наконец-то принесена в мой дом.			
 20171231DE2	2017_12_31 Munchen.jpg		31.12.2017	122	174	DE	Munchen	MihailT	И ещё одна открытка из Мюнхена от Михаила	beer		
 20171231LV	2017_21_31 LV.jpg		31.12.2017	114	170	LV	Riga	MihailT, Aliona		new_year		
-20180101LV	2018_01_01 LV.jpg	01.01.2018				LV	Riga	Alex	Поздравительная открытка от Саши. |Это авторская открытка, другие работы можно посмотреть на сайте автора lindawangstudios.com	new_year		
+20180101LV	2018_01_01 LV.jpg	01.01.2018				LV	Riga	Alex	Поздравительная открытка от Саши. |Это авторская открытка, другие работы можно посмотреть на сайте автора lindawangstudios.com	new_year, volume		SE
 20180111LV	2018_01_12 LV Lnmm.jpg	11.01.2018	15.01.2018	150	180	LV	Riga	Alex	Открытка из Латвийского национального художественного музея. Ценный экземпляр, потому что по своей воле я вряд ли туда загляну.	museum		
 20180301LV	2018_03_01 LV.jpg	01.03.2018		150	100	LV	Riga	Alex				
 20180308SE	2018_03_12 LV Ceilo.jpg	08.03.2018		150	100	SE	Stockholm	Alex	Рекламная открытка. Саша принес из ресторана "Валмиермуйжа"	advert		
@@ -280,7 +280,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20180628EE2	2018_06_28 EE.jpg		28.06.2018	104	147	EE	Tartu	Aliona, MihailT	Открытка от Молодых из Эстонии			
 20180801LV	2018_07_01 LV Jugenstila muzejs.jpg	01.07.2018	03.07.2018	100	149	LV	Riga	Alex, I	Открытка из музея Югенстиля	museum		
 20180713LV	2018_07_13 LV Rigas vest muz.jpg	13.07.2018	18.07.2018	104	154	LV	Riga	Alex, I	Открытка из музея истории Риги и мореходства.	museum		
-20180713LV2	2018_07_13 Rigas vest muz Cat.jpg	13.07.2018	17.07.2018	120	195	LV	Riga	Alex, I	Купили в музее истории и мореходства в Риге. Открытка фирмы Lovi. Складывается в объемную фигурку кошки.	volume, wood		
+20180713LV2	2018_07_13 Rigas vest muz Cat.jpg	13.07.2018	17.07.2018	120	195	LV	Riga	Alex, I	Купили в музее истории и мореходства в Риге. Открытка фирмы Lovi. Складывается в объемную фигурку кошки.	volume, wood, non_paper		
 20180715LV	2018_07_15 LV Ventspils.jpg	15.07.2018	16.07.2018	104	147	LV	Ventspils	Alex, I	Послали открытку из Вентспилса	latvia_city		
 20180716LV	2018_07_16 LV Liepaja sea.jpg	16.07.2018	18.07.2018	104	147	LV	Liepaja	Alex, I	Открытка из Лиепаи			
 20180716LV2	2018_07_16 LV Liepaja st Jazeph church.jpg	16.07.2018	17.07.2018	148	99	LV	Liepaja	Alex, I	Открытка из церкви св. Иосифа в Лиепае.	church		

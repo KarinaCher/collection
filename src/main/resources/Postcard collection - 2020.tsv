@@ -21,7 +21,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20200307LV4	2020_03_07 LV Miit coffee.jpg		07.03.2020	150	100	LV	Riga	Alex	Рекламная открытка Miit coffee. Саша принес из раменной (Стабу 14).	advert		
 20200307LV5	2020_03_07 LV Airbaltic.jpg		07.03.2020	150	100	LV	Riga	Alex	Рекламная открытка Airbaltic. Саша принес из раменной (Стабу 14).	advert, airbaltic		
 20200310LV	2020_03_10 LV Likums.jpg	07.03.2020	10.03.2020	150	100	LV	Riga	Alex	Рекламная открытка. Саша принес из раменной (Стабу 14).	advert		
-20200401GB	2020_04_01 GB Woodpecker 1.jpg		01.04.2020	150	100	GB	Kingston Upon Hall	mother	Мама прислала замечательную деревянную открытку с дятлом.| Производство [www.TheWoodenPostcardCompany.com|https://www.thewoodenpostcardcompany.com/]	wood	2	
+20200401GB	2020_04_01 GB Woodpecker 1.jpg		01.04.2020	150	100	GB	Kingston Upon Hall	mother	Мама прислала замечательную деревянную открытку с дятлом.| Производство [www.TheWoodenPostcardCompany.com|https://www.thewoodenpostcardcompany.com/]	wood, non_paper	2	
 20200531LV	2020_05_31 LV Dobele.jpg	31.05.2020	31.05.2020	106	150	LV	Dobele	I	Бесплатная рекламная открытка из добельского парка сирени. Съездили с Молодыми, полюбовались на цветущую сирень.	advert		
 20200606LV	2020_06_06 LV Jay.jpg	06.06.2020	06.06.2020	100	150	LV	Kuldiga	I	Привезла из поездки в Кулдигу. Купила в сувенирной лавке, где продавалось много интересных вещей латвийских мастеров и был продавец, который умеет предлагать.			
 20200606LV2	2020_06_06 LV Sams.jpg	06.06.2020	06.06.2020	100	150	LV	Kuldiga	I	Привезла из поездки в Кулдигу. Купила в сувенирной лавке, где продавалось много интересных вещей латвийских мастеров и был продавец, который умеет предлагать.			
@@ -37,5 +37,5 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20201124AR	2020_11_24 AR Agrentina.jpg		24.11.2020	120	167	AR		OlgaTk	Ольга привезла из поездки в Аргентину.			
 20201124KR	2020_11_24 KR South Korea.jpg		24.11.2020	104	150	KR		OlgaTk	Ольга привезла из Южной Кореи.			
 20201124KR2	2020_11_24 KR South Korea_2.jpg		24.11.2020	100	154	KR		OlgaTk	Ольга привезла из Южной Кореи.			
-20201210LV	2020_12_10 LV Wooden.jpg	10.12.2020	11.12.2020	104	150	LV	Riga	I	Деревянная открытка. Купила в Jaņa Rozes. Производитель [ralfsrada.com|http://ralfsrada.com/]. Весит 30 г., так что надо чуть больше марок чем на обычную открытку.	wood		
+20201210LV	2020_12_10 LV Wooden.jpg	10.12.2020	11.12.2020	104	150	LV	Riga	I	Деревянная открытка. Купила в Jaņa Rozes. Производитель [ralfsrada.com|http://ralfsrada.com/]. Весит 30 г., так что надо чуть больше марок чем на обычную открытку.	wood, non_paper		
 20201229GB	2020_12_29 GB Wonderful Daughter 1.jpg		29.12.2020	185	155	GB	Kingston Upon Hall	mother	Поздравление от мамы с Новым годом.|Интересно нарисованы снежинки, если присмотреться, то видно, что они из листьев.	new_year	2	
