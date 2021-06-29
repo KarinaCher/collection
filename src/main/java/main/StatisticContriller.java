@@ -1,7 +1,8 @@
 package main;
 
 import entity.Postcard;
-import java.util.Comparator;
+import java.util.ArrayList;
+import static java.util.Comparator.comparing;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,14 +14,15 @@ import resources.PostcardResource;
 import resources.TagResource;
 import static presentation.Filters.*;
 import presentation.SizeMap;
+import presentation.TopItem;
 
 @Controller
 public class StatisticContriller
 {
-    
+
     @RequestMapping(value = "/statistics/{param}")
     public String statistics(
-            @PathVariable String param, 
+            @PathVariable String param,
             Model model)
     {
         final List<Postcard> list = PostcardResource.getList();
@@ -30,24 +32,24 @@ public class StatisticContriller
             case "sender":
                 model.addAttribute("tagsBySender", tagResource.getBy(SENDERS_BY_COUNT));
                 break;
-                
+
             case "country":
                 model.addAttribute("tagsByCountry", tagResource.getBy(COUNTRY_CITY_BY_COUNT));
                 break;
-                
+
             case "tag":
                 model.addAttribute("tags", tagResource.getBy(TAG_BY_COUNT));
                 model.addAttribute("tagsByName", tagResource.getBy(TAG_BY_NAME));
                 break;
-                
+
             case "size":
                 model.addAttribute("sizeMap", (new SizeMap(list)).get());
                 break;
-                
+
             case "year":
                 model.addAttribute("tagsByYear", tagResource.getBy(YEAR_BY_NAME));
                 break;
-                   
+
             case "most":
                 model.addAttribute("most", getMostPostcards(list));
                 break;
@@ -56,35 +58,46 @@ public class StatisticContriller
 
         return "statistics";
     }
-    
-    private Map<String, Postcard> getMostPostcards(List<Postcard> postcards)
+
+    private List<TopItem> getMostPostcards(List<Postcard> postcards)
     {
-        Map<String, Postcard> result = new HashMap();
-        
-        result.put("oldest", postcards.stream()
-                .min(Comparator.comparing(Postcard::getDate)).get());
-        result.put("latest", postcards.stream()
-                .max(Comparator.comparing(Postcard::getDate)).get());
-        
-        
-        result.put("highest", postcards.stream()
-                .max(Comparator.comparing(Postcard::getHeight)).get());
-        result.put("widest", postcards.stream()
-                .max(Comparator.comparing(Postcard::getWidth)).get());
-        result.put("biggest", postcards.stream()
-                .max(Comparator.comparing(Postcard::getSquare)).get());
-        
-        result.put("shortest", postcards.stream()
+        List<TopItem> result = new ArrayList();
+
+        Postcard oldest = postcards.stream()
+                .min(comparing(Postcard::getDate)).get();
+        Postcard latest = postcards.stream()
+                .max(comparing(Postcard::getDate)).get();
+
+        result.add(new TopItem("oldest", oldest.getDate(), oldest));
+        result.add(new TopItem("latest", latest.getDate(), latest));
+
+        Postcard highest = postcards.stream()
+                .max(comparing(Postcard::getHeight)).get();
+        Postcard shortest = postcards.stream()
                 .filter(p -> p.getHeight() > 0)
-                .min(Comparator.comparing(Postcard::getHeight)).get());
-        result.put("narrowest", postcards.stream()
+                .min(comparing(Postcard::getHeight)).get();
+
+        result.add(new TopItem("highest", highest.getHeight(), highest));
+        result.add(new TopItem("shortest", shortest.getHeight(), shortest));
+
+        Postcard widest = postcards.stream()
+                .max(comparing(Postcard::getWidth)).get();
+        Postcard narrowest = postcards.stream()
                 .filter(p -> p.getWidth() > 0)
-                .min(Comparator.comparing(Postcard::getWidth)).get());
-        result.put("smallest", postcards.stream()
+                .min(comparing(Postcard::getWidth)).get();
+
+        result.add(new TopItem("widest", widest.getWidth(), widest));
+        result.add(new TopItem("narrowest", narrowest.getWidth(), narrowest));
+
+        Postcard biggest = postcards.stream()
+                .max(comparing(Postcard::getSquare)).get();
+        Postcard smallest = postcards.stream()
                 .filter(p -> p.getSquare() > 0)
-                .min(Comparator.comparing(Postcard::getSquare)).get());
-        
-        
+                .min(comparing(Postcard::getSquare)).get();
+
+        result.add(new TopItem("biggest", biggest.getSquare(), biggest));
+        result.add(new TopItem("smallest", smallest.getSquare(), smallest));
+
         return result;
     }
 
