@@ -71,20 +71,24 @@
                                     <td><fmt:message key="size" bundle="${texts}"/></td>
                                     <td>${postcard.height} x ${postcard.width}</td>
                                 </tr>
-                                <tr>
-                                    <td><fmt:message key="notes" bundle="${texts}"/></td>
-                                    <td>${fn:replace(postcard.description, '|', '<br />')}</td>
-                                </tr>
-                                <tr>
-                                    <td><fmt:message key="tags" bundle="${texts}"/></td>
-                                    <td>
-                                        <c:if test="${!empty postcard.tags}">
-                                            <c:forEach var="tag" items="${postcard.tags}">
-                                                <a href="/tag/${tag}/page/1"><fmt:message key="${tag}" bundle="${tagMap}"/></a> 
-                                            </c:forEach>
-                                        </c:if>
-                                    </td>
-                                </tr>
+                                <c:if test="${!empty postcard.description}">
+                                    <tr>
+                                        <td><fmt:message key="notes" bundle="${texts}"/></td>
+                                        <td>${fn:replace(postcard.description, '|', '<br />')}</td>
+                                    </tr>
+                                </c:if>
+                                <c:if test="${!empty postcard.tags}">
+                                    <tr>
+                                        <td><fmt:message key="tags" bundle="${texts}"/></td>
+                                        <td>
+                                            <c:if test="${!empty postcard.tags}">
+                                                <c:forEach var="tag" items="${postcard.tags}">
+                                                    <a href="/tag/${tag}/page/1"><fmt:message key="${tag}" bundle="${tagMap}"/></a> 
+                                                </c:forEach>
+                                            </c:if>
+                                        </td>
+                                    </tr>
+                                </c:if>
 
                             </table>
                         </div>
@@ -115,7 +119,7 @@
                 <div>
                     <c:forEach var="image" items="${postcard.images}" varStatus="loop">
                         <c:if test="${loop.index > 0}">
-                            <img src="../image/100/${image}" class="pop" current-index="${loop.index}" />
+                            <img src="../image/100/${image}" class="pop img_thumb" current-index="${loop.index}" />
                         </c:if>
                     </c:forEach>
                 </div>
