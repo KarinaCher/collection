@@ -65,10 +65,16 @@ div#modal-body-prevImg {
     float: left; 
     width: 50%; 
     height: 500px;
+    cursor: w-resize;
 }
 
 div#modal-body-nextImg {
     float: right; 
     width: 50%; 
     height: 500px;
+    cursor: e-resize;
+}
+
+img.img_thumb {
+    margin: 5px 5px 0 0;
 }
