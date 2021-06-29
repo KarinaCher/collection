@@ -49,11 +49,11 @@
                             <table class="table table-hover">
                                 <tr>
                                     <td><fmt:message key="dateSent" bundle="${texts}"/></td>
-                                    <td><fmt:formatDate value="${postcard.dateSent}" pattern="dd MMM yyyy"/></td>
+                                    <td>${postcard.dateSentString}</td>
                                 </tr>
                                 <tr>
                                     <td><fmt:message key="dateReceived" bundle="${texts}"/></td>
-                                    <td><fmt:formatDate value="${postcard.dateReceived}" pattern="dd MMM yyyy"/></td>
+                                    <td>${postcard.dateReceivedString}</td>
                                 </tr>
                                 <tr>
                                     <td><fmt:message key="from" bundle="${texts}"/></td>

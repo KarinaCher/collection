@@ -1,7 +1,8 @@
 package presentation;
 
 import entity.Postcard;
-import java.util.Date;
+import java.time.LocalDate;
+import static util.DateUtil.format;
 
 public class TopItem
 {
@@ -18,10 +19,10 @@ public class TopItem
         this.image = postcard.getImages().get(0);
     }
 
-    public TopItem(String nomination, Date value, Postcard postcard)
+    public TopItem(String nomination, LocalDate value, Postcard postcard)
     {
         this.nomination = nomination;
-        this.value = value.toString();
+        this.value = format(value);
         this.itemId = postcard.getId();
         this.image = postcard.getImages().get(0);
     }

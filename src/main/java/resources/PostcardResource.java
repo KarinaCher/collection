@@ -3,12 +3,8 @@ package resources;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import entity.Postcard;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -20,6 +16,7 @@ import java.util.HashSet;
 import java.util.Set;
 import static main.OverviewController.ITEMS_PER_PAGE;
 import org.jboss.logging.Logger;
+import static util.DateUtil.parse;
 
 public class PostcardResource
 {
@@ -29,8 +26,8 @@ public class PostcardResource
     
     private static final Comparator BY_DATE = (Comparator<Postcard>) (Postcard p1, Postcard p2) -> 
     {
-        Date date2 = p2.getDateReceived() == null ? p2.getDateSent() : p2.getDateReceived();
-        Date date1 = p1.getDateReceived() == null ? p1.getDateSent() : p1.getDateReceived();
+        LocalDate date2 = p2.getDateReceived() == null ? p2.getDateSent() : p2.getDateReceived();
+        LocalDate date1 = p1.getDateReceived() == null ? p1.getDateSent() : p1.getDateReceived();
         return date2.compareTo(date1);
     };
     
@@ -147,7 +144,6 @@ public class PostcardResource
     {
         List<Postcard> list = new ArrayList<>();
         Set<String> ids = new HashSet();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", Locale.ENGLISH);
         
         InputStream inputStream = PostcardResource.class.getResourceAsStream(file);
         
@@ -172,15 +168,11 @@ public class PostcardResource
                 postcard.getImages().add(data[1]);
                 if (!data[2].isEmpty())
                 {
-                    postcard.setDateSent(Date.from(
-                            LocalDate.parse(data[2], formatter)
-                            .atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+                    postcard.setDateSent(parse(data[2]));
                 }
                 if (!data[3].isEmpty())
                 {
-                    postcard.setDateReceived(Date.from(
-                                LocalDate.parse(data[3], formatter)
-                                .atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+                    postcard.setDateReceived(parse(data[3]));
                 }
                 else {
                     LOG.warn("Date received is empty. ID = " + postcard.getId());

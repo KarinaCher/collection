@@ -1,11 +1,10 @@
 package entity;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
-import static java.util.Calendar.YEAR;
-import java.util.Date;
 import java.util.List;
 import org.jboss.logging.Logger;
+import static util.DateUtil.format;
 
 public class Postcard
 {
@@ -13,8 +12,8 @@ public class Postcard
     
     private String id;
     private List<String> images = new ArrayList<>();
-    private Date dateSent;
-    private Date dateReceived;
+    private LocalDate dateSent;
+    private LocalDate dateReceived;
     private int height;
     private int width;
     private String country;
@@ -44,22 +43,22 @@ public class Postcard
         this.images = images;
     }
     
-    public Date getDateSent()
+    public LocalDate getDateSent()
     {
         return dateSent;
     }
 
-    public void setDateSent(Date dateSent)
+    public void setDateSent(LocalDate dateSent)
     {
         this.dateSent = dateSent;
     }
 
-    public Date getDateReceived()
+    public LocalDate getDateReceived()
     {
         return dateReceived;
     }
 
-    public void setDateReceived(Date dateReceived)
+    public void setDateReceived(LocalDate dateReceived)
     {
         this.dateReceived = dateReceived;
     }
@@ -144,7 +143,7 @@ public class Postcard
         this.mine = mine;
     }
     
-    public Date getDate() 
+    public LocalDate getDate() 
     {
         if (getDateReceived() != null) {
             return getDateReceived();
@@ -165,13 +164,21 @@ public class Postcard
             return null;
         }
         
-        Calendar c = Calendar.getInstance();
-        c.setTime(getDate());
-        return String.valueOf(c.get(YEAR));
+        return String.valueOf(getDate().getYear());
     }
     
     public int getSquare()
     {
         return getHeight() * getWidth();
+    }
+    
+    public String getDateSentString()
+    {
+        return format(dateSent);
+    }
+
+    public String getDateReceivedString()
+    {
+        return format(dateReceived);
     }
 }
