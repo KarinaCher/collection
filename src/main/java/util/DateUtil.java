@@ -13,6 +13,6 @@ public class DateUtil
     }
     
     public static String format(LocalDate date) {
-        return date.format(formatter);
+        return date != null ? date.format(formatter) : "";
     }
 }
