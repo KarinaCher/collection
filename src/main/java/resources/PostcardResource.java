@@ -24,17 +24,15 @@ public class PostcardResource
     private static List<Postcard> postcardList = new ArrayList<>();
     private static List<Postcard> postcardListOther = new ArrayList<>();
     
-    private static final Comparator BY_DATE = (Comparator<Postcard>) (Postcard p1, Postcard p2) -> 
+    private static final Comparator BY_DATE = (Comparator<Postcard>) (p1, p2) ->
     {
         LocalDate date2 = p2.getDateReceived() == null ? p2.getDateSent() : p2.getDateReceived();
         LocalDate date1 = p1.getDateReceived() == null ? p1.getDateSent() : p1.getDateReceived();
         return date2.compareTo(date1);
     };
     
-    private static final Comparator BY_ID = (Comparator<Postcard>) (Postcard p1, Postcard p2) -> 
-    {
-        return p2.getId().compareTo(p1.getId());
-    };
+    private static final Comparator BY_ID = (Comparator<Postcard>) (p1, p2) ->
+    p2.getId().compareTo(p1.getId());
     
     public static List<Postcard> getList()
     {
@@ -140,7 +138,7 @@ public class PostcardResource
         return result;
     }
     
-    private static List<Postcard> readTsv(String file)
+    static List<Postcard> readTsv(String file)
     {
         List<Postcard> list = new ArrayList<>();
         Set<String> ids = new HashSet();
