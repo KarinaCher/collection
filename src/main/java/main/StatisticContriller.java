@@ -29,10 +29,6 @@ public class StatisticContriller
         final TagResource tagResource = new TagResource(list);
         switch (param)
         {
-            case "sender":
-                model.addAttribute("tagsBySender", tagResource.getBy(SENDERS_BY_COUNT));
-                break;
-
             case "country":
                 model.addAttribute("tagsByCountry", tagResource.getBy(COUNTRY_CITY_BY_COUNT));
                 break;
@@ -52,6 +48,11 @@ public class StatisticContriller
 
             case "most":
                 model.addAttribute("most", getMostPostcards(list));
+                break;
+
+            case "sender":
+            default:
+                model.addAttribute("tagsBySender", tagResource.getBy(SENDERS_BY_COUNT));
                 break;
         }
         model.addAttribute("p", param);

@@ -1,31 +1,28 @@
 package main;
 
 import entity.Postcard;
-import java.awt.AlphaComposite;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import javax.imageio.ImageIO;
-import javax.servlet.ServletContext;
 import org.apache.commons.compress.utils.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
-import org.springframework.http.CacheControl;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import resources.PostcardResource;
 
+import javax.imageio.ImageIO;
+import javax.servlet.ServletContext;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 @Controller
 public class ImageController
 {
+    public static final String LAST_ITEM_SIZE = "200";
     @Autowired
     ServletContext servletContext;
     
@@ -48,7 +45,7 @@ public class ImageController
             throws IOException 
     {
         Postcard postcard = PostcardResource.getList().get(0);
-        return createImage(postcard.getImages().get(0), "200");
+        return createImage(postcard.getImages().get(0), LAST_ITEM_SIZE);
     }
 
     private ResponseEntity<byte[]> createImage(String name, String size) throws IOException

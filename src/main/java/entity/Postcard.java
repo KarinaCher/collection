@@ -1,12 +1,14 @@
 package entity;
 
+import org.jboss.logging.Logger;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.jboss.logging.Logger;
+
 import static util.DateUtil.format;
 
-public class Postcard
+public class Postcard implements Item<String>
 {
     public static final Logger LOG = Logger.getLogger(Postcard.class);
     

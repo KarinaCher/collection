@@ -1,6 +1,5 @@
 package main;
 
-import java.util.List;
 import entity.Postcard;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,16 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import resources.PostcardResource;
 
+import java.util.List;
+
 @Controller
 public class OverviewController
 {
     public static final int ITEMS_PER_PAGE = 36;
+    private static final int FIRST_PAGE = 1;
     
     @RequestMapping("/")
     public String overview(Model model) 
     {
-        final List<Postcard> list = PostcardResource.getList(1);
-        addAttributes(model, 1, list, PostcardResource.getList().size());
+        final List<Postcard> list = PostcardResource.getList(FIRST_PAGE);
+        addAttributes(model, FIRST_PAGE, list, PostcardResource.getFullCount());
         return "overview";
     }
     
@@ -28,7 +30,7 @@ public class OverviewController
         int pageNum = getPage(page);
         
         final List<Postcard> list = PostcardResource.getList(pageNum, true);
-        addAttributes(model, pageNum, list, PostcardResource.getOtherList().size());
+        addAttributes(model, pageNum, list, PostcardResource.getOthersFullCount());
         model.addAttribute("parentPath", "/other");
         return "overview";
     }
@@ -42,7 +44,7 @@ public class OverviewController
         
         addAttributes(model, pageNum, 
                 list, 
-                PostcardResource.getList().size());
+                PostcardResource.getFullCount());
         return "overview";
     }
     
@@ -51,7 +53,6 @@ public class OverviewController
             @PathVariable String page,
             Model model) 
     {
-        // TODO validate input.
         int pageNum = getPage(page);
         
         List<Postcard> list = tagName == null
@@ -72,7 +73,6 @@ public class OverviewController
             @PathVariable String page,
             Model model) 
     {
-        // TODO validate input.
         int pageNum = getPage(page);
         
         List<Postcard> list = countryId == null
@@ -93,7 +93,6 @@ public class OverviewController
             @PathVariable String page,
             Model model) 
     {
-        // TODO validate input.
         int pageNum = getPage(page);
         
         List<Postcard> list = city == null
@@ -120,20 +119,20 @@ public class OverviewController
     
     private int getPage(String page)
     {
-        int pageNum = 1;
         try
         {
-            pageNum = Integer.parseInt(page);
+            return Integer.parseInt(page);
         }
-        catch (NumberFormatException ex) { }
-        return pageNum;
+        catch (NumberFormatException ex) {
+            return FIRST_PAGE;
+        }
     }
 
     private void addAttributes(Model model, int pageNum, List<Postcard> list, int fullListSize)
     {
         model.addAttribute("currentPage", pageNum);
         model.addAttribute("list", list);
-        model.addAttribute("pages", (int) (fullListSize / ITEMS_PER_PAGE) + 1);
+        model.addAttribute("pages", (fullListSize / ITEMS_PER_PAGE) + 1);
         model.addAttribute("count", fullListSize);
     }
 }
