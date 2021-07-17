@@ -5,6 +5,8 @@ import entity.Item;
 import java.util.List;
 import java.util.Optional;
 
+import static main.OverviewController.ITEMS_PER_PAGE;
+
 public class ListUtil<T extends Item<?>, K> {
     public T getById(K id, List<T>... lists) {
         for (List<T> list : lists) {
@@ -16,5 +18,13 @@ public class ListUtil<T extends Item<?>, K> {
             }
         }
         return null;
+    }
+
+    public List<T> getPage(int page, List<T> list) {
+        int begin = ITEMS_PER_PAGE * (page - 1);
+        int end = ITEMS_PER_PAGE * page;
+        end = end > list.size() ? list.size() : end;
+
+        return list.subList(begin, end);
     }
 }

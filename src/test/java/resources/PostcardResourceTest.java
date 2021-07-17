@@ -6,11 +6,12 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static util.TsvUtil.readTsv;
 
 public class PostcardResourceTest {
     @Test
     public void testGetList() {
-        List<Postcard> postcards = PostcardResource.readTsv("/TestScope.tsv");
+        List<Postcard> postcards = readTsv("/TestScope.tsv");
 
         Postcard postcard = postcards.stream()
                 .filter(p -> p.getId().equals("20210621DE"))
@@ -57,7 +58,7 @@ public class PostcardResourceTest {
 
     @Test
     public void testOtherList() {
-        List<Postcard> postcards = PostcardResource.getOtherList();
+        List<Postcard> postcards = (new PostcardOtherResource()).getList();
 
         assertAll("Test list of 'Others' postcards, which wasn't sent to me.",
                 () -> assertEquals(2, postcards.size()),

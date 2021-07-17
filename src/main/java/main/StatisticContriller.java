@@ -1,34 +1,32 @@
 package main;
 
 import entity.Postcard;
-import java.util.ArrayList;
-import static java.util.Comparator.comparing;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import resources.PostcardResource;
-import resources.TagResource;
-import static presentation.Filters.*;
 import presentation.SizeMap;
 import presentation.TopItem;
+import resources.ResourceContainer;
+import resources.TagResource;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static java.util.Comparator.comparing;
+import static presentation.Filters.*;
 
 @Controller
-public class StatisticContriller
-{
+public class StatisticContriller {
+    private static ResourceContainer container = new ResourceContainer();
 
     @RequestMapping(value = "/statistics/{param}")
     public String statistics(
             @PathVariable String param,
-            Model model)
-    {
-        final List<Postcard> list = PostcardResource.getList();
-        final TagResource tagResource = new TagResource(list);
-        switch (param)
-        {
+            Model model) {
+        final List<Postcard> list = container.getResource().getList();
+        final TagResource tagResource = container.getTagResource();
+        switch (param) {
             case "country":
                 model.addAttribute("tagsByCountry", tagResource.getBy(COUNTRY_CITY_BY_COUNT));
                 break;
@@ -60,8 +58,7 @@ public class StatisticContriller
         return "statistics";
     }
 
-    private List<TopItem> getMostPostcards(List<Postcard> postcards)
-    {
+    private List<TopItem> getMostPostcards(List<Postcard> postcards) {
         List<TopItem> result = new ArrayList();
 
         Postcard oldest = postcards.stream()
