@@ -2,11 +2,10 @@ package util;
 
 import entity.Postcard;
 import org.jboss.logging.Logger;
-import resources.PostcardResource;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -23,9 +22,9 @@ public class TsvUtil {
     public static List<Postcard> readTsv(String file) {
         Map<String, Postcard> list = new HashMap<>();
 
-        URL fileName = TsvUtil.class.getResource(file);
+        ClassPathResource resource = new ClassPathResource(file);
 
-        try (Stream<String> stream = Files.lines(Paths.get(fileName.toURI()))) {
+        try (Stream<String> stream = Files.lines(Paths.get(resource.getURL().toURI()))) {
             stream
                     .skip(1)
                     .forEach(line -> {
