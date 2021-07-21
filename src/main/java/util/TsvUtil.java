@@ -23,8 +23,11 @@ public class TsvUtil {
     public static List<Postcard> readTsv(String fileName) {
         Map<String, Postcard> list = new HashMap<>();
 
-        Path path = null;
+        Path path;
+
         try {
+            System.out.println(ClassLoader.getSystemResource(fileName));
+            System.out.println(Paths.get(ClassLoader.getSystemResource(fileName).toURI()));
             path = Paths.get(ClassLoader.getSystemResource(fileName).toURI());
         } catch (URISyntaxException e) {
             e.printStackTrace();
