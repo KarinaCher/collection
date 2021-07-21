@@ -3,12 +3,12 @@ package util;
 import entity.Postcard;
 import org.jboss.logging.Logger;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,19 +23,15 @@ public class TsvUtil {
     public static List<Postcard> readTsv(String fileName) {
         Map<String, Postcard> list = new HashMap<>();
 
-        URL res = TsvUtil.class.getClassLoader().getResource(fileName);
-        File file = null;
+        Path path = null;
         try {
-            System.out.println(res);
-            System.out.println(res.getPath());
-            file = Paths.get(res.toURI()).toFile();
+            path = Paths.get(ClassLoader.getSystemResource(fileName).toURI());
         } catch (URISyntaxException e) {
             e.printStackTrace();
+            return Collections.emptyList();
         }
-        System.out.println(file.getAbsolutePath());
-        System.out.println(file.toURI().getPath());
 
-        try (Stream<String> stream = Files.lines(file.toPath())) {
+        try (Stream<String> stream = Files.lines(path)) {
             stream
                     .skip(1)
                     .forEach(line -> {
