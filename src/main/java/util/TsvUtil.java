@@ -30,9 +30,8 @@ public class TsvUtil {
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
-        String absolutePath = file.getAbsolutePath();
 
-        try (Stream<String> stream = Files.lines(Paths.get(absolutePath))) {
+        try (Stream<String> stream = Files.lines(file.toPath())) {
             stream
                     .skip(1)
                     .forEach(line -> {
