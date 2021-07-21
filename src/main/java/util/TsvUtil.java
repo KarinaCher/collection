@@ -23,7 +23,7 @@ public class TsvUtil {
     public static List<Postcard> readTsv(String file) {
         Map<String, Postcard> list = new HashMap<>();
 
-        URL fileName = PostcardResource.class.getResource(file);
+        URL fileName = TsvUtil.class.getResource(file);
 
         try (Stream<String> stream = Files.lines(Paths.get(fileName.toURI()))) {
             stream
