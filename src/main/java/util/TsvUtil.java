@@ -2,10 +2,11 @@ package util;
 
 import entity.Postcard;
 import org.jboss.logging.Logger;
-import org.springframework.core.io.ClassPathResource;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -19,12 +20,19 @@ public class TsvUtil {
     public static final Logger LOG = Logger.getLogger(TsvUtil.class);
     private static final PostcardHelper helper = new PostcardHelper();
 
-    public static List<Postcard> readTsv(String file) {
+    public static List<Postcard> readTsv(String fileName) {
         Map<String, Postcard> list = new HashMap<>();
 
-        ClassPathResource resource = new ClassPathResource(file);
+        URL res = TsvUtil.class.getClassLoader().getResource(fileName);
+        File file = null;
+        try {
+            file = Paths.get(res.toURI()).toFile();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        String absolutePath = file.getAbsolutePath();
 
-        try (Stream<String> stream = Files.lines(Paths.get(resource.getURL().toURI()))) {
+        try (Stream<String> stream = Files.lines(Paths.get(absolutePath))) {
             stream
                     .skip(1)
                     .forEach(line -> {
@@ -34,7 +42,7 @@ public class TsvUtil {
                         }
                         list.put(postcard.getId(), postcard);
                     });
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return list.values().stream()

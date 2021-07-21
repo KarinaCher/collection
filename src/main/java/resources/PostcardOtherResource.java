@@ -15,7 +15,7 @@ public class PostcardOtherResource implements Resource<Postcard> {
     @Override
     public List<Postcard> getList() {
         if (postcardList.isEmpty()) {
-            postcardList.addAll(readTsv("/Postcard collection - other.tsv"));
+            postcardList.addAll(readTsv("Postcard collection - other.tsv"));
             postcardList.forEach(postcard -> postcard.setMine(false));
             postcardList.sort(BY_ID);
         }

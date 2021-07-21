@@ -15,13 +15,13 @@ public class PostcardResource implements Resource<Postcard> {
 
     public List<Postcard> getList() {
         if (postcardList.isEmpty()) {
-            postcardList.addAll(readTsv("/Postcard collection - 1980x.tsv"));
-            postcardList.addAll(readTsv("/Postcard collection - 1990x.tsv"));
-            postcardList.addAll(readTsv("/Postcard collection - 2000x.tsv"));
-            postcardList.addAll(readTsv("/Postcard collection - 2010x.tsv"));
+            postcardList.addAll(readTsv("Postcard collection - 1980x.tsv"));
+            postcardList.addAll(readTsv("Postcard collection - 1990x.tsv"));
+            postcardList.addAll(readTsv("Postcard collection - 2000x.tsv"));
+            postcardList.addAll(readTsv("Postcard collection - 2010x.tsv"));
             int currentYear = LocalDate.now().getYear();
             for (int i = 2019; i <= currentYear; i++) {
-                postcardList.addAll(readTsv("/Postcard collection - " + i + ".tsv"));
+                postcardList.addAll(readTsv("Postcard collection - " + i + ".tsv"));
             }
             postcardList.sort(BY_DATE);
         }

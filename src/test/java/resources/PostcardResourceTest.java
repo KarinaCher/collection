@@ -11,7 +11,7 @@ import static util.TsvUtil.readTsv;
 public class PostcardResourceTest {
     @Test
     public void testGetList() {
-        List<Postcard> postcards = readTsv("/TestScope.tsv");
+        List<Postcard> postcards = readTsv("TestScope.tsv");
 
         Postcard postcard = postcards.stream()
                 .filter(p -> p.getId().equals("20210621DE"))
