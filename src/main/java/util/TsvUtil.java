@@ -26,7 +26,9 @@ public class TsvUtil {
         Path path;
 
         try {
-            System.out.println(ClassLoader.getSystemResource(fileName));
+            System.out.println(ClassLoader.getSystemResource("/" + fileName));
+            System.out.println(ClassLoader.getSystemResource("/../resources/" + fileName));
+
             System.out.println(Paths.get(ClassLoader.getSystemResource(fileName).toURI()));
             path = Paths.get(ClassLoader.getSystemResource(fileName).toURI());
         } catch (URISyntaxException e) {
