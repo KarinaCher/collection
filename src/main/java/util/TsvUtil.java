@@ -30,6 +30,8 @@ public class TsvUtil {
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
+        System.out.println(file.getAbsolutePath());
+        System.out.println(file.toURI().getPath());
 
         try (Stream<String> stream = Files.lines(file.toPath())) {
             stream
