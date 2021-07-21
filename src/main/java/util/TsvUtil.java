@@ -26,6 +26,7 @@ public class TsvUtil {
         URL res = TsvUtil.class.getClassLoader().getResource(fileName);
         File file = null;
         try {
+            System.out.println(res);
             System.out.println(res.getPath());
             file = Paths.get(res.toURI()).toFile();
         } catch (URISyntaxException e) {
