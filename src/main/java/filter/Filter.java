@@ -58,7 +58,7 @@ public abstract class Filter<E, T, K> {
                         subSet.stream()
                                 .forEach(subField -> {
                                     tagInfo.getList().add(
-                                            createTagInfo(subField, getCountOfTagged(resource, field)));
+                                            createTagInfo(subField, getCountOfTagged(resource, subField)));
                                 });
                     }
 
