@@ -21,7 +21,7 @@ public class TsvUtil {
 
         Stream<String> stream = new BufferedReader(
                 new InputStreamReader(
-                        ClassLoader.getSystemResourceAsStream(fileName))).lines();
+                        TsvUtil.class.getResourceAsStream("/" + fileName))).lines();
         stream
                 .skip(1)
                 .forEach(line -> {
