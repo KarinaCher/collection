@@ -30,9 +30,9 @@
                 <li <c:if test="${p eq 'most'}">class="active"</c:if>>
                     <a href="/statistics/most"><fmt:message key="most" bundle="${texts}"/></a>
                 </li>
-<!--                <li <c:if test="${p eq 'size'}">class="active"</c:if>>
+                <li <c:if test="${p eq 'size'}">class="active"</c:if>>
                     <a href="/statistics/size">by size</a>
-                </li>-->
+                </li>
             </ul>
             <div style="padding-top: 30px;">
                 <c:choose>

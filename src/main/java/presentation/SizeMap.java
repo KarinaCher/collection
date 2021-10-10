@@ -1,54 +1,96 @@
 package presentation;
 
 import entity.Postcard;
+
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
-public class SizeMap
-{
+import static java.util.stream.Collectors.toSet;
+
+public class SizeMap {
     private final List<Postcard> postcardList;
-    private Map<Integer, Map<Integer, Integer>> map = new HashMap();
-    private Set<Integer> heights = new HashSet();
-    private Set<Integer> widths = new HashSet();
+    private Map<String, Cell> map = new HashMap();
+    private Integer[][] result;
+    private Integer[] heights;
+    private Integer[] widths;
 
-    public SizeMap(List<Postcard> postcardList)
-    {
+    public SizeMap(List<Postcard> postcardList) {
         this.postcardList = postcardList;
     }
-    
-    private void build()
-    {
-        for (Postcard postcard : postcardList)
-        {
-            heights.add(postcard.getHeight());
-            widths.add(postcard.getWidth());
+
+    private void build() {
+        for (Postcard postcard : postcardList) {
+            String key = postcard.getHeight() + "x" + postcard.getWidth();
+            if (map.get(key) == null) {
+                map.put(key, new Cell());
+            }
+            map.get(key).increase();
         }
-        
-        for (Integer height : heights) 
-        {
-            map.put(height, new HashMap());
-            for (Integer width : widths) 
-            {
-                map.get(height).put(width, 0);
+        heights = postcardList.stream()
+                .map(Postcard::getHeight)
+                .collect(toSet())
+                .stream()
+                .sorted()
+                .toArray(Integer[]::new);
+
+        widths = postcardList.stream()
+                .map(Postcard::getWidth)
+                .collect(toSet())
+                .stream()
+                .sorted()
+                .toArray(Integer[]::new);
+
+        result = new Integer[heights.length][widths.length];
+
+        for (int h = 0; h < heights.length; h++) {
+            Integer cellHeight = heights[h];
+            for (int w = 0; w < widths.length; w++) {
+                Integer cellWidth = widths[w];
+                result[h][w] = getCell(map, cellHeight, cellWidth);
             }
         }
-        
-        for (Postcard postcard : postcardList)
-        {
-            Map<Integer, Integer> heightMap = map.get(postcard.getHeight());
-            int increaseValue = heightMap.get(postcard.getWidth()) + 1;
-            heightMap.put(postcard.getWidth(), increaseValue);
-        }
     }
-    
-    public Map<Integer, Map<Integer, Integer>> get() {
-        if (map.isEmpty())
-        {
+
+    private int getCell(Map<String, Cell> map, int height, int wight) {
+        Cell cell = map.get(height + "x" + wight);
+        return cell != null ? cell.getCount() : 0;
+    }
+
+    public Integer[][] get() {
+        if (result == null) {
             build();
         }
-        return map;
+        return result;
+    }
+
+    public int getMaxCount() {
+        get();
+        return map.values().stream()
+                .mapToInt(cell -> cell.getCount())
+                .max()
+                .getAsInt();
+    }
+
+    public Integer[] getHeights() {
+        get();
+        return heights;
+    }
+
+    public Integer[] getWidths() {
+        get();
+        return widths;
+    }
+
+    private class Cell {
+        private int count = 0;
+
+        public void increase() {
+            count++;
+        }
+
+        public int getCount() {
+            return count;
+        }
     }
 }

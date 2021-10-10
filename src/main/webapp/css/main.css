@@ -78,3 +78,9 @@ div#modal-body-nextImg {
 img.img_thumb {
     margin: 5px 5px 0 0;
 }
+table#postcardsBySize {
+    width: 100%;
+}
+table#postcardsBySize td {
+    border: 1px #aaa solid;
+}

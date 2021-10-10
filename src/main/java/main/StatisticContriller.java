@@ -37,7 +37,11 @@ public class StatisticContriller {
                 break;
 
             case "size":
-                model.addAttribute("sizeMap", (new SizeMap(list)).get());
+                SizeMap sizeMap = new SizeMap(list);
+                model.addAttribute("sizeMap", sizeMap.get());
+                model.addAttribute("maxCount", sizeMap.getMaxCount());
+                model.addAttribute("heights", sizeMap.getHeights());
+                model.addAttribute("widths", sizeMap.getWidths());
                 break;
 
             case "year":
