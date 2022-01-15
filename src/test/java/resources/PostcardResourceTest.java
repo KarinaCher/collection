@@ -25,8 +25,12 @@ public class PostcardResourceTest {
                 .filter(p -> p.getId().equals("20210628GB"))
                 .findFirst()
                 .get();
+        Postcard postcardHref = postcards.stream()
+                .filter(p -> p.getId().equals("20220115EE"))
+                .findFirst()
+                .get();
         assertAll("Test get List",
-                () -> assertEquals(16, postcards.size()),
+                () -> assertEquals(17, postcards.size()),
 
                 () -> assertEquals("20210621DE", postcard.getId()),
                 () -> assertEquals(1, postcard.getSenders().size()),
@@ -52,7 +56,9 @@ public class PostcardResourceTest {
                 () -> assertEquals(1, postcard1.getTags().size()),
 
                 () -> assertNull(postcard2.getYear()),
-                () -> assertEquals(0, postcard2.getTags().size())
+                () -> assertEquals(0, postcard2.getTags().size()),
+
+                () -> assertEquals("Коллеги Эма и Глеб привезли мне эту открытку, которая входной билет с <a href=\"https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%8F%D0%BA_%D0%9F%D0%B0%D0%BA%D1%80%D0%B8\" target=\"_blank\">маяка Пакри</a>. Официальный сайт маяка на эстонском <a href=\"http://www.pakrituletorn.ee/\" target=\"_blank\">pakrituletorn.ee</a>", postcardHref.getDescription())
         );
     }
 
