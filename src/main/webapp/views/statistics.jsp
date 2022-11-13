@@ -5,9 +5,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='/css/test.css'>
         <link rel='stylesheet' href='/css/main.css'>
-        <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/js/test.js"></script>
         <title>Statistics</title>
     </head>
     <body>

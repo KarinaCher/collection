@@ -36,9 +36,8 @@ dependencies {
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
     compile("javax.servlet:jstl")
     compile('org.springframework.boot:spring-boot-devtools')
-    
-    compile('org.webjars:webjars-locator:0.32') // use:        /webjars/bootstrap/css/bootstrap.min.css
-    compile('org.webjars:bootstrap:3.3.7-1')    // instead of: /webjars/bootstrap/3.3.7-1/css/bootstrap.min.css
+
+    compile('org.apache.commons:commons-compress:1.22')
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.3.1')
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.3.1')
 }
