@@ -24,6 +24,14 @@
                     </c:if>
                     <div class="col-sm-3">
                         <div class="thumbnail">
+                            <div class="caption">
+                                <fmt:message key="overview.from" bundle="${texts}"/>
+                                <c:forEach var="sender" items="${postcard.senders}">
+                                    <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>,
+                                </c:forEach>
+                                <br />
+                                <a href="/country/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>
+                            </div>
                             <a href="/postcard/${postcard.id}">
                                 <img src="/image/200/${postcard.images[0]}" class="img-fluid" id="${postcard.id}"/>
                             </a>
@@ -31,12 +39,6 @@
                                 ${fn:replace(postcard.description, '|', '<br />')}
                             </div>
                             <div class="caption">
-                                <fmt:message key="overview.from" bundle="${texts}"/>  
-                                <c:forEach var="sender" items="${postcard.senders}">
-                                    <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>, 
-                                </c:forEach>
-                                (<a href="/country/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>)
-                                <br />
                                 <c:if test="${!empty postcard.tags}">
                                     <c:forEach var="tag" items="${postcard.tags}">
                                         <a href="/tag/${tag}/page/1"><fmt:message key="${tag}" bundle="${tagMap}"/></a> 
