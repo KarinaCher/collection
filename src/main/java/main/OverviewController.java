@@ -36,7 +36,7 @@ public class OverviewController {
 
     @GetMapping("/other/page/{page}")
     public String otherPostcards(@PathVariable String page, Model model) {
-        int pageNum = getPageNum(page);
+        int pageNum = currentPage(page);
 
         addAttributes(model,
                 pageNum,
@@ -49,7 +49,7 @@ public class OverviewController {
 
     @GetMapping("/page/{page}")
     public String overviewPage(@PathVariable String page, Model model) {
-        int pageNum = getPageNum(page);
+        int pageNum = currentPage(page);
 
         addAttributes(model, pageNum,
                 getPage(pageNum, resource.getList()),
@@ -62,7 +62,7 @@ public class OverviewController {
     public String tag(@PathVariable String tagName,
                       @PathVariable String page,
                       Model model) {
-        int pageNum = getPageNum(page);
+        int pageNum = currentPage(page);
 
         List<Postcard> list = tagName == null
                 ? resource.getList()
@@ -82,7 +82,7 @@ public class OverviewController {
     public String getBycountry(@PathVariable String countryId,
                                @PathVariable String page,
                                Model model) {
-        int pageNum = getPageNum(page);
+        int pageNum = currentPage(page);
 
         List<Postcard> list = countryId == null
                 ? resource.getList()
@@ -101,7 +101,7 @@ public class OverviewController {
     public String getByCity(@PathVariable String city,
                             @PathVariable String page,
                             Model model) {
-        int pageNum = getPageNum(page);
+        int pageNum = currentPage(page);
 
         List<Postcard> list = city == null
                 ? resource.getList()
@@ -129,7 +129,7 @@ public class OverviewController {
         return "postcard";
     }
 
-    private int getPageNum(String page) {
+    private int currentPage(String page) {
         try {
             return Integer.parseInt(page);
         } catch (NumberFormatException ex) {

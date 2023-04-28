@@ -4,7 +4,8 @@ import entity.Postcard;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.List;
 
 import static util.PostcardHelper.BY_DATE;
 import static util.TsvUtil.readTsv;
@@ -12,9 +13,9 @@ import static util.TsvUtil.readTsv;
 @Component
 public class PostcardResource implements Resource<Postcard> {
 
-    private static LinkedList<Postcard> postcardList = new LinkedList<>();
+    private static List<Postcard> postcardList = new ArrayList();
 
-    public LinkedList<Postcard> getList() {
+    public List<Postcard> getList() {
         if (postcardList.isEmpty()) {
             postcardList.addAll(readTsv("Postcard collection - 1980x.tsv"));
             postcardList.addAll(readTsv("Postcard collection - 1990x.tsv"));

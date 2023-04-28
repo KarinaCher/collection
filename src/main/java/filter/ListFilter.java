@@ -28,7 +28,4 @@ public class ListFilter extends Filter<Postcard, List<String>, List<String>>
     {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
-    
-    
 }

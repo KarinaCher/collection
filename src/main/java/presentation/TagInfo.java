@@ -5,13 +5,12 @@ import java.util.List;
 
 public class TagInfo
 {
-
     public TagInfo(String name, Integer count)
     {
         this.name = name;
         this.count = count;
     }
-    
+
     private String name;
     private Integer count;
     private List<TagInfo> list = new ArrayList();

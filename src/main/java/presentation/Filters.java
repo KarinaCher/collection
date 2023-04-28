@@ -20,7 +20,7 @@ public enum Filters {
 
     private final Filter filter;
 
-    private Filters(Filter filter) {
+    Filters(Filter filter) {
         this.filter = filter;
     }
 

@@ -39,7 +39,4 @@ public class StringFilter extends Filter<Postcard, String, String>
                 .map(getSubfield())
                 .collect(Collectors.toSet());
     }
-    
-    
-    
 }

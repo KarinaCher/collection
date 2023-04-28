@@ -11,10 +11,10 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
+import static util.PostcardHelper.parsePostcard;
 
 public class TsvUtil {
     public static final Logger LOG = Logger.getLogger(TsvUtil.class);
-    private static final PostcardHelper helper = new PostcardHelper();
 
     public static List<Postcard> readTsv(String fileName) {
         Map<String, Postcard> list = new HashMap<>();
@@ -25,7 +25,7 @@ public class TsvUtil {
         stream
                 .skip(1)
                 .forEach(line -> {
-                    Postcard postcard = helper.parsePostcard(line);
+                    Postcard postcard = parsePostcard(line);
                     if (list.keySet().contains(postcard.getId())) {
                         LOG.warn("Duplicate id " + postcard.getId());
                     }
