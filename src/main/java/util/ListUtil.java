@@ -7,8 +7,8 @@ import java.util.Optional;
 
 import static main.OverviewController.ITEMS_PER_PAGE;
 
-public class ListUtil<T extends Item<?>, K> {
-    public T getById(K id, List<T>... lists) {
+public class ListUtil {
+    public static <T extends Item<?>, K> T getById(K id, List<T>... lists) {
         for (List<T> list : lists) {
             Optional<T> item = list.stream()
                     .filter(p -> p.getId().equals(id))
@@ -20,7 +20,7 @@ public class ListUtil<T extends Item<?>, K> {
         return null;
     }
 
-    public List<T> getPage(int page, List<T> list) {
+    public static <T extends Item<?>> List<T> getPage(int page, List<T> list) {
         int begin = ITEMS_PER_PAGE * (page - 1);
         int end = ITEMS_PER_PAGE * page;
         end = end > list.size() ? list.size() : end;

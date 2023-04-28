@@ -1,6 +1,7 @@
 package resources;
 
 import entity.Postcard;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -9,6 +10,7 @@ import java.util.List;
 import static util.PostcardHelper.BY_ID;
 import static util.TsvUtil.readTsv;
 
+@Component
 public class PostcardOtherResource implements Resource<Postcard> {
     private static List<Postcard> postcardList = new ArrayList<>();
 

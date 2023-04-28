@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import resources.ResourceContainer;
+import resources.PostcardResource;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletContext;
@@ -28,7 +28,8 @@ public class ImageController {
     @Autowired
     ResourceLoader resourceLoader;
 
-    private static ResourceContainer container = new ResourceContainer();
+    @Autowired
+    private PostcardResource resource;
 
     private static final String JPG = "jpg";
 
@@ -43,7 +44,7 @@ public class ImageController {
     @RequestMapping(value = "/lastPostcard", method = RequestMethod.GET)
     public ResponseEntity<byte[]> getLast()
             throws IOException {
-        Postcard postcard = container.getResource().getList().get(0);
+        Postcard postcard = resource.getList().get(0);
         return createImage(postcard.getImages().get(0), LAST_ITEM_SIZE);
     }
 

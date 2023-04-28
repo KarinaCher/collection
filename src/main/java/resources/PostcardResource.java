@@ -1,19 +1,20 @@
 package resources;
 
 import entity.Postcard;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 import static util.PostcardHelper.BY_DATE;
 import static util.TsvUtil.readTsv;
 
+@Component
 public class PostcardResource implements Resource<Postcard> {
 
-    private static List<Postcard> postcardList = new ArrayList<>();
+    private static LinkedList<Postcard> postcardList = new LinkedList<>();
 
-    public List<Postcard> getList() {
+    public LinkedList<Postcard> getList() {
         if (postcardList.isEmpty()) {
             postcardList.addAll(readTsv("Postcard collection - 1980x.tsv"));
             postcardList.addAll(readTsv("Postcard collection - 1990x.tsv"));
@@ -30,9 +31,9 @@ public class PostcardResource implements Resource<Postcard> {
 
     public boolean isBelong(String tagName, Postcard postcard) {
         return postcard.getCountry().equals(tagName)
-                || (postcard.getCity() != null && postcard.getCity().equals(tagName))
-                || postcard.getSenders().contains(tagName)
-                || postcard.getTags().contains(tagName)
-                || postcard.getYear().equals(tagName);
+               || (postcard.getCity() != null && postcard.getCity().equals(tagName))
+               || postcard.getSenders().contains(tagName)
+               || postcard.getTags().contains(tagName)
+               || postcard.getYear().equals(tagName);
     }
 }

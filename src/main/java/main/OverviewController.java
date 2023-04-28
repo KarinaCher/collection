@@ -1,18 +1,18 @@
 package main;
 
 import entity.Postcard;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import resources.PostcardOtherResource;
 import resources.PostcardResource;
-import resources.ResourceContainer;
-import util.ListUtil;
 
 import java.util.List;
 
+import static util.ListUtil.getById;
+import static util.ListUtil.getPage;
 import static util.PostcardHelper.BY_DATE;
 
 @Controller
@@ -20,61 +20,56 @@ public class OverviewController {
     public static final int ITEMS_PER_PAGE = 36;
     private static final int FIRST_PAGE = 1;
 
-    private static ResourceContainer container = new ResourceContainer();
-    private static final ListUtil<Postcard, String> util = new ListUtil<>();
+    @Autowired
+    private PostcardResource resource;
+    @Autowired
+    private PostcardOtherResource otherResource;
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String overview(Model model) {
-        PostcardResource postcardResource = container.getResource();
-
         addAttributes(model,
                 FIRST_PAGE,
-                util.getPage(FIRST_PAGE, postcardResource.getList()),
-                postcardResource.getCount());
+                getPage(FIRST_PAGE, resource.getList()),
+                resource.getCount());
         return "overview";
     }
 
-    @RequestMapping("/other/page/{page}")
+    @GetMapping("/other/page/{page}")
     public String otherPostcards(@PathVariable String page, Model model) {
-        int pageNum = getPage(page);
-        PostcardOtherResource resource = container.getOtherResource();
+        int pageNum = getPageNum(page);
 
         addAttributes(model,
                 pageNum,
-                util.getPage(pageNum, resource.getList()),
-                resource.getCount());
+                getPage(pageNum, otherResource.getList()),
+                otherResource.getCount());
 
         model.addAttribute("parentPath", "/other");
         return "overview";
     }
 
-    @RequestMapping(value = "/page/{page}", method = RequestMethod.GET)
+    @GetMapping("/page/{page}")
     public String overviewPage(@PathVariable String page, Model model) {
-        int pageNum = getPage(page);
-
-        PostcardResource resource = container.getResource();
+        int pageNum = getPageNum(page);
 
         addAttributes(model, pageNum,
-                util.getPage(pageNum, resource.getList()),
+                getPage(pageNum, resource.getList()),
                 resource.getCount());
 
         return "overview";
     }
 
-    @RequestMapping(value = "/tag/{tagName}/page/{page}", method = RequestMethod.GET)
+    @GetMapping("/tag/{tagName}/page/{page}")
     public String tag(@PathVariable String tagName,
                       @PathVariable String page,
                       Model model) {
-        int pageNum = getPage(page);
-
-        PostcardResource resource = container.getResource();
+        int pageNum = getPageNum(page);
 
         List<Postcard> list = tagName == null
                 ? resource.getList()
                 : resource.getListWithTag(tagName, BY_DATE);
 
         addAttributes(model, pageNum,
-                util.getPage(pageNum, list),
+                getPage(pageNum, list),
                 list.size());
 
         model.addAttribute("itemId", tagName);
@@ -83,20 +78,18 @@ public class OverviewController {
         return "overview";
     }
 
-    @RequestMapping(value = "/country/{countryId}/page/{page}", method = RequestMethod.GET)
+    @GetMapping("/country/{countryId}/page/{page}")
     public String getBycountry(@PathVariable String countryId,
                                @PathVariable String page,
                                Model model) {
-        int pageNum = getPage(page);
-
-        PostcardResource resource = container.getResource();
+        int pageNum = getPageNum(page);
 
         List<Postcard> list = countryId == null
                 ? resource.getList()
                 : resource.getListWithTag(countryId, BY_DATE);
 
         addAttributes(model, pageNum,
-                util.getPage(pageNum, list),
+                getPage(pageNum, list),
                 list.size());
         model.addAttribute("itemId", countryId);
         model.addAttribute("navPath", "country");
@@ -104,20 +97,18 @@ public class OverviewController {
         return "overview";
     }
 
-    @RequestMapping(value = "/city/{city}/page/{page}", method = RequestMethod.GET)
+    @GetMapping("/city/{city}/page/{page}")
     public String getByCity(@PathVariable String city,
                             @PathVariable String page,
                             Model model) {
-        int pageNum = getPage(page);
-
-        PostcardResource resource = container.getResource();
+        int pageNum = getPageNum(page);
 
         List<Postcard> list = city == null
                 ? resource.getList()
                 : resource.getListWithTag(city, BY_DATE);
 
         addAttributes(model, pageNum,
-                util.getPage(pageNum, list),
+                getPage(pageNum, list),
                 list.size());
         model.addAttribute("itemId", city);
         model.addAttribute("navPath", "city");
@@ -125,19 +116,20 @@ public class OverviewController {
         return "overview";
     }
 
-    @RequestMapping(value = "/postcard/{id}", method = RequestMethod.GET)
+    @GetMapping("/postcard/{id}")
     public String postcard(@PathVariable String id, Model model) {
-        Postcard item = (new ListUtil<Postcard, String>())
-                .getById(id,
-                        container.getResource().getList(),
-                        container.getOtherResource().getList());
+        Postcard item = getById(id,
+                resource.getList(),
+                otherResource.getList());
 
         model.addAttribute("postcard", item);
-        model.addAttribute("count", container.getResource().getList().size()); // TODO is it needed
+        model.addAttribute("previous", item);
+        model.addAttribute("next", item);
+        model.addAttribute("count", resource.getList().size()); // TODO is it needed
         return "postcard";
     }
 
-    private int getPage(String page) {
+    private int getPageNum(String page) {
         try {
             return Integer.parseInt(page);
         } catch (NumberFormatException ex) {
