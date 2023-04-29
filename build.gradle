@@ -7,19 +7,19 @@ buildscript {
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+apply plugin: "java"
+apply plugin: "org.springframework.boot"
+apply plugin: "io.spring.dependency-management"
 
-compileJava.options.encoding = 'UTF-8'
+compileJava.options.encoding = "UTF-8"
 
 tasks.withType(JavaCompile) {
 	options.encoding = "UTF-8"
 }
 
 bootJar {
-    baseName = 'gs-spring-boot'
-    version =  '0.1.0'
+    baseName = "gs-spring-boot"
+    version =  "0.1.0"
 }
 
 repositories {
@@ -35,11 +35,11 @@ dependencies {
     
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
     compile("javax.servlet:jstl")
-    compile('org.springframework.boot:spring-boot-devtools')
+    compile("org.springframework.boot:spring-boot-devtools")
 
-    compile('org.apache.commons:commons-compress:1.22')
-    testImplementation('org.junit.jupiter:junit-jupiter-api:5.3.1')
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.3.1')
+    compile("org.apache.commons:commons-compress:1.22")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.3.1")
 }
 
 test {
