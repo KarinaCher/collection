@@ -4,25 +4,13 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
-            by count<br />
-            <c:forEach var="tag" items="${tags}">
-                <a href="/tag/${tag.name}/page/1">
-                    <span style="white-space: nowrap; padding-left: 10px">
-                        ${tag.count}&nbsp;&mdash;&nbsp;<fmt:message key="${tag.name}" bundle="${tagMap}"/>,
-                    </span>
-                </a> 
-                <br />
-            </c:forEach>
-        </div>
-        <div>
-            by name <br />
+        <div style="text-align: center">
             <c:forEach var="tag" items="${tagsByName}">
                 <a href="/tag/${tag.name}/page/1">
-                    <span style="white-space: nowrap; padding-left: 10px">
+                    <span style="white-space: nowrap; padding-left: 10px; font-size: ${10 + tag.count}px">
                         <fmt:message key="${tag.name}" bundle="${tagMap}"/>&nbsp;&mdash;&nbsp;${tag.count},
                     </span>
-                </a> 
+                </a>
                 <br />
             </c:forEach>
         </div>
