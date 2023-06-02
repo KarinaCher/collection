@@ -7,6 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel='stylesheet' href='/css/test.css'>
     <link rel='stylesheet' href='/css/main.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="/js/test.js"></script>
     <script src="/js/js.js"></script>
 
