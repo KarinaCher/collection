@@ -2,6 +2,7 @@ package resources;
 
 import entity.Postcard;
 import org.springframework.stereotype.Component;
+import util.PostcardHelper;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -17,7 +18,7 @@ public class PostcardOtherResource implements Resource<Postcard> {
     @Override
     public List<Postcard> getList() {
         if (postcardList.isEmpty()) {
-            postcardList.addAll(readTsv("Postcard collection - other.tsv"));
+            postcardList.addAll(readTsv("Postcard collection - other.tsv", new PostcardHelper()));
             postcardList.forEach(postcard -> postcard.setMine(false));
             postcardList.sort(BY_ID);
         }

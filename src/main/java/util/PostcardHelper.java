@@ -12,7 +12,7 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 import static util.DateUtil.parse;
 
-public class PostcardHelper {
+public class PostcardHelper implements Helper<Postcard> {
     public static final Logger LOG = Logger.getLogger(PostcardHelper.class);
 
     public static final Comparator<Postcard> BY_DATE = (p1, p2) ->
@@ -24,7 +24,7 @@ public class PostcardHelper {
 
     public static final Comparator<Postcard> BY_ID = Comparator.comparing(Postcard::getId);
 
-    public static Postcard parsePostcard(String line) {
+    public Postcard parseItem(String line) {
         String[] data = line.split("\t");
 
         String id = data[0];

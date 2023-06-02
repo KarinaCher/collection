@@ -2,6 +2,7 @@ package resources;
 
 import entity.Postcard;
 import org.springframework.stereotype.Component;
+import util.PostcardHelper;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,13 +18,14 @@ public class PostcardResource implements Resource<Postcard> {
 
     public List<Postcard> getList() {
         if (postcardList.isEmpty()) {
-            postcardList.addAll(readTsv("Postcard collection - 1980x.tsv"));
-            postcardList.addAll(readTsv("Postcard collection - 1990x.tsv"));
-            postcardList.addAll(readTsv("Postcard collection - 2000x.tsv"));
-            postcardList.addAll(readTsv("Postcard collection - 2010x.tsv"));
+            PostcardHelper helper = new PostcardHelper();
+            postcardList.addAll(readTsv("Postcard collection - 1980x.tsv", helper));
+            postcardList.addAll(readTsv("Postcard collection - 1990x.tsv", helper));
+            postcardList.addAll(readTsv("Postcard collection - 2000x.tsv", helper));
+            postcardList.addAll(readTsv("Postcard collection - 2010x.tsv", helper));
             int currentYear = LocalDate.now().getYear();
             for (int i = 2019; i <= currentYear; i++) {
-                postcardList.addAll(readTsv("Postcard collection - " + i + ".tsv"));
+                postcardList.addAll(readTsv("Postcard collection - " + i + ".tsv", helper));
             }
             postcardList.sort(BY_DATE);
         }

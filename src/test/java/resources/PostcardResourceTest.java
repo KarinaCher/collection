@@ -2,6 +2,7 @@ package resources;
 
 import entity.Postcard;
 import org.junit.jupiter.api.Test;
+import util.PostcardHelper;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import static util.TsvUtil.readTsv;
 public class PostcardResourceTest {
     @Test
     public void testGetList() {
-        List<Postcard> postcards = readTsv("TestScope.tsv");
+        List<Postcard> postcards = readTsv("TestScope.tsv", new PostcardHelper());
 
         Postcard postcard = postcards.stream()
                 .filter(p -> p.getId().equals("20210621DE"))
