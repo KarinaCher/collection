@@ -1,10 +1,17 @@
 package main;
 
+import entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import resources.BookResource;
+
+import java.util.List;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.groupingBy;
 
 @Controller
 public class BookController {
@@ -13,7 +20,10 @@ public class BookController {
 
     @GetMapping("/book")
     public String overview(Model model) {
-        model.addAttribute("list", resource.getList());
+        List<Book> list = resource.getList();
+        TreeMap<String, List<Book>> map = list.stream()
+                .collect(groupingBy(Book::getAuthor, TreeMap::new, Collectors.toList()));
+        model.addAttribute("map", map);
         return "library";
     }
 }

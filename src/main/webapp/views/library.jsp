@@ -14,16 +14,22 @@
 <jsp:include page="parts/bundles.jsp"/>
 <jsp:include page="parts/menu.jsp"/>
 <div class="container">
-    <c:forEach var="book" items="${list}" varStatus="count">
-        <div>
-            <div style="margin-top: 10px">
-                <c:if test="${not empty book.author}">${book.author}</c:if>
-                <c:if test="${not empty book.originalAuthor}">(${book.originalAuthor})</c:if>
+    <c:set var="count" value="1"/>
+    <c:forEach var="item" items="${map}">
+        <c:set var="author" value="${item.key}"/>
+        <c:set var="bookList" value="${item.value}"/>
+        <c:set var="firstBook" value="${item.value[0]}"/>
+        <div style="margin-top: 10px">
+                ${firstBook.author}
+            <c:if test="${not empty firstBook.originalAuthor}">(${firstBook.originalAuthor})</c:if>
+            <c:forEach var="book" items="${bookList}">
                 <div style="margin-left: 15px">
-                    ${book.title}
+                        ${count}) ${book.title}
                     <c:if test="${not empty book.originalTitle}">(${book.originalTitle})</c:if>
                 </div>
-            </div>
+
+                <c:set var="count" value="${count + 1}"/>
+            </c:forEach>
         </div>
     </c:forEach>
 </div>

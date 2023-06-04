@@ -4,7 +4,6 @@ import entity.Book;
 import util.BookHelper;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 import static util.TsvUtil.readTsv;
@@ -18,7 +17,6 @@ public class BookResource implements Resource<Book> {
         if (list.isEmpty()) {
             BookHelper helper = new BookHelper();
             list.addAll(readTsv("Library.tsv", helper));
-            list.sort(Comparator.comparing(Book::getAuthor));
         }
         return list;
     }
