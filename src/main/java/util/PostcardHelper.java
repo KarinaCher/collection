@@ -81,7 +81,8 @@ public class PostcardHelper implements Helper<Postcard> {
         if (field == null || field.isEmpty()) {
             return Collections.emptyList();
         }
-        return Arrays.stream(field.split(", "))
+        return Arrays.stream(field.split(","))
+                .map(s -> s.trim())
                 .collect(toList());
     }
 }
