@@ -9,7 +9,7 @@
         <br />
         <c:forEach var="city" items="${countryItem.list}">
             <c:if test="${!empty city.name}">
-                <span style="padding-left: 10px"><a href="/city/${city.name}/page/1">${city.name}</a> - ${city.count}</span>,
+                <span style="padding-left: 10px"><a href="/city/${city.name}/page/1">${city.name}</a>&nbsp;-&nbsp;${city.count}</span>,
             </c:if>
         </c:forEach>
     </div>
