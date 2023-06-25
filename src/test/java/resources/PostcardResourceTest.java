@@ -34,8 +34,12 @@ public class PostcardResourceTest {
                 .filter(p -> p.getId().equals("20230603CH"))
                 .findFirst()
                 .get();
+        Postcard postcardHref3 = postcards.stream()
+                .filter(p -> p.getId().equals("20230603CH2"))
+                .findFirst()
+                .get();
         assertAll("Test get List",
-                () -> assertEquals(18, postcards.size()),
+                () -> assertEquals(19, postcards.size()),
 
                 () -> assertEquals("20210621DE", postcard.getId()),
                 () -> assertEquals(1, postcard.getSenders().size()),
@@ -64,7 +68,8 @@ public class PostcardResourceTest {
                 () -> assertEquals(0, postcard2.getTags().size()),
 
                 () -> assertEquals("Коллеги Эма и Глеб привезли мне эту открытку, которая входной билет с <a href=\"https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%8F%D0%BA_%D0%9F%D0%B0%D0%BA%D1%80%D0%B8\" target=\"_blank\">маяка Пакри</a>. Официальный сайт маяка на эстонском <a href=\"http://www.pakrituletorn.ee/\" target=\"_blank\">pakrituletorn.ee</a>", postcardHref.getDescription()),
-                () -> assertEquals("Выставка <a href=\"https://banksy-zuerich.ch/\" target=\"_blank\">The Mystery of Bansky \"A genius mind\"</a>", postcardHref2.getDescription())
+                () -> assertEquals("Выставка <a href=\"https://banksy-zuerich.ch/\" target=\"_blank\">The Mystery of Bansky \"A genius mind\"</a>", postcardHref2.getDescription()),
+                () -> assertEquals("Открытка из <a href=\"https://www.stadt-zuerich.ch/ted/de/index/gsz/sukkulenten-sammlung-zuerich.html\" target=\"_blank\">Sukkulenten-Sammlung Zürich</a>", postcardHref3.getDescription())
         );
     }
 
