@@ -3,6 +3,7 @@ package entity;
 import org.jboss.logging.Logger;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -156,6 +157,15 @@ public class Postcard implements Item<String>
         else {
             return null;
         }
+    }
+
+    public int getTravelDays()
+    {
+        if (getDateSent() == null || getDateReceived() == null) {
+            return -1;
+        }
+
+        return Period.between(getDateSent(), getDateReceived()).getDays();
     }
     
     public String getYear() 

@@ -58,7 +58,13 @@
                     </tr>
                     <tr>
                         <td><fmt:message key="dateReceived" bundle="${texts}"/></td>
-                        <td>${postcard.dateReceivedString}</td>
+                        <td>${postcard.dateReceivedString}
+                            <c:if test="${postcard.travelDays ne -1}">
+                                (<fmt:message key="travel" bundle="${texts}"/>
+                                ${postcard.travelDays}
+                                <fmt:message key="days" bundle="${texts}"/>)
+                            </c:if>
+                        </td>
                     </tr>
                     <tr>
                         <td><fmt:message key="from" bundle="${texts}"/></td>
