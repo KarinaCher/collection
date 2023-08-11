@@ -43,4 +43,11 @@ public class Book implements Item<String> {
     public String getId() {
         return author + title;
     }
+
+    public String getAuthorToSort() {
+        if (getOriginalAuthor().isEmpty()) {
+            return getAuthor();
+        }
+        return getOriginalAuthor();
+    }
 }
