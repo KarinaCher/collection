@@ -22,9 +22,9 @@
         <div style="margin-top: 10px">
                 ${firstBook.author}
             <c:if test="${not empty firstBook.originalAuthor}">(${firstBook.originalAuthor})</c:if>
-            <c:forEach var="book" items="${bookList}">
+            <c:forEach var="book" items="${bookList}" varStatus="loop">
                 <div style="margin-left: 15px">
-                        ${count}) ${book.title}
+                        ${count}) ${loop.index + 1}. ${book.title}
                     <c:if test="${not empty book.originalTitle}">(${book.originalTitle})</c:if>
                 </div>
 
