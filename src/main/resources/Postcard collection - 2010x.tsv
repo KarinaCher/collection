@@ -103,7 +103,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20150215SE	2015_02_15_Kaknastornet2.jpg	15.02.2015	18.02.2015	134	239	SE	Stockholm	Alex	Телевизионная башня Kaknastornet.			
 20150215SE2	2015_02_15_Kaknastornet.jpg	15.02.2015	19.02.2015	147	104	SE	Stockholm	Alex	Телевизионная башня Kaknastornet.			
 20150221LV	2015_02_21_LV_Cesis.jpg	21.02.2015		100	147	LV	Cesis	I	С ИТ отделом ездили на новогоднюю премию.	castle		
-20150215LV3	2015_03_13_SE.jpg	15.02.2015	13.03.2015	150	210	LV	Riga	Alex				
+20150215LV3	2015_03_13_SE.jpg	15.02.2015	13.03.2015	150	210	LV	Riga	Alex				SE
 20150317SE	2015_03_20_SE_Vasa.jpg	17.03.2015	20.03.2015	150	210	SE	Stockholm	Alex	Музей Васа. Открытка с трёхмерным эффектом, поэтому так отсканировалась.	stereo, museum		
 20150330IS	2015_03_30_IS.jpg	30.03.2015	09.03.2014	147	104	IS		JuraM	открытка похоже отправлена из будущего	map		
 20150416SE	2015_04_16_SE_Lund.jpg	16.04.2015	21.04.2015	104	147	SE	Lund	JuraM	От Юры М. из Лунда, Швеция, где он жил и работал.			
@@ -258,8 +258,8 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20180101LV	2018_01_01 LV.jpg	01.01.2018				LV	Riga	Alex	Поздравительная открытка от Саши. |Это авторская открытка, другие работы можно посмотреть на сайте автора lindawangstudios.com	new_year, volume		SE
 20180111LV	2018_01_12 LV Lnmm.jpg	11.01.2018	15.01.2018	150	180	LV	Riga	Alex	Открытка из Латвийского национального художественного музея. Ценный экземпляр, потому что по своей воле я вряд ли туда загляну.	museum		
 20180301LV	2018_03_01 LV.jpg	01.03.2018		150	100	LV	Riga	Alex				
-20180308SE	2018_03_12 LV Ceilo.jpg	08.03.2018		150	100	SE	Stockholm	Alex	Рекламная открытка. Саша принес из ресторана "Валмиермуйжа"	advert		
-20180307SE	2018_03_12 LV Valmiermuiza beer.jpg	07.03.2018	12.03.2018	150	100	SE	Stockholm	Alex	Замечательная рекламная открытка из ресторана "Валмиермуйжа" с рецептом горячего пива.	advert, beer		
+20180308SE	2018_03_12 LV Ceilo.jpg	08.03.2018		150	100	SE	Stockholm	Alex	Рекламная открытка. Саша принес из ресторана "Валмиермуйжа"	advert		LV
+20180307SE	2018_03_12 LV Valmiermuiza beer.jpg	07.03.2018	12.03.2018	150	100	SE	Stockholm	Alex	Замечательная рекламная открытка из ресторана "Валмиермуйжа" с рецептом горячего пива.	advert, beer		LV
 20180316LV	2018_03_20 LV Kolkasrags.jpg	16.03.2018	20.03.2018	100	205	LV	Kolka	I	А еще посетили Колкас Рагс. Было очень холодно, но и очень красиво.			
 20180316LV2	2018_03_20 LV Sklandrausi.jpg	16.03.2018	20.03.2018	100	205	LV	Kolka	I	Были с сестрой на Колке. Пекли аутентичные скландраусиши.			
 20180321LV	2018_03_21 LV Laima.jpg	21.03.2018	23.03.2018	105	150	LV	Riga	Alex				
