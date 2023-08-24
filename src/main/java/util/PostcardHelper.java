@@ -74,6 +74,9 @@ public class PostcardHelper implements Helper<Postcard> {
                 postcard.getImages().add(image.replaceAll("1.jpg", i + ".jpg"));
             }
         }
+        if (data.length > 12 && !data[12].isEmpty()) {
+            postcard.setOriginCountry(data[12]);
+        }
         return postcard;
     }
 

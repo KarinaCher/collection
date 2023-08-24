@@ -24,6 +24,7 @@ public class Postcard implements Item<String>
     private List<String> senders = new ArrayList<>();
     private String description;
     private List<String> tags = new ArrayList<>();
+    private String originCountry;
     private boolean mine = true;
     
     public String getId()
@@ -91,6 +92,13 @@ public class Postcard implements Item<String>
         return  country;
     }
 
+    public String getCountryOrOrigin() {
+        return getOriginCountry() == null ? getCountry() : getOriginCountry();
+    }
+    public String getCityOrOrigin() {
+        return getOriginCountry() == null ? getCity() : null;
+    }
+
     public void setCountry(String country)
     {
         this.country = country;
@@ -134,6 +142,14 @@ public class Postcard implements Item<String>
     public void setTags(List<String> tags)
     {
         this.tags = tags;
+    }
+
+    public String getOriginCountry() {
+        return originCountry;
+    }
+
+    public void setOriginCountry(String originCountry) {
+        this.originCountry = originCountry;
     }
 
     public boolean isMine()

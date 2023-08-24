@@ -33,8 +33,8 @@ public class PostcardResource implements Resource<Postcard> {
     }
 
     public boolean isBelong(String tagName, Postcard postcard) {
-        return postcard.getCountry().equals(tagName)
-               || (postcard.getCity() != null && postcard.getCity().equals(tagName))
+        return postcard.getCountryOrOrigin().equals(tagName)
+               || (postcard.getCityOrOrigin() != null && postcard.getCityOrOrigin().equals(tagName))
                || postcard.getSenders().contains(tagName)
                || postcard.getTags().contains(tagName)
                || postcard.getYear().equals(tagName);

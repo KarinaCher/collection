@@ -66,6 +66,12 @@
                             </c:if>
                         </td>
                     </tr>
+                    <c:if test="${!empty postcard.originCountry}">
+                        <tr>
+                            <td><fmt:message key="originCountry" bundle="${texts}"/></td>
+                            <td><fmt:message key="${postcard.originCountry}" bundle="${country}"/></td>
+                        </tr>
+                    </c:if>
                     <tr>
                         <td><fmt:message key="from" bundle="${texts}"/></td>
                         <td><fmt:message key="${postcard.country}" bundle="${country}"/>, ${postcard.city}</td>
