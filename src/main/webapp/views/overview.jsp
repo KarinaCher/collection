@@ -16,6 +16,11 @@
         <jsp:include page="parts/menu.jsp" />
         <div class="container">
             ${count} <fmt:message key="postcards" bundle="${texts}"/>
+            <c:if test="${navPath eq 'tag'}">
+                <br />
+                <fmt:message key="${itemId}" bundle="${tagDescrMap}" />
+            </c:if>
+
             <jsp:include page="parts/navigation.jsp" />
             <c:set var="collCount" value="4" />
             <c:forEach var="postcard" items="${list}" varStatus="count">

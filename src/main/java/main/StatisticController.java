@@ -1,6 +1,5 @@
 package main;
 
-import entity.Postcard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,8 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import resources.PostcardResource;
 import resources.TagResource;
-
-import java.util.List;
 
 import static presentation.Filters.*;
 
@@ -22,7 +19,6 @@ public class StatisticController {
     public String statistics(
             @PathVariable String param,
             Model model) {
-        final List<Postcard> list = resource.getList();
         final TagResource tagResource = new TagResource(resource);
         switch (param) {
             case "country":
