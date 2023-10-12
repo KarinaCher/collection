@@ -16,9 +16,10 @@
         <jsp:include page="parts/menu.jsp" />
         <div class="container">
             ${count} <fmt:message key="postcards" bundle="${texts}"/>
-            <c:if test="${navPath eq 'tag'}">
-                <br />
-                <fmt:message key="${itemId}" bundle="${tagDescrMap}" />
+
+            <c:set var="descrMessage"><fmt:message key="${itemId}" bundle="${tagDescrMap}" /></c:set>
+            <c:if test="${navPath eq 'tag' and !fn:startsWith(descrMessage,'???')}">
+                <br />${descrMessage}
             </c:if>
 
             <jsp:include page="parts/navigation.jsp" />
