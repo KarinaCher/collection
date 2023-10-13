@@ -40,7 +40,7 @@
 
 <c:set var="placeholder" value='<div style="width: 100px;">&nbsp;</div>' />
 
-<div style="width: 100%; text-align: center;"><a href="TODO">TODO Back to ${itemId}</a></div>
+<%--<div style="width: 100%; text-align: center;"><a href="TODO">TODO Back to ${itemId}</a></div>--%>
 
 <table style="width: 100%;">
     <tr>
@@ -54,102 +54,28 @@
         </td>
         <td>
 
-<c:if test="${!empty postcard}">
-    <div class="container" style="width: 80%">
-        <div class="row" style="text-align: center">
-            <img src="../../image/lg/${postcard.images[0]}" class="pop" current-index="0"/>
-            <br/>
-            <c:forEach var="image" items="${postcard.images}" varStatus="loop">
-                <c:if test="${loop.index > 0}">
-                    <img src="../../image/100/${image}" class="pop img_thumb" current-index="${loop.index}"/>
-                </c:if>
-            </c:forEach>
-        </div>
-        <div class="row" style="text-align: center">
-            <c:if test="${postcard.mine}">
-                <table class="table table-hover" style="width: 700px; margin: 30px auto 0px auto">
-                    <tr>
-                        <td><fmt:message key="dateSent" bundle="${texts}"/></td>
-                        <td>${postcard.dateSentString}</td>
-                    </tr>
-                    <tr>
-                        <td><fmt:message key="dateReceived" bundle="${texts}"/></td>
-                        <td>${postcard.dateReceivedString}
-                            <c:if test="${postcard.travelDays ne -1}">
-                                (<fmt:message key="travel" bundle="${texts}"/>
-                                ${postcard.travelDays}
-                                <fmt:message key="days" bundle="${texts}"/>)
+            <c:if test="${!empty postcard}">
+                <div class="container" style="width: 80%">
+                    <div class="row" style="text-align: center">
+                        <img src="../../image/lg/${postcard.images[0]}" class="pop" current-index="0"/>
+                        <br/>
+                        <c:forEach var="image" items="${postcard.images}" varStatus="loop">
+                            <c:if test="${loop.index > 0}">
+                                <img src="../../image/100/${image}" class="pop img_thumb" current-index="${loop.index}"/>
                             </c:if>
-                        </td>
-                    </tr>
-                    <c:if test="${!empty postcard.originCountry}">
-                        <tr>
-                            <td><fmt:message key="originCountry" bundle="${texts}"/></td>
-                            <td><fmt:message key="${postcard.originCountry}" bundle="${country}"/></td>
-                        </tr>
-                    </c:if>
-                    <tr>
-                        <td><fmt:message key="from" bundle="${texts}"/></td>
-                        <td><fmt:message key="${postcard.country}" bundle="${country}"/>, ${postcard.city}</td>
-                    </tr>
-                    <tr>
-                        <td><fmt:message key="sender" bundle="${texts}"/></td>
-                        <td>
-                            <c:forEach var="sender" items="${postcard.senders}">
-                                <a href="/tag/${sender}/page/1"><fmt:message key="${sender}"
-                                                                             bundle="${senderMap}"/></a>,
-                            </c:forEach>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><fmt:message key="size" bundle="${texts}"/></td>
-                        <td>${postcard.height} x ${postcard.width}</td>
-                    </tr>
-                    <c:if test="${!empty postcard.description}">
-                        <tr>
-                            <td><fmt:message key="notes" bundle="${texts}"/></td>
-                            <td>${fn:replace(postcard.description, '|', '<br />')}</td>
-                        </tr>
-                    </c:if>
-                    <c:if test="${!empty postcard.tags}">
-                        <tr>
-                            <td><fmt:message key="tags" bundle="${texts}"/></td>
-                            <td>
-                                <c:if test="${!empty postcard.tags}">
-                                    <c:forEach var="tag" items="${postcard.tags}">
-                                        <a href="/tag/${tag}/page/1"><fmt:message key="${tag}"
-                                                                                  bundle="${tagMap}"/></a>
-                                    </c:forEach>
-                                </c:if>
-                            </td>
-                        </tr>
-                    </c:if>
+                        </c:forEach>
+                    </div>
+                    <div class="row" style="text-align: center">
+                        <c:if test="${postcard.mine}">
+                            <jsp:include page="postcard/postcardDescr.jsp" />
+                        </c:if>
+                        <c:if test="${!postcard.mine}">
+                            <jsp:include page="postcard/otherPostcard.jsp" />
+                        </c:if>
+                    </div>
+                </div>
+            </c:if>
 
-                </table>
-            </c:if>
-            <c:if test="${!postcard.mine}">
-                <table class="table table-hover" style="width: 700px; margin: 30px auto 0px auto">
-                    <tr>
-                        <td><fmt:message key="sender" bundle="${texts}"/></td>
-                        <td>
-                            <c:forEach var="sender" items="${postcard.senders}">
-                                <fmt:message key="${sender}" bundle="${senderMap}"/>,
-                            </c:forEach>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><fmt:message key="size" bundle="${texts}"/></td>
-                        <td>${postcard.height} x ${postcard.width}</td>
-                    </tr>
-                    <tr>
-                        <td><fmt:message key="notes" bundle="${texts}"/></td>
-                        <td>${fn:replace(postcard.description, '|', '<br />')}</td>
-                    </tr>
-                </table>
-            </c:if>
-        </div>
-    </div>
-</c:if>
         </td>
         <td style="vertical-align: text-top; padding: 150px 30px 0 0;">
             <c:if test="${!empty nextPostcard}">
