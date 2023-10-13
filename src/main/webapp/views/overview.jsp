@@ -38,7 +38,7 @@
                                 <br />
                                 <a href="/country/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>
                             </div>
-                            <a href="/postcard/${postcard.id}">
+                            <a href="/postcard/${postcard.id}/${itemId}">
                                 <img src="/image/200/${postcard.images[0]}" class="img-fluid" id="${postcard.id}"/>
                             </a>
                             <div id="postcardDescription${postcard.id}" class="hidden">

@@ -38,14 +38,30 @@
     </div>
 </div>
 
+<c:set var="placeholder" value='<div style="width: 100px;">&nbsp;</div>' />
+
+<div style="width: 100%; text-align: center;"><a href="TODO">TODO Back to ${itemId}</a></div>
+
+<table style="width: 100%;">
+    <tr>
+        <td style="vertical-align: text-top; padding: 150px 0 0 30px;">
+            <c:if test="${!empty prevPostcard}">
+                <a href="/postcard/${prevPostcard.id}/${itemId}">
+                    <img src="/image/100/${prevPostcard.images[0]}" class="img-fluid" id="${prevPostcard.id}"/>
+                </a>
+            </c:if>
+            <c:if test="${empty prevPostcard}">${placeholder}</c:if>
+        </td>
+        <td>
+
 <c:if test="${!empty postcard}">
-    <div class="container">
+    <div class="container" style="width: 80%">
         <div class="row" style="text-align: center">
-            <img src="../image/lg/${postcard.images[0]}" class="pop" current-index="0"/>
+            <img src="../../image/lg/${postcard.images[0]}" class="pop" current-index="0"/>
             <br/>
             <c:forEach var="image" items="${postcard.images}" varStatus="loop">
                 <c:if test="${loop.index > 0}">
-                    <img src="../image/100/${image}" class="pop img_thumb" current-index="${loop.index}"/>
+                    <img src="../../image/100/${image}" class="pop img_thumb" current-index="${loop.index}"/>
                 </c:if>
             </c:forEach>
         </div>
@@ -134,5 +150,17 @@
         </div>
     </div>
 </c:if>
+        </td>
+        <td style="vertical-align: text-top; padding: 150px 30px 0 0;">
+            <c:if test="${!empty nextPostcard}">
+                <a href="/postcard/${nextPostcard.id}/${itemId}">
+                    <img src="/image/100/${nextPostcard.images[0]}" class="img-fluid" id="${nextPostcard.id}"/>
+                </a>
+            </c:if>
+            <c:if test="${empty nextPostcard}">${placeholder}</c:if>
+        </td>
+    </tr>
+</table>
+
 </body>
 </html>

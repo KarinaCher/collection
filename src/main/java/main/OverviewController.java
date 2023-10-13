@@ -11,8 +11,8 @@ import resources.PostcardResource;
 
 import java.util.List;
 
-import static util.ListUtil.getById;
-import static util.ListUtil.getPage;
+import static util.InputValidator.isValidFilter;
+import static util.ListUtil.*;
 import static util.PostcardHelper.BY_DATE;
 
 @Controller
@@ -116,16 +116,39 @@ public class OverviewController {
         return "overview";
     }
 
-    @GetMapping("/postcard/{id}")
-    public String postcard(@PathVariable String id, Model model) {
-        Postcard item = getById(id,
-                resource.getList(),
-                otherResource.getList());
+    @GetMapping(value = {"/postcard/{id}/{filter}", "/postcard/{id}"})
+    public String postcard(@PathVariable String id,
+                           @PathVariable(required = false) String filter,
+                           Model model) {
+        Postcard item;
+        Postcard prev;
+        Postcard next;
+        List<Postcard> list;
+        boolean hasFilter = false;
 
+        if (isValidFilter(filter)) {
+            list = resource.getListWithTag(filter, BY_DATE);
+            item = getById(id, list);
+            prev = getPrev(item, list);
+            next = getNext(item, list);
+            hasFilter = true;
+
+        } else {
+            item = getById(id,
+                    resource.getList(),
+                    otherResource.getList());
+            prev = getPrev(item,
+                    resource.getList(),
+                    otherResource.getList());
+            next = getNext(item,
+                    resource.getList(),
+                    otherResource.getList());
+        }
+
+        model.addAttribute("itemId", filter);
         model.addAttribute("postcard", item);
-        model.addAttribute("previous", item);
-        model.addAttribute("next", item);
-        model.addAttribute("count", resource.getList().size()); // TODO is it needed
+        model.addAttribute("prevPostcard", prev);
+        model.addAttribute("nextPostcard", next);
         return "postcard";
     }
 
