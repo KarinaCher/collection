@@ -36,7 +36,15 @@
                                     <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>,
                                 </c:forEach>
                                 <br />
-                                <a href="/country/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>
+                                <c:if test="${!empty postcard.originCountry}">
+                                    <a href="/country/${postcard.originCountry}/page/1"><fmt:message key="${postcard.originCountry}" bundle="${country}"/></a>
+                                    (<fmt:message key="from" bundle="${texts}" />
+                                    <fmt:message key="${postcard.country}" bundle="${country}"/>)
+                                </c:if>
+                                <c:if test="${empty postcard.originCountry}">
+                                    <a href="/country/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>
+                                </c:if>
+
                             </div>
                             <a href="/postcard/${postcard.id}/${itemId}">
                                 <img src="/image/200/${postcard.images[0]}" class="img-fluid" id="${postcard.id}"/>
