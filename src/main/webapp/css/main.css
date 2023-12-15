@@ -84,3 +84,32 @@ table#postcardsBySize {
 table#postcardsBySize td {
     border: 1px #aaa solid;
 }
+
+table.library {
+    width: 100%;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    margin-left: 30px;
+}
+
+table.library td {
+    vertical-align: top;
+    padding: 5px;
+    border-top: 1px solid #c1e2b3;
+}
+
+td.library_1 {
+    width: 20px;
+}
+td.library_2 {
+    width: 20px;
+}
+td.library_3 {
+    width: 600px;
+}
+td.library_4 {
+    width: 200px;
+}
+td.library_5 {
+}
+

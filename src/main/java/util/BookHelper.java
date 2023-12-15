@@ -19,6 +19,13 @@ public class BookHelper implements Helper<Book> {
         if (data.length > 3) {
             book.setOriginalTitle(data[3]);
         }
+        if (data.length > 4) {
+            book.setIsbn(data[4]);
+        }
+        if (data.length > 5) {
+            book.setNote(data[5]);
+        }
+
 
         return book;
     }

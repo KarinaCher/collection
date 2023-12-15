@@ -23,6 +23,7 @@ public class BookController {
         List<Book> list = resource.getList();
         TreeMap<String, List<Book>> map = list.stream()
                 .collect(groupingBy(Book::getAuthorToSort, TreeMap::new, Collectors.toList()));
+
         model.addAttribute("map", map);
         return "library";
     }
