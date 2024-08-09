@@ -68,4 +68,10 @@ public class Book implements Item<String> {
         }
         return getOriginalAuthor();
     }
+
+    public String getIsbnSearch() {
+        return isbn.replace("-", "");
+    }
+
+
 }
