@@ -32,7 +32,7 @@
                                 <c:if test="${not empty book.originalTitle}"><br />(${book.originalTitle})&nbsp;</c:if>
                             </td>
                             <td class="library_4"><c:if test="${not empty book.isbn}">
-                                <a href="https://www.google.com/search?q=ISBN+${book.isbnSearch}">ISBN: ${book.isbn}</a></c:if>&nbsp;
+                                <a href="https://www.google.com/search?q=ISBN+${book.isbnSearch}" target="_blank">ISBN: ${book.isbn}</a></c:if>&nbsp;
                             </td>
                             <td class="library_5"><c:if test="${not empty book.note}">${book.note}</c:if>&nbsp;</td>
                         </tr>
