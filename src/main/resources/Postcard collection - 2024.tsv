@@ -6,14 +6,14 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20240127CH	2024_01_27 CH Vergiss nie.jpg		27.01.2024	104	147	CH	Zurich	I	Открытка милая и надпись заставила задуматься.|Надпись: "Никогда не забывай: На этой Земле есть особенное место где ты нужен и тебя любят."			
 20240201LV	2024_02_05 LV Puce.jpg	01.02.2024	05.02.2024	100	150	LV	Marupe	Aliona				
 20240202LV	2024_02_09 LV Riga.jpg	02.02.2024	09.02.2024	104	154	LV	Marupe	Aliona	Такую открытку я посылала посткроссерам в качестве открытки с библиотекой, ну поярче у нас в продаже нет.|Но когда это твой знакомый город, то совсем иначе воспринимаешь. Я разглядывала знакомые места и вспоминала как ходила там в разное время моей жизни. Как даже была в этой библиотеке на конференции.			
-20240202LV2	2024_02_09 LV Zilite.jpg	02.02.2024	09.02.2024	100	147	LV	Marupe	Aliona	Надпись на обороте: Tai ir melna galva un balti vaigi, krūtis un vēders dzeltens, pār kuru stiepjas melna svītra. Jaunie ir bālāki, ne tik koši. Ligzdošanas laikā ir ļoti agresīva. Tās mādz sanākt kopā, lai plēsēju kopīgiem spēkiem padzītu.			
+20240202LV2	2024_02_09 LV Zilite.jpg	02.02.2024	09.02.2024	100	147	LV	Marupe	Aliona	Надпись на обороте: Tai ir melna galva un balti vaigi, krūtis un vēders dzeltens, pār kuru stiepjas melna svītra. Jaunie ir bālāki, ne tik koši. Ligzdošanas laikā ir ļoti agresīva. Tās mādz sanākt kopā, lai plēsēju kopīgiem spēkiem padzītu.	birds_lv		
 20240403LV	2024_04_03 LV Birthday.jpg	29.03.2024	03.04.2024	180	120	LV	Riga	LudmilaViktor		birthday		
 20240405GB	2024_04_05 GB Birthday.jpg		05.04.2024	205	135	GB	Kingston Upon Hall	mother		birthday		
 20240405LV	2024_04_05 LV DR Liepaja.jpg	01.04.2024	05.04.2024	104	155	LV	Liepaja	LusaFamily		birthday		
 20240405LV2	2024_04_05 LV Easter.jpg	01.04.2024	05.04.2024	104	155	LV	Daugavpils	Aliona		easter		
 20240405LV3	2024_04_05 LV Kuldiga.jpg	02.04.2024	05.04.2024	190	113	LV	Kuldiga	father		birthday, shape		
 20240405LV4	2024_04_05 LV Turtle.jpg	01.04.2024	05.04.2024	100	150	LV	Daugavpils	Aliona				
-20240405LV5	2024_04_05 LV Zubite.jpg	01.04.2024	05.04.2024	100	147	LV	Daugavpils	Aliona				
+20240405LV5	2024_04_05 LV Zubite.jpg	01.04.2024	05.04.2024	100	147	LV	Daugavpils	Aliona		birds_lv		
 20240405LV6	2024_04_05 LV Aliona.jpg		05.04.2024	210	145	CH		Aliona	Открытка прилагалась к подарку, который заказала мне сестра	birthday		
 20240408LV	2024_04_08 LV Cat.jpg	04.04.2024	08.04.2024	140	100	LV	Marupe	Aliona, MihailT, JuliaT, LevT	Открытка с пожеланиями на день рождения и с анекдотом	birthday		
 20240408LV2	2024_04_08 LV Peony.jpg	04.04.2024	08.04.2024	170	120	LV	Marupe	Aliona	Открытка от сестры на день рождения с тёплыми пожеланиями :)	birthday		
@@ -40,3 +40,5 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20240830CH3	2024_08_30 CH Luzern Sommer Festival.jpg		30.08.2024	147	104	CH	Luzern	mother	Реклама летнего фестиваля	advert		
 20240830CH4	2024_08_30 CH Maximum card.jpg		30.08.2024	147	104	CH	Buchs ZH	I	Когда покупала марки, обнаружила что есть и открытки с этим же изображением.	maksimum_card		
 20240830CH5	2024_08_30 CH Ad Ballenberg.jpg		30.08.2024	104	147	CH	Buchs ZH		Каким-то образом мне прислали рекламу этнографического музея, хотя мне до туда ехать 3 с половиной часа на поезде	advert		
+20240902GR	2024_09_02 GR Kassiopi.jpg	27.07.2024	02.09.2024	110	178	GR	Kassiopi	Aliona, MihailT, JuliaT, LevT	Открытка из Греции была месяц где-то в увлекательном путешествии, пока дошла до меня,			
+20240902LV	2024_09_02 LV Krauklis.jpg	27.08.2024	02.09.2024	100	147	LV	Marupe	Aliona	Открытка с интересными сведеньями о воронах	birds_lv		
