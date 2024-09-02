@@ -2,11 +2,12 @@ package entity;
 
 import org.jboss.logging.Logger;
 
+import java.time.Duration;
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.time.temporal.ChronoUnit.DAYS;
 import static util.DateUtil.format;
 
 public class Postcard implements Item<String>
@@ -175,13 +176,13 @@ public class Postcard implements Item<String>
         }
     }
 
-    public int getTravelDays()
+    public long getTravelDays()
     {
         if (getDateSent() == null || getDateReceived() == null) {
             return -1;
         }
 
-        return Period.between(getDateSent(), getDateReceived()).getDays();
+        return Duration.ofDays(DAYS.between(getDateSent(), getDateReceived())).toDays();
     }
     
     public String getYear() 

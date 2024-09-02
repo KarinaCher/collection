@@ -2,6 +2,7 @@ package resources;
 
 import entity.Postcard;
 import org.junit.jupiter.api.Test;
+import util.DateUtil;
 import util.PostcardHelper;
 
 import java.util.List;
@@ -81,5 +82,13 @@ public class PostcardResourceTest {
                 () -> assertEquals(2, postcards.size()),
                 () -> assertFalse(postcards.get(0).isMine())
         );
+    }
+
+    @Test
+    public void testTravelDays() {
+        Postcard p = new Postcard();
+        p.setDateSent(DateUtil.parse("27.07.2024"));
+        p.setDateReceived(DateUtil.parse("02.09.2024"));
+        assertEquals(37, p.getTravelDays());
     }
 }
