@@ -47,7 +47,7 @@
         <td style="vertical-align: text-top; padding: 150px 0 0 30px;">
             <c:if test="${!empty prevPostcard}">
                 <a href="/postcard/${prevPostcard.id}/${itemId}">
-                    <img src="/image/100/${prevPostcard.images[0]}" class="img-fluid" id="${prevPostcard.id}"/>
+                    <img src="/image/100/${prevPostcard.images[0]}" id="${prevPostcard.id}"/>
                 </a>
             </c:if>
             <c:if test="${empty prevPostcard}">${placeholder}</c:if>
@@ -80,7 +80,7 @@
         <td style="vertical-align: text-top; padding: 150px 30px 0 0;">
             <c:if test="${!empty nextPostcard}">
                 <a href="/postcard/${nextPostcard.id}/${itemId}">
-                    <img src="/image/100/${nextPostcard.images[0]}" class="img-fluid" id="${nextPostcard.id}"/>
+                    <img src="/image/100/${nextPostcard.images[0]}" id="${nextPostcard.id}"/>
                 </a>
             </c:if>
             <c:if test="${empty nextPostcard}">${placeholder}</c:if>

@@ -30,33 +30,31 @@
                     </c:if>
                     <div class="col-sm-3">
                         <div class="thumbnail">
-                            <div class="caption">
-                                <fmt:message key="overview.from" bundle="${texts}"/>
+                            <div class="caption"">
+                                <a href="/postcard/${postcard.id}/${itemId}" style="display: inline;">
+                                    <img src="/image/200/${postcard.images[0]}" id="${postcard.id}"/>
+                                </a>
+
+                                <!--fmt:message key="overview.from" bundle="${texts}"/-->
                                 <c:forEach var="sender" items="${postcard.senders}">
-                                    <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>,
+                                    &#8226; <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>
                                 </c:forEach>
+
                                 <c:if test="${!empty postcard.originCountry}">
-                                    (<a href="/country/${postcard.originCountry}/page/1"><fmt:message key="${postcard.originCountry}" bundle="${country}"/></a>
-                                    , <fmt:message key="from" bundle="${texts}" />
-                                    <fmt:message key="${postcard.country}" bundle="${country}"/>)
+                                    &#8226; <a href="/country/${postcard.originCountry}/page/1"><fmt:message key="${postcard.originCountry}" bundle="${country}"/></a>, <fmt:message key="from" bundle="${texts}" />
+                                    <fmt:message key="${postcard.country}" bundle="${country}"/>
                                 </c:if>
                                 <c:if test="${empty postcard.originCountry}">
-                                    (<a href="/country/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>)
+                                    &#8226; <a href="/country/${postcard.country}/page/1"><fmt:message key="${postcard.country}" bundle="${country}"/></a>
                                 </c:if>
+                                <div>
+                                    <c:if test="${!empty postcard.tags}">
+                                        <c:forEach var="tag" items="${postcard.tags}">
+                                            &#8226; <a href="/tag/${tag}/page/1"><fmt:message key="${tag}" bundle="${tagMap}"/></a>
+                                        </c:forEach>
+                                    </c:if>
+                                </div>
 
-                            </div>
-                            <a href="/postcard/${postcard.id}/${itemId}">
-                                <img src="/image/200/${postcard.images[0]}" class="img-fluid" id="${postcard.id}"/>
-                            </a>
-                            <div id="postcardDescription${postcard.id}" class="hidden">
-                                ${fn:replace(postcard.description, '|', '<br />')}
-                            </div>
-                            <div class="caption">
-                                <c:if test="${!empty postcard.tags}">
-                                    <c:forEach var="tag" items="${postcard.tags}">
-                                        <a href="/tag/${tag}/page/1"><fmt:message key="${tag}" bundle="${tagMap}"/></a> 
-                                    </c:forEach>
-                                </c:if>
                             </div>
                         </div>
                     </div>

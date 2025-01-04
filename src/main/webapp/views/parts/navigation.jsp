@@ -7,7 +7,7 @@
 <nav>
     <ul class="pagination">
         <c:forEach begin="1" end="${pages}" var="page">
-            <li class="page-item <c:if test="${currentPage eq page}">active</c:if>">
+            <li class="<c:if test="${currentPage eq page}">active</c:if>">
                 <a class="page-link" href="${parentPath}${filter}/page/${page}">${page}</a>
             </li>
         </c:forEach>
