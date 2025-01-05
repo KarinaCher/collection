@@ -54,29 +54,25 @@
         </td>
         <td>
 
-            <c:if test="${!empty postcard}">
-                <table style="width: 80%">
-                    <tr>
-                        <td>
-                            <img src="../../image/lg/${postcard.images[0]}" class="pop" current-index="0"/>
-                            <br/>
-                            <c:forEach var="image" items="${postcard.images}" varStatus="loop">
-                                <c:if test="${loop.index > 0}">
-                                    <img src="../../image/100/${image}" class="pop img_thumb" current-index="${loop.index}"/>
-                                </c:if>
-                            </c:forEach>
-                        </td>
-                        <td>
-                            <c:if test="${postcard.mine}">
-                                <jsp:include page="postcard/postcardDescr.jsp" />
-                            </c:if>
-                            <c:if test="${!postcard.mine}">
-                                <jsp:include page="postcard/otherPostcard.jsp" />
-                            </c:if>
-                        </td>
-                    </tr>
-                </table>
+    <c:if test="${!empty postcard}">
+        <td style="text-align: right; width: 40%">
+            <img src="../../image/lg/${postcard.images[0]}" class="pop" current-index="0"/>
+            <br/>
+            <c:forEach var="image" items="${postcard.images}" varStatus="loop">
+                <c:if test="${loop.index > 0}">
+                    <img src="../../image/100/${image}" class="pop img_thumb" current-index="${loop.index}"/>
+                </c:if>
+            </c:forEach>
+        </td>
+        <td style="text-align: left; width: 40%">
+            <c:if test="${postcard.mine}">
+                <jsp:include page="postcard/postcardDescr.jsp" />
             </c:if>
+            <c:if test="${!postcard.mine}">
+                <jsp:include page="postcard/otherPostcard.jsp" />
+            </c:if>
+        </td>
+    </c:if>
 
         </td>
         <td style="vertical-align: text-top; padding: 150px 30px 0 0;">
