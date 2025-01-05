@@ -21,7 +21,8 @@
     </c:if>
     <p>
         <fmt:message key="from" bundle="${texts}"/>:
-        <fmt:message key="${postcard.country}" bundle="${country}"/>, ${postcard.city}
+        <fmt:message key="${postcard.country}" bundle="${country}"/>,
+        <a href="/city/${postcard.city}/page/1">${postcard.city}</a>
     </p>
     <p>
         <fmt:message key="sender" bundle="${texts}"/>:
