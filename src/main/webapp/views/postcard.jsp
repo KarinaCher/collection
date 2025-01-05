@@ -55,25 +55,27 @@
         <td>
 
             <c:if test="${!empty postcard}">
-                <div class="container" style="width: 80%">
-                    <div class="row" style="text-align: center">
-                        <img src="../../image/lg/${postcard.images[0]}" class="pop" current-index="0"/>
-                        <br/>
-                        <c:forEach var="image" items="${postcard.images}" varStatus="loop">
-                            <c:if test="${loop.index > 0}">
-                                <img src="../../image/100/${image}" class="pop img_thumb" current-index="${loop.index}"/>
+                <table style="width: 80%">
+                    <tr>
+                        <td>
+                            <img src="../../image/lg/${postcard.images[0]}" class="pop" current-index="0"/>
+                            <br/>
+                            <c:forEach var="image" items="${postcard.images}" varStatus="loop">
+                                <c:if test="${loop.index > 0}">
+                                    <img src="../../image/100/${image}" class="pop img_thumb" current-index="${loop.index}"/>
+                                </c:if>
+                            </c:forEach>
+                        </td>
+                        <td>
+                            <c:if test="${postcard.mine}">
+                                <jsp:include page="postcard/postcardDescr.jsp" />
                             </c:if>
-                        </c:forEach>
-                    </div>
-                    <div class="row" style="text-align: center">
-                        <c:if test="${postcard.mine}">
-                            <jsp:include page="postcard/postcardDescr.jsp" />
-                        </c:if>
-                        <c:if test="${!postcard.mine}">
-                            <jsp:include page="postcard/otherPostcard.jsp" />
-                        </c:if>
-                    </div>
-                </div>
+                            <c:if test="${!postcard.mine}">
+                                <jsp:include page="postcard/otherPostcard.jsp" />
+                            </c:if>
+                        </td>
+                    </tr>
+                </table>
             </c:if>
 
         </td>

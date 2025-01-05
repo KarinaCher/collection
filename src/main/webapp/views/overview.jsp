@@ -32,7 +32,7 @@
                         <div class="thumbnail">
                             <div class="caption"">
                                 <a href="/postcard/${postcard.id}/${itemId}" style="display: inline;">
-                                    <img src="/image/200/${postcard.images[0]}" id="${postcard.id}"/>
+                                    <img src="/image/280/${postcard.images[0]}" id="${postcard.id}"/>
                                 </a>
 
                                 <!--fmt:message key="overview.from" bundle="${texts}"/-->
