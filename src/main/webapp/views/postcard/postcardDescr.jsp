@@ -5,6 +5,12 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div style="text-align: left; padding: 20px">
+    <c:if test="${!empty postcard.description}">
+        <p>
+            ${fn:replace(postcard.description, '|', '<br />')}
+        </p>
+        <br />
+    </c:if>
     <p><fmt:message key="dateSent" bundle="${texts}"/>: ${postcard.dateSentString}</p>
     <p><fmt:message key="dateReceived" bundle="${texts}"/>: ${postcard.dateReceivedString}
         <c:if test="${postcard.travelDays ne -1}">
@@ -34,12 +40,6 @@
         <fmt:message key="size" bundle="${texts}"/>:
         ${postcard.height} x ${postcard.width}
     </p>
-    <c:if test="${!empty postcard.description}">
-        <p>
-            <fmt:message key="notes" bundle="${texts}"/>:
-            ${fn:replace(postcard.description, '|', '<br />')}
-        </p>
-    </c:if>
     <c:if test="${!empty postcard.tags}">
         <p>
             <fmt:message key="tags" bundle="${texts}"/>:
