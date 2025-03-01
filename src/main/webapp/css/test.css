@@ -1620,27 +1620,27 @@ a.bg-success:focus, a.bg-success:hover {
     background-color: #c1e2b3
 }
 
-.bg-info {
+.bg-info, .bg-info1, .bg-info7 {
     background-color: #d9edf7
 }
 
-a.bg-info:focus, a.bg-info:hover {
+a.bg-info:focus, a.bg-info:hover, .bg-info2, .bg-info8 {
     background-color: #afd9ee
 }
 
-.bg-warning {
+.bg-warning, .bg-info3, .bg-info9 {
     background-color: #fcf8e3
 }
 
-a.bg-warning:focus, a.bg-warning:hover {
+a.bg-warning:focus, a.bg-warning:hover, .bg-info4, .bg-info10 {
     background-color: #f7ecb5
 }
 
-.bg-danger {
+.bg-danger, .bg-info5, .bg-info11 {
     background-color: #f2dede
 }
 
-a.bg-danger:focus, a.bg-danger:hover {
+a.bg-danger:focus, a.bg-danger:hover, .bg-info6, .bg-info12 {
     background-color: #e4b9b9
 }
 

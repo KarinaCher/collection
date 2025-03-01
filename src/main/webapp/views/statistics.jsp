@@ -39,7 +39,7 @@
                     </c:when>
                     
                     <c:when test="${p eq 'year'}">
-                        <jsp:include page="parts/statisticsByYear.jsp" />
+                        <jsp:include page="parts/statisticsByYearMonth.jsp" />
                     </c:when>
 
                     <c:otherwise>

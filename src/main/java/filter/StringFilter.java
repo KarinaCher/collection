@@ -17,9 +17,10 @@ public class StringFilter extends Filter<Postcard, String, String>
     
     public StringFilter(Function<Postcard, String> field, 
                         Function<Postcard, String> subfield, 
-                        Comparator<TagInfo> comparator)
+                        Comparator<TagInfo> comparator,
+                        Comparator<TagInfo> subComparator)
     {
-        super(field, subfield, comparator);
+        super(field, subfield, comparator, subComparator);
     }
     
     @Override

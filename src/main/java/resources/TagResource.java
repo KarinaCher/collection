@@ -13,7 +13,7 @@ public class TagResource {
     private static Map<String, List<TagInfo>> cache = new HashMap<>();
 
     public final static Comparator<TagInfo> BY_COUNT = Comparator.comparing(TagInfo::getCount);
-    public final static Comparator<TagInfo> BY_NAME = Comparator.comparing(TagInfo::getName);
+    public final static Comparator<TagInfo> BY_NAME = Comparator.comparing(c -> c.getName().toLowerCase());
 
     public TagResource(Resource resource) {
         this.resource = resource;

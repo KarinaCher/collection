@@ -16,16 +16,19 @@ public abstract class Filter<E, T, K> {
     Function<E, K> subfield;
 
     Comparator<TagInfo> comparator;
+    Comparator<TagInfo> subComparator;
 
     public Filter(Function<E, T> field, Comparator<TagInfo> comparator) {
         this.field = field;
         this.comparator = comparator;
     }
 
-    public Filter(Function<E, T> field, Function<E, K> subfield, Comparator<TagInfo> comparator) {
+    public Filter(Function<E, T> field, Function<E, K> subfield,
+                  Comparator<TagInfo> comparator, Comparator<TagInfo> subComparator) {
         this.field = field;
         this.subfield = subfield;
         this.comparator = comparator;
+        this.subComparator = subComparator;
     }
 
     public Function<E, T> getField() {
@@ -36,8 +39,12 @@ public abstract class Filter<E, T, K> {
         return subfield;
     }
 
-    public Comparator<TagInfo> getComparator() {
+    private Comparator<TagInfo> getComparator() {
         return comparator;
+    }
+
+    private Comparator<TagInfo> getSubComparator() {
+        return subComparator;
     }
 
     protected abstract Set<String> getSet(List<E> postcardList);
@@ -65,7 +72,7 @@ public abstract class Filter<E, T, K> {
                     result.add(tagInfo);
                 });
 
-        result.forEach(value -> value.getList().sort(getComparator()));
+        result.forEach(value -> value.getList().sort(this.getSubComparator()));
         result.sort(this.getComparator());
 
         return result;

@@ -31,7 +31,7 @@ public class StatisticController {
                 break;
 
             case "year":
-                model.addAttribute("tagsByYear", tagResource.getBy(YEAR_BY_NAME));
+                model.addAttribute("tagsByYear", tagResource.getBy(YEAR_MONTH_BY_NAME));
                 break;
 
             case "sender":
