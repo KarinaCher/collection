@@ -38,7 +38,7 @@ public class PostcardResource implements Resource<Postcard> {
                || postcard.getSenders().contains(tagName)
                || postcard.getTags().contains(tagName)
                || postcard.getYear().equals(tagName)
-               || postcard.getMonth().equals(tagName)
+               || postcard.getMonthOfYear().equals(tagName)
                 ;
     }
 }

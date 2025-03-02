@@ -10,7 +10,7 @@
         <c:forEach var="month" items="${yearItem.list}" varStatus="loop">
             <fmt:formatNumber var="width" type="percent"
                               maxFractionDigits="0" value="${month.count/max}"/>
-<div class="bg-info${loop.index + 1}" style="width: ${width}; display: inline-block; margin-left: -4px">&nbsp;${month.count}</div>
+<div class="bg-info${loop.index + 1}" style="width: ${width}; display: inline-block; margin-left: -4px; padding-left: 3px;"> <a href="/tag/${month.name}/page/1">${month.count}</a></div>
         </c:forEach>
     </div>
 </c:forEach>

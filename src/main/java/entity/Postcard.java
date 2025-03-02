@@ -166,7 +166,7 @@ public class Postcard implements Item<String> {
         return String.valueOf(getDate().getYear());
     }
 
-    public String getMonth() {
+    public String getMonthOfYear() {
         if (getDate() == null) {
             LOG.warn("Postcard without date. ID = " + getId());
             return null;
