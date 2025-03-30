@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import resources.PostcardResource;
 
 import javax.imageio.ImageIO;
-import javax.servlet.ServletContext;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -22,8 +21,6 @@ import java.io.InputStream;
 @Controller
 public class ImageController {
     public static final String LAST_ITEM_SIZE = "200";
-    @Autowired
-    ServletContext servletContext;
 
     @Autowired
     ResourceLoader resourceLoader;
