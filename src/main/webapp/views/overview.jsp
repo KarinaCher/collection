@@ -27,10 +27,10 @@
             <c:forEach var="postcard" items="${list}" varStatus="count">
                 <c:if test="${(count.count mod collCount) eq 1}" >
                     <div class="row">
-                    </c:if>
+                </c:if>
                     <div class="col-sm-3">
                         <div class="thumbnail">
-                            <div class="caption"">
+                            <div class="caption">
                                 <a href="/postcard/${postcard.id}/${itemId}" style="display: inline;">
                                     <img src="/image/280/${postcard.images[0]}" id="${postcard.id}"/>
                                 </a>
