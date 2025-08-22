@@ -11,6 +11,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 import static util.DateUtil.parse;
+import static util.LinkUtil.formatLink;
 
 public class PostcardHelper implements Helper<Postcard> {
     public static final Logger LOG = Logger.getLogger(PostcardHelper.class);
@@ -61,9 +62,7 @@ public class PostcardHelper implements Helper<Postcard> {
 
         if (data.length > 9) {
             String descr = data[9];
-            descr = descr.replaceAll("\\[([0-9]{8}[A-Z]{2}[0-9]?)\\|(\\p{L}+)\\]", "<a href=\"/postcard/$1\">$2</a>");
-            descr = descr.replaceAll("\\[([a-zA-Z\\.\\s\\p{IsAlphabetic}-\"]+)\\|([a-zA-Z0-9\\_\\%\\s:/\\.\\(\\)-]+)\\]", "<a href=\"$2\" target=\"_blank\">$1</a>");
-            postcard.setDescription(descr);
+            postcard.setDescription(formatLink(descr));
         }
         if (data.length > 10) {
             postcard.setTags(readMultiValues(data[10]));
