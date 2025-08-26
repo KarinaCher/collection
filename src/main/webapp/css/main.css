@@ -56,7 +56,7 @@ div.thumb_img img {
 
 div#modal-body-img {
     text-align: center; 
-    height: 500px; 
+    height: 700px;
     background-position: center; 
     background-repeat: no-repeat;
 }
@@ -64,14 +64,14 @@ div#modal-body-img {
 div#modal-body-prevImg {
     float: left; 
     width: 50%; 
-    height: 500px;
+    height: 700px;
     cursor: w-resize;
 }
 
 div#modal-body-nextImg {
     float: right; 
     width: 50%; 
-    height: 500px;
+    height: 700px;
     cursor: e-resize;
 }
 
