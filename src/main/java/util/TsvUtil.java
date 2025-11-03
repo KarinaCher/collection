@@ -21,16 +21,16 @@ public class TsvUtil {
         Stream<String> stream = new BufferedReader(
                 new InputStreamReader(
                         TsvUtil.class.getResourceAsStream("/" + fileName))).lines();
-        stream
+        return stream
                 .skip(1)
-                .forEach(line -> {
-                    T postcard = (T) helper.parseItem(line);
-                    if (list.keySet().contains(postcard.getId())) {
-                        LOG.warn("Duplicate id " + postcard.getId());
+                .map(line -> (T) helper.parseItem(line))
+                .filter(item -> item != null)
+                .peek(item -> {
+                    if (list.keySet().contains(item.getId())) {
+                        LOG.warn("Duplicate id " + item.getId());
                     }
-                    list.put(postcard.getId(), postcard);
-                });
-        return list.values().stream()
+                    list.put(item.getId(), item);
+                })
                 .collect(toList());
     }
 }

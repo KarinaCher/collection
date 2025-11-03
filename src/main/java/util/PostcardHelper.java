@@ -30,6 +30,11 @@ public class PostcardHelper implements Helper<Postcard> {
 
         String id = data[0];
         String image = data[1];
+
+        if (id == null || id.isEmpty()) {
+            LOG.warn("Empty id for postcard " + image);
+            return null;
+        }
         String dateSent = data[2];
         String dateReceived = data[3];
         String height = data[4];
@@ -43,10 +48,6 @@ public class PostcardHelper implements Helper<Postcard> {
         postcard.getImages().add(image);
         postcard.setDateSent(parse(dateSent));
         postcard.setDateReceived(parse(dateReceived));
-
-        if (dateReceived.isEmpty()) {
-            LOG.warn("Date received is empty. ID = " + postcard.getId());
-        }
 
         if (height.isEmpty() || width.isEmpty()) {
             postcard.setHeight(0);
