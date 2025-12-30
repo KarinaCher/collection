@@ -105,7 +105,7 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20251023LV	2025_10_23 LV Flowers.jpg	18.10.2025	23.10.2025	155	105	LV	Kuldiga	Aliona				
 20251001CH	2025_10_01 CH Katzenweisheiten 1.jpg		01.10.2025	120	179	CH	Zurich	I	Календарь на 2026 год, с мудростями от кошек. Открытки на приятной толстой бумаге.	calendar	4	
 20251025CH	2025_10_25 CH 82box 1.jpg		25.10.2025	110	80	CH	Zurich	OlgaKa	Открытка от Ольги, которая заказала [косметики 82box.ru|https://82box.ru/boxes/95d97987-2b08-4bed-bea2-8acc11ac7336], а там в коробке была эта открытка.	advert	2	
-	2025_10_30 CH Swing Cards 1.jpg		30.10.2025	200	144	CH	Zurich	I	Прекрасная открытка от фирмы [www.santoro-london.com|https://www.santoro-london.com/]	volume	7	
+20251030CH	2025_10_30 CH Swing Cards 1.jpg		30.10.2025	200	144	CH	Zurich	I	Прекрасная открытка от фирмы [www.santoro-london.com|https://www.santoro-london.com/]	volume	7	
 20251101DE	2025_11_01 DE Miumau 1.jpg		01.11.2025	104	147	DE	Berlin	JanaFrank			3	
 20251106CH	2025_11_06 CH Weihnachten.jpg		06.11.2025	170	120	CH	Zurich	I		new_year		
 20251107JP	2025_11_07 JP Kyoto.jpg		07.11.2025	100	147	JP	Tokyo	tozando_com		advert		
@@ -128,3 +128,5 @@ ID	Image	Sent	Received	Height	Width	Country	City	Sender	Description	Tags	Images	
 20251229LV2	2025_12_29 LV Bird.jpg	22.12.2025	29.12.2025	147	104	LV	Marupe	Aliona	Уютная зимняя открытка!	new_year		
 20251229LV3	2025_12_29 LV Fir cone.jpg	19.12.2025	29.12.2025	155	105	LV	Marupe	Aliona	Нарядная новогодняя открытка!	new_year		
 20251229LV4	2025_12_29 LV Latvietis ziema.jpg	21.12.2025	29.12.2025	150	100	LV	Marupe	Aliona	Открытка с латвийским самоюмором :)	new_year		
+20251230LV	2025_12_30 LV Birds.jpg		30.12.2025	150	150	LV	Marupe	Aliona, MihailT, JuliaT, LevT		new_year		
+20251230LV2	2025_12_30 LV Julia.jpg		30.12.2025	147	104		Marupe	JuliaT		new_year		
