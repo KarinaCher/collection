@@ -4,6 +4,19 @@
 
 <c:set var="max" value="110" />
 
+<div class="bg-info-Jan bg-info-month-legend">Jan</div>
+<div class="bg-info-Feb bg-info-month-legend">Feb</div>
+<div class="bg-info-Mar bg-info-month-legend">Mar</div>
+<div class="bg-info-Apr bg-info-month-legend">Apr</div>
+<div class="bg-info-May bg-info-month-legend">May</div>
+<div class="bg-info-Jun bg-info-month-legend">Jun</div>
+<div class="bg-info-Jul bg-info-month-legend">Jul</div>
+<div class="bg-info-Aug bg-info-month-legend">Aug</div>
+<div class="bg-info-Sep bg-info-month-legend">Sep</div>
+<div class="bg-info-Oct bg-info-month-legend">Oct</div>
+<div class="bg-info-Nov bg-info-month-legend">Nov</div>
+<div class="bg-info-Dec bg-info-month-legend">Dec</div>
+
 <c:forEach var="yearItem" items="${tagsByYear}">
     <div style="margin-bottom: 20px;">
         <h3>${yearItem.name} - <a href="/tag/${yearItem.name}/page/1">${yearItem.count}</a></h3>
@@ -25,7 +38,7 @@
             </c:choose>
             <fmt:formatNumber var="width" type="percent"
                               maxFractionDigits="0" value="${month.count/max}"/>
-<div class="bg-info${loop.index + 1}" style="width: ${width}; display: inline-block; margin-left: -4px; padding-left: 3px;"> <a href="/tag/${month.name}/page/1" title="${monthName}">${month.count}</a></div>
+<div class="bg-info-${monthName}" style="width: ${width}; display: inline-block; margin-left: -4px; padding-left: 3px;"> <a href="/tag/${month.name}/page/1" title="${monthName}">${month.count}</a></div>
         </c:forEach>
     </div>
 </c:forEach>
