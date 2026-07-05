@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core"  %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -27,6 +27,9 @@
                 <li <c:if test="${p eq 'sender'}">class="active"</c:if>>
                     <a href="/statistics/sender"><fmt:message key="bySender" bundle="${texts}"/></a>
                 </li>
+                <li <c:if test="${p eq 'yearSender'}">class="active"</c:if>>
+                    <a href="/statistics/yearSender"><fmt:message key="byYearSender" bundle="${texts}"/></a>
+                </li>
             </ul>
             <div style="padding-top: 30px;">
                 <c:choose>
@@ -42,8 +45,12 @@
                         <jsp:include page="parts/statisticsByYearMonth.jsp" />
                     </c:when>
 
-                    <c:otherwise>
+                    <c:when test="${p eq 'sender'}">
                         <jsp:include page="parts/statisticsBySender.jsp" />
+                    </c:when>
+
+                    <c:otherwise>
+                        <jsp:include page="parts/statisticsByYearSender.jsp" />
                     </c:otherwise>
                 </c:choose>
             </div>

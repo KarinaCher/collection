@@ -5,8 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import presentation.TagInfo;
 import resources.PostcardResource;
 import resources.TagResource;
+
+import java.util.List;
 
 import static presentation.Filters.*;
 
@@ -35,8 +38,15 @@ public class StatisticController {
                 break;
 
             case "sender":
-            default:
                 model.addAttribute("tagsBySender", tagResource.getBy(SENDERS_BY_COUNT));
+                break;
+
+            case "yearSender":
+            default:
+                List<TagInfo> list = tagResource.getBy(YEAR_SENDERS_BY_COUNT);
+                int maxCount = list.stream().mapToInt(TagInfo::getCount).max().orElse(0);
+                model.addAttribute("tagsBySender", list);
+                model.addAttribute("maxCount", maxCount);
                 break;
         }
         model.addAttribute("p", param);

@@ -1,4 +1,4 @@
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <fmt:setLocale value = "en_GB"/>
 <fmt:setBundle basename="CountryMap" var="country" scope="session"/>
 <fmt:setBundle basename="TagMap" var="tagMap" scope="session"/>

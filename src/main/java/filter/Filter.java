@@ -65,7 +65,7 @@ public abstract class Filter<E, T, K> {
                         subSet.stream()
                                 .forEach(subField -> {
                                     tagInfo.getList().add(
-                                            createTagInfo(subField, getCountOfTagged(resource, subField)));
+                                            createTagInfo(subField, getCountOfTagged(resource, field, subField)));
                                 });
                     }
 
@@ -78,8 +78,8 @@ public abstract class Filter<E, T, K> {
         return result;
     }
 
-    private int getCountOfTagged(Resource resource, String field) {
-        return resource.getListWithTag(field, BY_DATE).size();
+    private int getCountOfTagged(Resource resource, String... field) {
+        return resource.getListWithTag(BY_DATE, field).size();
     }
 
     private TagInfo createTagInfo(String field, int listSize) {

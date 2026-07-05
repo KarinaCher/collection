@@ -66,7 +66,7 @@ public class OverviewController {
 
         List<Postcard> list = tagName == null
                 ? resource.getList()
-                : resource.getListWithTag(tagName, BY_DATE);
+                : resource.getListWithTag(BY_DATE, tagName);
 
         addAttributes(model, pageNum,
                 getPage(pageNum, list),
@@ -86,7 +86,7 @@ public class OverviewController {
 
         List<Postcard> list = countryId == null
                 ? resource.getList()
-                : resource.getListWithTag(countryId, BY_DATE);
+                : resource.getListWithTag(BY_DATE, countryId);
 
         addAttributes(model, pageNum,
                 getPage(pageNum, list),
@@ -105,7 +105,7 @@ public class OverviewController {
 
         List<Postcard> list = city == null
                 ? resource.getList()
-                : resource.getListWithTag(city, BY_DATE);
+                : resource.getListWithTag(BY_DATE, city);
 
         addAttributes(model, pageNum,
                 getPage(pageNum, list),
@@ -127,7 +127,7 @@ public class OverviewController {
         boolean hasFilter = false;
 
         if (isValidFilter(filter)) {
-            list = resource.getListWithTag(filter, BY_DATE);
+            list = resource.getListWithTag(BY_DATE, filter);
             item = getById(id, list);
             prev = getPrev(item, list);
             next = getNext(item, list);

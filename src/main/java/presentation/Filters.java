@@ -4,11 +4,13 @@ import entity.Postcard;
 import filter.Filter;
 import filter.ListFilter;
 import filter.StringFilter;
+import filter.StringListFilter;
 import resources.Resource;
 
 import java.util.List;
 
-import static resources.TagResource.*;
+import static resources.TagResource.BY_COUNT;
+import static resources.TagResource.BY_NAME;
 
 public enum Filters {
     TAG_BY_COUNT(new ListFilter(Postcard::getTags, BY_COUNT.reversed())),
@@ -18,6 +20,11 @@ public enum Filters {
             Postcard::getYear, Postcard::getMonthOfYear,
             BY_NAME.reversed(), BY_NAME)),
     SENDERS_BY_COUNT(new ListFilter(Postcard::getSenders, BY_COUNT.reversed())),
+    YEAR_SENDERS_BY_COUNT(new StringListFilter(
+            Postcard::getYear,
+            Postcard::getSenders,
+            BY_NAME.reversed(),
+            BY_COUNT.reversed())),
     COUNTRY_CITY_BY_COUNT(new StringFilter(
             Postcard::getCountryOrOrigin, Postcard::getCityOrOrigin,
             BY_COUNT.reversed(), BY_COUNT.reversed())),

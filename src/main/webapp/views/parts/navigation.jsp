@@ -1,4 +1,4 @@
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <c:set var="filter" value="" />
 <c:if test="${!empty itemId}">

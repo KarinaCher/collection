@@ -15,15 +15,24 @@ public interface Resource<T extends Item> {
         return getList().size();
     }
 
-    default List<T> getListWithTag(String tagName, Comparator<T> comparator) {
-        if (tagName.isEmpty()) {
+    default List<T> getListWithTag(Comparator<T> comparator, String... tagName) {
+        if (tagName.length == 0) {
             return getList();
         }
 
         return getList().stream()
-                .filter(postcard -> isBelong(tagName, postcard))
+                .filter(postcard -> isBelongList(tagName, postcard))
                 .sorted(comparator)
                 .collect(toList());
+    }
+
+    private boolean isBelongList(String[] tagName, T postcard) {
+        boolean belong = true;
+        for (String tag : tagName) {
+            belong &= isBelong(tag, postcard);
+        }
+
+        return belong;
     }
 
     boolean isBelong(String tagName, T postcard);

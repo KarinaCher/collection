@@ -26,7 +26,7 @@ public class PostcardOtherResource implements Resource<Postcard> {
     }
 
     @Override
-    public List<Postcard> getListWithTag(String tagName, Comparator<Postcard> comparator) {
+    public List<Postcard> getListWithTag(Comparator<Postcard> comparator, String... tagName) {
         return null;
     }
 

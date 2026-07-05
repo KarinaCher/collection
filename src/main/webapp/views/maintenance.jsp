@@ -1,7 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -31,7 +31,7 @@
         <tr>
             <td>Country:</td>
             <td>
-                <select name="countryList" id="countryList">
+                <select name="country" id="country">
                     <option value="-"></option>
                     <c:forEach items="${countries}" var="country" varStatus="i">
                         <option value="${country.key}">${country.value}</option>
@@ -46,12 +46,12 @@
         <tr>
             <td>Sender:</td>
             <td>
-                <c:forEach items="${senders}" var="sender" varStatus="i">
+                <c:forEach items="${senders}" var="sender" varStatus="loop">
                     <span style="margin-right: 20px; white-space: nowrap"><input
                             type="checkbox"
                             id="sender"
-                            name="sender${i}"
-                            value="${sender.key}">&nbsp;<label for="tag${i}">${sender.value}</label>
+                            name="sender${loop.index}"
+                            value="${sender.key}">&nbsp;<label for="tag${loop.index}">${sender.value}</label>
                     </span>
                 </c:forEach>
             </td>
@@ -66,19 +66,19 @@
         <tr>
             <td>Tag:</td>
             <td>
-                <c:forEach items="${tags}" var="tag" varStatus="i">
+                <c:forEach items="${tags}" var="tag" varStatus="loop">
                     <span style="margin-right: 20px; white-space: nowrap"><input
                             type="checkbox"
                             id="tag"
-                            name="tag${i}"
-                            value="${tag.key}">&nbsp;<label for="tag${i}">${tag.value}</label>
+                            name="tag${loop.index}"
+                            value="${tag.key}">&nbsp;<label for="tag${loop.index}">${tag.value}</label>
                     </span>
                 </c:forEach>
             </td>
         </tr>
         <tr>
             <td>Description:</td>
-            <td><textarea cols="100" rows="10"></textarea></td>
+            <td><textarea id="descr" cols="100" rows="10"></textarea></td>
         </tr>
         <tr>
             <td>Upload images:</td>
