@@ -26,4 +26,11 @@ $(document).ready(function () {
         
         $('#imagemodal').modal('show');
     });
+
+    $('.sender').on('mouseenter', function() {
+        var classes = $(this).attr('class').split(' ');
+        $('.sender').not('.' + classes[1]).fadeTo(0, 0.3);
+    }).on('mouseleave', function() {
+        $('.sender').fadeTo(0 , 1);
+    });
 });
