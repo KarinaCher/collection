@@ -1,4 +1,4 @@
-package main;
+package route;
 
 import entity.Postcard;
 import org.apache.commons.compress.utils.IOUtils;

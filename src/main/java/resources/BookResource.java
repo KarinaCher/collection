@@ -1,6 +1,7 @@
 package resources;
 
 import entity.Book;
+import org.springframework.stereotype.Component;
 import util.BookHelper;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 
 import static util.TsvUtil.readTsv;
 
+@Component
 public class BookResource implements Resource<Book> {
 
     private static List<Book> list = new ArrayList();

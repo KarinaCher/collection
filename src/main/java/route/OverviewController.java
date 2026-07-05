@@ -1,4 +1,4 @@
-package main;
+package route;
 
 import entity.Postcard;
 import org.springframework.beans.factory.annotation.Autowired;
