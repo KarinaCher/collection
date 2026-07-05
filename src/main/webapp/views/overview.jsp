@@ -35,7 +35,6 @@
                                     <img src="/image/280/${postcard.images[0]}" id="${postcard.id}"/>
                                 </a>
 
-                                <!--fmt:message key="overview.from" bundle="${texts}"/-->
                                 <c:forEach var="sender" items="${postcard.senders}">
                                     &#8226; <a href="/tag/${sender}/page/1"><fmt:message key="${sender}" bundle="${senderMap}"/></a>
                                 </c:forEach>
