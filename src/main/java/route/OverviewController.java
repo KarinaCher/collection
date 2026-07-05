@@ -116,7 +116,7 @@ public class OverviewController {
         return "overview";
     }
 
-    @GetMapping(value = {"/postcard/{id}/{filter}", "/postcard/{id}"})
+    @GetMapping(value = {"/postcard/{id}/{filter}", "/postcard/{id}/"})
     public String postcard(@PathVariable String id,
                            @PathVariable(required = false) String filter,
                            Model model) {
