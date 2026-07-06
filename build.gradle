@@ -28,3 +28,7 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.register("stage") {
+    dependsOn("build")
+}
