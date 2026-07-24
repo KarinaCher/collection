@@ -18,67 +18,64 @@
 </head>
 <body style="padding: 50px;">
 <h1>Add or edit postcard information</h1>
-<form method="post" action="/update" enctype="multipart/form-data">
+
+<form:form action="/maintenance" method="post" modelAttribute="postcard">
+    <div id="errorHandler">${errorMessage}</div>
     <table>
         <tr>
             <td>Date sent:</td>
-            <td><input type="text" path="dateSent" class="date" name="dateSent" value=""/></td>
+            <td><form:input path="dateSent" type="date"/></td>
         </tr>
         <tr>
             <td>Date received:</td>
-            <td><input type="text" path="dateReceived" class="date" name="dateReceived" value=""/></td>
+            <td><form:input path="dateReceived" type="date"/></td>
         </tr>
         <tr>
             <td>Country:</td>
             <td>
-                <select name="country" id="country">
+                <form:select path="country">
                     <option value="-"></option>
+                    <form:option value="-"/>
                     <c:forEach items="${countries}" var="country" varStatus="i">
-                        <option value="${country.key}">${country.value}</option>
+                        <c:choose>
+                            <c:when test="${foCountry eq country.key}">
+                                <form:option value="${country.key}" selected="selected">${country.value}</form:option>
+                            </c:when>
+                            <c:otherwise>
+                                <form:option value="${country.key}">${country.value}</form:option>
+                            </c:otherwise>
+                        </c:choose>
                     </c:forEach>
-                </select>
+                </form:select>
             </td>
         </tr>
         <tr>
             <td>City:</td>
-            <td><input type="text" path="city" name="city" value=""/></td>
+            <td><form:input path="city"/></td>
         </tr>
         <tr>
             <td>Sender:</td>
             <td>
                 <c:forEach items="${senders}" var="sender" varStatus="loop">
-                    <span style="margin-right: 20px; white-space: nowrap"><input
-                            type="checkbox"
-                            id="sender"
-                            name="sender${loop.index}"
-                            value="${sender.key}">&nbsp;<label for="tag${loop.index}">${sender.value}</label>
-                    </span>
+                    <form:checkbox path="senders" value="${sender.key}" label="${sender.value}"/>
                 </c:forEach>
             </td>
         </tr>
         <tr>
             <td>Size:</td>
-            <td>
-                <input type="text" path="width" name="width" value=""/>(w)
-                x <input type="text" path="height" name="height" value=""/>(h)
-            </td>
-        </tr>
+            <td>Width: <form:input path="width"/>, Height:
+            <form:input path="height"/></tr>
         <tr>
             <td>Tag:</td>
             <td>
                 <c:forEach items="${tags}" var="tag" varStatus="loop">
-                    <span style="margin-right: 20px; white-space: nowrap"><input
-                            type="checkbox"
-                            id="tag"
-                            name="tag${loop.index}"
-                            value="${tag.key}">&nbsp;<label for="tag${loop.index}">${tag.value}</label>
-                    </span>
+                    <form:checkbox path="tags" value="${tag.key}" label="${tag.value}"/>
                 </c:forEach>
             </td>
         </tr>
         <tr>
             <td>Description:</td>
-            <td><textarea id="descr" cols="100" rows="10"></textarea></td>
+            <td><form:textarea path="description" cols="100" rows="10"/></td>
         </tr>
         <tr>
             <td>Upload images:</td>
@@ -92,9 +89,9 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td><input type="submit"></td>
+            <td><form:button>Submit</form:button></td>
         </tr>
     </table>
-</form>
+</form:form>
 </body>
 </html>

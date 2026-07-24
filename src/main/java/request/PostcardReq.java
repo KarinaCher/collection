@@ -4,10 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Entity
 public class PostcardReq {
-//    @Id
-    private String id;
+//    private String id;
 
     private List<String> images = new ArrayList<>();
     private LocalDate dateSent;
@@ -21,13 +19,13 @@ public class PostcardReq {
     private List<String> tags = new ArrayList<>();
     private String originCountry;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public void setId(String id) {
+//        this.id = id;
+//    }
 
     public List<String> getImages() {
         return images;

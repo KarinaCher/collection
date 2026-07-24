@@ -2,13 +2,14 @@ package route;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import request.PostcardReq;
 
-import java.io.File;
-import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 
-import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 import static util.ResourceBundleHelper.SENDERS_INCLUDE;
 import static util.ResourceBundleHelper.getMap;
 
@@ -21,42 +22,40 @@ public class MaintenanceController {
         model.addAttribute("countries", getMap("countryMap"));
         model.addAttribute("senders", getMap("senderMap", SENDERS_INCLUDE));
         model.addAttribute("tags", getMap("tagMap"));
+        model.addAttribute("postcard", new PostcardReq());
 
         return "maintenance";
     }
 
     @PostMapping(
-            path = "/update",
-            consumes = {MULTIPART_FORM_DATA_VALUE})
-    public String update(@RequestPart(name = "dateSent", required = false) String dateSent,
-                         @RequestPart(name = "dateReceived", required = false) String dateReceived,
-                         @RequestPart(name = "country", required = false) String country,
-                         @RequestPart(name = "city", required = false) String city,
-                         @RequestPart(name = "sender", required = false) String sender,
-                         @RequestPart(name = "width", required = false) String width,
-                         @RequestPart(name = "height", required = false) String height,
-                         @RequestPart(name = "tag", required = false) String tag,
-                         @RequestPart(name = "descr", required = false) String descr,
-                         @RequestPart(name = "image1", required = false) MultipartFile image,
+            path = "/maintenance")
+    public String update(@ModelAttribute("postcard") PostcardReq postcardReq,
                          Model model) {
 
-        System.out.println("dateSent: " + dateSent);
-        System.out.println("dateReceived: " + dateReceived);
-        System.out.println("country: " + country);
-        System.out.println("city: " + city);
-        System.out.println("sender: " + sender);
-        System.out.println("width: " + width);
-        System.out.println("height: " + height);
-        System.out.println("tag: " + tag);
-        System.out.println("descr: " + descr);
+        model.addAttribute("countries", getMap("countryMap"));
+        model.addAttribute("senders", getMap("senderMap", SENDERS_INCLUDE));
+        model.addAttribute("tags", getMap("tagMap"));
 
-        File file = new File(image.getOriginalFilename());
-        try {
-            image.transferTo(file);
-            System.out.println("path" + file.getAbsolutePath());
-        } catch (IOException ex) {
-            ex.printStackTrace(); // TODO
-        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+
+        System.out.println("generate ID: " + formatter.format(postcardReq.getDateReceived()) + postcardReq.getCountry());
+        System.out.println("dateSent: " + postcardReq.getDateSent());
+        System.out.println("dateReceived: " + postcardReq.getDateReceived());
+        System.out.println("country: " + postcardReq.getCountry());
+        System.out.println("city: " + postcardReq.getCity());
+        System.out.println("sender: " + postcardReq.getSenders());
+        System.out.println("width: " + postcardReq.getWidth());
+        System.out.println("height: " + postcardReq.getHeight());
+        System.out.println("tags: " + postcardReq.getTags());
+        System.out.println("descr: " + postcardReq.getDescription());
+
+//        File file = new File(image.getOriginalFilename());
+//        try {
+//            image.transferTo(file);
+//            System.out.println("path" + file.getAbsolutePath());
+//        } catch (IOException ex) {
+//            ex.printStackTrace(); // TODO
+//        }
         return "maintenance";
     }
 
