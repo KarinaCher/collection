@@ -50,6 +50,25 @@
             </td>
         </tr>
         <tr>
+            <td>Origin country (optional):</td>
+            <td>
+                <form:select path="originCountry">
+                    <option value="-"></option>
+                    <form:option value="-"/>
+                    <c:forEach items="${countries}" var="country" varStatus="i">
+                        <c:choose>
+                            <c:when test="${foCountry eq country.key}">
+                                <form:option value="${country.key}" selected="selected">${country.value}</form:option>
+                            </c:when>
+                            <c:otherwise>
+                                <form:option value="${country.key}">${country.value}</form:option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </form:select>
+            </td>
+        </tr>
+        <tr>
             <td>City:</td>
             <td><form:input path="city"/></td>
         </tr>
@@ -57,7 +76,7 @@
             <td>Sender:</td>
             <td>
                 <c:forEach items="${senders}" var="sender" varStatus="loop">
-                    <form:checkbox path="senders" value="${sender.key}" label="${sender.value}"/>
+                    <span style="padding-right: 10px"><form:checkbox path="senders" value="${sender.key}" label="${sender.value}"/></span>
                 </c:forEach>
             </td>
         </tr>
@@ -69,13 +88,18 @@
             <td>Tag:</td>
             <td>
                 <c:forEach items="${tags}" var="tag" varStatus="loop">
-                    <form:checkbox path="tags" value="${tag.key}" label="${tag.value}"/>
+                    <span style="padding-right: 10px"><form:checkbox path="tags" value="${tag.key}" label="${tag.value}"/></span>
                 </c:forEach>
             </td>
         </tr>
         <tr>
             <td>Description:</td>
-            <td><form:textarea path="description" cols="100" rows="10"/></td>
+            <td>
+                Allowed formatting:<br />
+                '|' for a new line,<br />
+                [Page name|Page URL] for URL. Example: [Landesmuseum|https://www.landesmuseum.ch/en]<br />
+                <form:textarea path="description" cols="100" rows="10"/>
+            </td>
         </tr>
         <tr>
             <td>Upload images:</td>
