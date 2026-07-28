@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class ResourceBundleHelper {
 
-    public static final String[] SENDERS_INCLUDE = new String[]{"I", "Aliona"};
+    public static final String[] SENDERS_INCLUDE = new String[]{"I", "Aliona", "JanaFrank"};
 
     public static Map<String, String> getMap(String bundleName) {
         ResourceBundle bundle = ResourceBundle.getBundle(bundleName);
