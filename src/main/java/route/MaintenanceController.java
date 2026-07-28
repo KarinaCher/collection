@@ -1,7 +1,9 @@
 package route;
 
+import entity.Postcard;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import request.PostcardReq;
+import resources.PostcardResource;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -19,6 +22,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
 import static java.nio.file.StandardOpenOption.APPEND;
+import static util.ListUtil.getById;
+import static util.PostcardConverter.convert;
 import static util.ResourceBundleHelper.SENDERS_INCLUDE;
 import static util.ResourceBundleHelper.getMap;
 
@@ -27,6 +32,9 @@ public class MaintenanceController {
     private static final Logger log = LoggerFactory.getLogger(MaintenanceController.class);
     public static final String EMPTY_VALUE = "";
 
+    @Autowired
+    private PostcardResource resource;
+
     @Value("${sourceFile}")
     private String fileName;
 
@@ -34,10 +42,17 @@ public class MaintenanceController {
     public String maintenance(@PathVariable String id, Model model) {
         model.addAttribute("id", id);
 
+        if (id.isEmpty()) {
+            model.addAttribute("postcard", new PostcardReq());
+        }
+        else {
+            Postcard postcard = getById(id, resource.getList());
+            model.addAttribute("postcard", convert(postcard));
+        }
+
         model.addAttribute("countries", getMap("countryMap"));
         model.addAttribute("senders", getMap("senderMap", SENDERS_INCLUDE));
         model.addAttribute("tags", getMap("tagMap"));
-        model.addAttribute("postcard", new PostcardReq());
 
         return "maintenance";
     }
