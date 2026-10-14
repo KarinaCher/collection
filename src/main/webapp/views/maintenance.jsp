@@ -53,8 +53,7 @@
             <td>Origin country (optional):</td>
             <td>
                 <form:select path="originCountry">
-                    <option value="-"></option>
-                    <form:option value="-"/>
+                    <form:option value=""/>
                     <c:forEach items="${countries}" var="country" varStatus="i">
                         <c:choose>
                             <c:when test="${foCountry eq country.key}">

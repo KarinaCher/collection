@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
@@ -30,7 +31,6 @@ import static util.ResourceBundleHelper.getMap;
 @Controller
 public class MaintenanceController {
     private static final Logger log = LoggerFactory.getLogger(MaintenanceController.class);
-    public static final String EMPTY_VALUE = "";
 
     @Autowired
     private PostcardResource resource;
@@ -44,8 +44,7 @@ public class MaintenanceController {
 
         if (id.isEmpty()) {
             model.addAttribute("postcard", new PostcardReq());
-        }
-        else {
+        } else {
             Postcard postcard = getById(id, resource.getList());
             model.addAttribute("postcard", convert(postcard));
         }
@@ -73,34 +72,39 @@ public class MaintenanceController {
         // prepare data
         String id = formatterId.format(postcardReq.getDateReceived()) + postcardReq.getCountry();
         StringBuilder postcardRow = new StringBuilder();
-        String dateSent = formatter.format(postcardReq.getDateSent()); // TODO empty
+        LocalDate foDateSent = postcardReq.getDateSent();
+        String dateSent = foDateSent == null ?
+                null
+                : formatter.format(foDateSent);
         String dateReceived = formatter.format(postcardReq.getDateReceived());
         String senders = postcardReq.getSenders().stream().collect(Collectors.joining(","));
         String description = postcardReq.getDescription().isBlank()
-                ? EMPTY_VALUE
+                ? null
                 : postcardReq.getDescription();
         String tags = postcardReq.getTags().isEmpty()
-                ? EMPTY_VALUE
+                ? null
                 : postcardReq.getTags().stream().collect(Collectors.joining(","));
         String originCountry = postcardReq.getOriginCountry() == null
-                ? EMPTY_VALUE
+                ? null
                 : postcardReq.getOriginCountry();
 
         // create a row
         postcardRow.append("\n") // start new row
                 .append(id).append("\t")
-                .append("image_name.jpg").append("\t")
-                .append(dateSent).append("\t")
-                .append(dateReceived).append("\t")
+                .append("image_name.jpg").append("\t");
+        appendIfNotNull(postcardRow, dateSent);
+
+        postcardRow.append(dateReceived).append("\t")
                 .append(postcardReq.getHeight()).append("\t")
                 .append(postcardReq.getWidth()).append("\t")
                 .append(postcardReq.getCountry()).append("\t")
                 .append(postcardReq.getCity()).append("\t")
-                .append(senders).append("\t")
-                .append(description).append("\t")
-                .append(tags).append("\t")
-                .append(EMPTY_VALUE).append("\t") //postcard count
-                .append(originCountry).append("\t");
+                .append(senders).append("\t");
+
+        appendIfNotNull(postcardRow, description);
+        appendIfNotNull(postcardRow, tags);
+        appendIfNotNull(postcardRow, null); //postcard count
+        postcardRow.append(originCountry).append("\t");
 
         try {
             OutputStream outputStream = Files.newOutputStream(Paths.get(fileName), APPEND);
@@ -120,4 +124,11 @@ public class MaintenanceController {
         return "maintenance";
     }
 
+    private void appendIfNotNull(StringBuilder sb, String value) {
+        if (value != null) {
+            sb.append(value).append("\t");
+        } else {
+            sb.append("\t");
+        }
+    }
 }
